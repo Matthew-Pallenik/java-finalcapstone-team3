@@ -80,7 +80,7 @@ h2 {
 
 h1 {
   font-size: 85px;
-  margin-top: 150px;
+  margin-top: 60px;
   padding: 20px;
 }
 

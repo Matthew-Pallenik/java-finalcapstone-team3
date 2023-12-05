@@ -95,7 +95,7 @@ h2 {
 
 h1 {
   font-size: 85px;
-  margin-top: 150px;
+  margin-top: 60px;
   padding: 20px;
 }
 
@@ -195,4 +195,92 @@ label {
   height: 250px;
   object-fit: none;
   filter: drop-shadow(-10px -10px 10px #9c9ce0);
-}</style>
+}
+/* Tablet size @media query */
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 45px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+
+  .form-container {
+    max-width: 550px;
+    max-height: 450px;
+    padding: 30px;
+    
+  }
+
+  .form-input-group {
+    font-size: 22px;
+  }
+
+  .form-input-group input[type="text"],
+  .form-input-group input[type="password"] {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 22px;
+  }
+
+  .footer {    
+    height: fit-content;
+  }
+
+  .footer img {
+    max-height: 250px;
+  }
+
+}
+
+/* Phone size @media query */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 45px; /* Reduced font size for smaller screens */
+    margin-top: 10px; /* Adjusted top margin */
+    padding: 0px; /* Adjusted padding */
+  }
+
+  h2 {
+    font-size: 40px; /* Smaller font size for h2 */
+  }
+
+  .form-container {
+    max-width: 80%; /* Full width for smaller screens */
+    padding: 15px; /* Adjusted padding */
+    margin-top: 0px; /* Smaller top margin */
+  }
+
+  .form-input-group {
+    font-size: 18px; /* Smaller font size for readability */
+  }
+
+  .form-input-group input[type="text"],
+  .form-input-group input[type="password"] {
+    font-size: 18px; /* Larger font size for touch targets */
+  }
+
+  button {
+    font-size: 20px; /* Adjusted button font size for easier interaction */
+  }
+
+  .footer {
+    height: fit-content; /* Adjusted footer height */
+  }
+
+  .footer img {
+    height: fit-content; /* Adjusted image size in the footer */
+  }
+
+  .login-link {
+    font-size: 20px;
+  }
+}
+</style>
