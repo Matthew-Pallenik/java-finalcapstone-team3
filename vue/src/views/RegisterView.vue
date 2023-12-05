@@ -283,4 +283,54 @@ label {
     font-size: 20px;
   }
 }
+/* Phone size @media query for screens up to 360px wide */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 30px; /* Reduced font size */
+    margin-top: 10px; /* Adjusted top margin */
+    padding: 0px; /* Adjusted padding */
+  }
+
+  h2 {
+    font-size: 25px; /* Smaller font size */
+  }
+
+  .form-container {    
+  max-width: 80%; /* Utilize available space */
+  max-height: 300px; /* Maximum height of the container */
+  padding: 10px; /* Reduced padding */
+  margin-top: 0px; /* Smaller top margin */
+  margin-bottom: 20px; /* Added bottom margin for spacing before footer */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+}
+
+.form-input-group {
+  font-size: 16px; /* Reduced font size */
+  margin-bottom: 8px; /* Reduced margin between groups */
+}
+
+.form-input-group input[type="text"],
+.form-input-group input[type="password"] {
+  font-size: 16px; /* Adjusted font size for inputs */
+  padding: 8px; /* Reduced padding for inputs */
+  margin-bottom: 8px; /* Reduced margin between inputs */
+}
+
+button {
+  font-size: 18px; /* Adjusted button font size */
+  padding: 8px; /* Reduced button padding */
+  margin-bottom: 8px; /* Space below the button */
+}
+  .footer {
+    height: auto; /* Height set to auto for adaptive sizing */
+  }
+
+  .footer img {
+    height: 250px; /* Adjusted image size in the footer */
+  }
+
+  .login-link {
+    font-size: 18px; /* Adjusted font size for links */
+  }
+}
 </style>

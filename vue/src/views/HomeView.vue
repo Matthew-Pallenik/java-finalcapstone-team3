@@ -205,14 +205,14 @@ h2 {
   /* Additional tablet-specific styles can be added here */
 }
 /* Phone size @media query */
-@media (max-width: 767px) {
+@media (max-width: 430px) {
   .qa-container {
     width: 80%; /* Full width for smaller screens */
     height: auto; /* Dynamic height based on content */
     padding: 10px; /* Adjusted padding */
     margin: 10px auto; /* Adjusted margin */
     overflow-y: auto; /* Ensuring vertical scrolling if needed */
-    max-height: 400px;
+    max-height: 325px;
   }
 
   .qa-container .question,
@@ -242,6 +242,90 @@ h2 {
 
   .footer img {
     height: 250px; /* Adjusted image size in the footer */
+  }
+
+  /* Additional phone-specific styles can be added here */
+}
+/* Phone size @media query */
+@media (max-width: 390px) {
+  .qa-container {
+    width: 80%; /* Full width for smaller screens */
+    height: auto; /* Dynamic height based on content */
+    padding: 10px; /* Adjusted padding */
+    margin: 10px auto; /* Adjusted margin */
+    overflow-y: auto; /* Ensuring vertical scrolling if needed */
+    max-height: 325px;
+  }
+
+  .qa-container .question,
+  .qa-container .answer {
+    font-size: 18px; /* Smaller font size for better readability */
+  }
+
+  input[type="text"] {
+    width: 85%; /* Adjust width for better fit */
+    height: 40px; /* Adjust height */
+    font-size: 1rem; /* Smaller font size */
+    margin-top: 20px; /* Adjusted top margin */
+  }
+
+  h1 {
+    font-size: 25px; /* Reduced font size for smaller screens */
+    margin-top: 0px; /* Adjusted top margin */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduced font size */
+  }
+
+  .footer {
+    height: auto; /* Adjusted footer height */
+  }
+
+  .footer img {
+    height: 250px; /* Adjusted image size in the footer */
+  }
+
+  /* Additional phone-specific styles can be added here */
+}
+/* Phone size @media query */
+@media (max-width: 360px) {
+  .qa-container {
+    width: 80%; /* Full width for smaller screens */
+    height: auto; /* Dynamic height based on content */
+    padding: 10px; /* Adjusted padding */
+    margin: 10px auto; /* Adjusted margin */
+    overflow-y: auto; /* Ensuring vertical scrolling if needed */
+    max-height: 200px;
+  }
+
+  .qa-container .question,
+  .qa-container .answer {
+    font-size: 18px; /* Smaller font size for better readability */
+  }
+
+  input[type="text"] {
+    width: 85%; /* Adjust width for better fit */
+    height: 40px; /* Adjust height */
+    font-size: 1rem; /* Smaller font size */
+    margin-top: 20px; /* Adjusted top margin */
+  }
+
+  h1 {
+    font-size: 25px; /* Reduced font size for smaller screens */
+    margin-top: 0px; /* Adjusted top margin */
+  }
+
+  h2 {
+    font-size: 20px; /* Reduced font size */
+  }
+
+  .footer {
+    height: auto; /* Adjusted footer height */
+  }
+
+  .footer img {
+    height: 250px; /* Adjusted image size in the footer */    
   }
 
   /* Additional phone-specific styles can be added here */
