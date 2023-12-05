@@ -74,9 +74,9 @@ export default {
   padding: 20px;
   margin: 20px auto;
   /* Center the container */
-  width: 1000px;
+  width: 800px;
   /* Maximum width of the container */
-  height: 450px;
+  height: 350px;
   /* Maximum height before scrolling */
   overflow-y: auto;
   /* Enable vertical scrolling */
@@ -140,7 +140,7 @@ h2 {
 
 h1 {
   font-size: 85px;
-  margin-top: 25px;
+  margin-top: 15px;
   padding: 20px;
   margin-bottom: 0px;
 }
