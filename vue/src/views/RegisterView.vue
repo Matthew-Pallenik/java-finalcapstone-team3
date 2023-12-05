@@ -1,5 +1,4 @@
-<template>  
-<link rel="stylesheet" href="main.css">
+<template>
   <!--added -register-container to grab this and manipulate it with css-->
   <div id="register" class="register-container text-center">
     <h1>Welcome to Chatbot</h1>
@@ -87,7 +86,8 @@ export default {
 </script>
 
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   color: var(--color-darker-purple);
   text-align: center;
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
@@ -96,7 +96,7 @@ h1, h2 {
 h1 {
   font-size: 85px;
   margin-top: 150px;
-  padding: 20px;  
+  padding: 20px;
 }
 
 h2 {
@@ -108,13 +108,16 @@ h2 {
   background-color: var(--color-light-purple);
   padding: 20px;
   margin-top: 20px;
-  margin-left: auto; /* Centering horizontally */
-  margin-right: auto; /* Centering horizontally */
+  margin-left: auto;
+  /* Centering horizontally */
+  margin-right: auto;
+  /* Centering horizontally */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  
+  max-width: 500px;
+  /* Adjust as needed */
+
 }
 
 .form-input-group {
@@ -140,12 +143,12 @@ h2 {
   outline: none;
   border-radius: 4px;
   font-size: 25px;
-  color:var(--color-darker-purple);
+  color: var(--color-darker-purple);
 }
 
 button {
   padding: 10px;
-  background-color: var(--color-darker-purple); 
+  background-color: var(--color-darker-purple);
   color: #fff;
   font-weight: bold;
   font-size: 25px;
@@ -172,22 +175,24 @@ button:hover {
 .form-input-group {
   margin-bottom: 1rem;
 }
+
 label {
   margin-right: 0.5rem;
 }
+
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 150px; /* Adjust the height as needed */
-    /* Other styles for your footer */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  /* Adjust the height as needed */
+  /* Other styles for your footer */
 }
 
 .footer img {
-    width: 100%;
-    height: 250px;
-    object-fit:none;
-    filter: drop-shadow(-10px -10px 10px  #9c9ce0);
-}
-</style>
+  width: 100%;
+  height: 250px;
+  object-fit: none;
+  filter: drop-shadow(-10px -10px 10px #9c9ce0);
+}</style>
