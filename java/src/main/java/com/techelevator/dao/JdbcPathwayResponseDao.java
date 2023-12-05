@@ -2,23 +2,24 @@ package com.techelevator.dao;
 
 import com.techelevator.exception.DaoException;
 import com.techelevator.model.PathwayResponse;
-import com.techelevator.model.User;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class JdbcPathwayResponseDao implements PathwayResponseDao {
 
     private final JdbcTemplate jdbcTemplate;
 
+
+    // Constructor to initialize JdbcTemplate
     public JdbcPathwayResponseDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
+
+    // Retrieve a PathwayResponse by its unique identifier (id)
     @Override
     public PathwayResponse getResponseById(int id) {
         PathwayResponse pathwayResponse = null;
@@ -35,6 +36,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     }
 
 
+    // Retrieve a PathwayResponse by its key
     @Override
     public PathwayResponse getResponseByKey(String key) {
         PathwayResponse pathwayResponse = null;
@@ -51,6 +53,8 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         return pathwayResponse;
     }
 
+
+    // Retrieve a list of PathwayResponses by their key
     @Override
     public List<PathwayResponse> getResponsesByKey(String key) {
         List<PathwayResponse> pathwayResponses = new ArrayList<>();
@@ -68,6 +72,8 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         return pathwayResponses;
     }
 
+
+    // Retrieve a PathwayResponse by its description
     @Override
     public PathwayResponse getResponseByDesc(String key) {
         PathwayResponse pathwayResponse = null;
@@ -84,6 +90,8 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         return pathwayResponse;
     }
 
+
+    // Retrieve a list of PathwayResponses by their description
     @Override
     public List<PathwayResponse> getResponsesByDesc(String key) {
         List<PathwayResponse> pathwayResponses = new ArrayList<>();
@@ -101,6 +109,8 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         return pathwayResponses;
     }
 
+
+    // Helper method to map a database row to a PathwayResponse object
     private PathwayResponse mapRowToPathwayResponse(SqlRowSet rs) {
         PathwayResponse pathwayResponse = new PathwayResponse();
         pathwayResponse.setId(rs.getInt("entry_id"));
