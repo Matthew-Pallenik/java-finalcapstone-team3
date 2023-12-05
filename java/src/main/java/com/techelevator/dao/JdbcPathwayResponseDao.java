@@ -26,7 +26,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     @Override
     public PathwayResponse getResponseById(int id) {
         PathwayResponse pathwayResponse = null;
-        String sql = "SELECT * FROM pathway WHERE entry_id = ?";
+        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE entry_id = ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
             if (results.next()) {

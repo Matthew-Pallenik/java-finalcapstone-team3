@@ -162,6 +162,100 @@ https://drive.google.com/file/d/1X-7mPFQeZo9AHM_WH_JZJCpSe238Ruca/preview'
 (
 'Technical Interviews',
 
-'While you likely have experience in general or behavioral interviews, we are guessing you have yet to encounter a technical interview. The technical interview is very specific to the industry you are entering and is usually a blend of technical questions, whiteboarding, and/or coding problems.'
+'While you likely have experience in general or behavioral interviews, we are guessing you have yet to encounter a technical interview. The technical interview is very specific to the industry you are entering and is usually a blend of technical questions, whiteboarding, and/or coding problems. Important things to review before a technical interview might include: OOP Principles, Data Structures, SQL, Unit Tests, File I/O, Request/Response & MVC Pattern, HTML/CSS/JavaScript.
+Interviewers know what junior developers should and should not know, if you brave uncharted territory be able to speak on a subject close to what the interviewer is asking. (If possible). It is also important to be able to write code on a whiteboard and explain a high level approach.',
 
-)
+'technical | interview | practice | tech | managers | problems | whiteboard | whiteboarding | questions | coding | code | review',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/04_Technical_Interviews/01-introduction.md | 
+https://drive.google.com/file/d/1vfHM8nq-RmB2v2h2G-i5-S2ll4LKYGmE/preview'
+
+),
+(
+'After Interviews',
+
+'Post-interview, ensure continuous engagement and momentum in your job search. Send personalized thank-you emails, expressing gratitude, reiterating interest, and referencing specific aspects of the conversation. Maintain a proactive application approach, aiming for 3 applications weekly during the cohort and 5 post-graduation. Diversify opportunities and do not solely rely on one prospect. Patience is key; responses may take weeks. Embrace rejections as part of the process, using them to fuel your job search momentum. Always keep applying until a signed offer letter is in hand.',
+
+'interview | rejection | communication | communicate | interviewer | linkedin | after interview | interest | follow up',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/05_After_Interviews/01-introduction.md | 
+https://drive.google.com/file/d/1mA3zZ9wVQ2t0kAVN-GF-w8iwURGv-cCs/preview'
+
+),
+(
+'Job Search',
+
+'Navigating a successful technical job search involves a multifaceted strategy. Begin by building a robust network through industry events, meetups, and online platforms like LinkedIn. Leverage connections for insights and opportunities. Simultaneously, actively apply on diverse job sites, tailoring resumes to each position. Adopt a two-pronged approach by reaching out to individuals on LinkedIn after submitting an application. This not only demonstrates genuine interest but also reinforces your candidacy. Networking provides a personalized touch, enhancing visibility and increasing the likelihood of referral. The proactive application process broadens opportunities, ensuring a comprehensive job search. Embrace rejection as part of the journey, utilizing feedback to refine your approach. The synergy of networking and strategic applications positions you for success, opening doors to diverse technical roles. Stay persistent, patient, and adaptable in this dynamic job market.',
+
+'job search | search | employer | employee | job | salary | linkedin | indeed | two-pronged approach | application | apply | search tools | employment | listing | apply | HR',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/06_Job_Search/01-introduction.md | 
+https://drive.google.com/file/d/1vj5a9J2QStNpUB6X90PyOhM2XwXf-2Vj/preview | 
+https://huntr.co/ | 
+https://indeed.com/ | 
+https://www.linkedin.com/ | 
+https://www.hiration.com/'
+),
+(
+'Benefits',
+
+'Once you receive a job offer, you will want to review the benefits package as well. The benefits package will include paid time off (PTO), medical benefits, bonuses, and more. Important benefits that are worth asking about: Healthcare, Retirement, Leave, Flexible Working, Family Friendly, Wellness, Travel, and Housing ',
+
+'benefits | healthcare | wellness | retirement | leave | flexibility | flexible | family | travel | housing | bonuses | compensation | medical | pto | paid time off | co-pay | deductible | premium | insurance | 401k ',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/07_Benefits/01-introduction.md | 
+https://drive.google.com/file/d/16zOls126WD_fCrkuMWpT850gxImftgh3/preview'
+
+),
+(
+'Huntr',
+
+'Huntr is an incredible job search organizational platform that Tech Elevator provides students access to. Once you begin applying to jobs, it is easy to lose track of which opportunities you have applied to. Huntr makes staying organized in your job search easy. In addition to helping you keep track of your applications and interviews, Huntr allows you track your job goals and find and apply to jobs using their Job Portal. Huntr allows students to create and customize their own Student Profile, which allows them to showcase their experience, education, skills, resume, and more. The Student Profile feature allows Tech Elevator to share student profiles with approved hiring partners for ease of interviewing and hiring.',
+
+'huntr | job search | job portal | pathway | tracking | organized | organization | organize | job | search | goals | application | apply',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/09_Huntr/01-introduction.md | 
+https://huntr.co/ | 
+https://blog.huntr.co/huntr-quickstart-guide/ | 
+https://drive.google.com/file/d/18VD-iB7MdqwUNfIra5Fn6FLuOKLmdJBN/preview | 
+https://drive.google.com/file/d/1HS70b-AfCR1463S64syP_kMpN82U6Tsa/preview | 
+https://drive.google.com/file/d/1f5lr7e2RrHQMyooYesmmvSwhs1TSnQ4P/preview | 
+https://drive.google.com/file/d/17VglGdHQ8_kwrg-W9b1-mL13XiD2ClqQ/preview | 
+https://drive.google.com/file/d/1BCiZh6WHQ2OUIcZMrBcnL0sN2hnD8Nf2/preview'
+
+),
+(
+'Matchmaking',
+
+'Matchmaking is designed to give you a head start on your job search. While Matchmaking occurs at the end of the cohort, it is just the start of your career journey! Use Matchmaking to put your best foot forward, to learn, and to grow professionally. The most successful graduates from Tech Elevator: Do their research prior to interviews, practice lessons from pathway, and follow-up after interviews. Your Pathway Team and Campus Director will work together to cultivate relationships with hiring managers and human resources professionals who register for the big event! Matchmaking is a two-day event with Day 1 occuring at the latter end of the cohort and Day 2 occuring the following week.',
+
+'matchmaking | pathway | success | job search | interviews | interview | employer',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/11_Matchmaking/01-introduction.md'
+),
+(
+'Relocation',
+
+'Looking at relocation opportunities is a great way to expand your job search and cast a wider net when applying for jobs. Wanting to relocate is only the beginning... once you have decided you would like to relocate for your career, there are several steps you will need to take to identify non-local job opportunities, such as: Searching on google, checking the local chamber of commerce, and researching tech hubs in the US. Attending networking events is a good way to scope out potential areas through talking to people from those areas.',
+
+'relocation | relocate | moving | different area | leaving',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/12_Relocation/01-introduction.md | 
+https://www.uschamber.com/co/chambers | 
+https://builtin.com/ '
+),
+(
+'Job Offer',
+
+'You have received a job offer—a moment of triumph. Amid the excitement, it is crucial to navigate the next steps effectively. Begin by expressing gratitude and enthusiasm to the employer. Politely request the offer letter and benefits package via email for careful review. Communicate your intention to assess the provided information and seek clarity on the response time frame. Confirm the deadline for accepting or declining the offer. Then, reach out to your Pathway Team for valuable guidance. Whether accepting, declining, or negotiating, involving your Pathway Team ensures expert insights, industry perspectives, and optimization of your offer. Even if you are certain about accepting, following these steps guarantees thorough consideration and feedback, ensuring you secure the best possible terms.',
+
+'offer | job | employment | pathway | success | victory | job search | interview | negotiate | employed',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/13_Job_Offer/05-intro.md | 
+https://www.payscale.com/research/US/Employer | 
+https://www.salarylist.com/jobs-salary-by-companies.htm | 
+https://www.salary.com/research/employer |  
+https://www.linkedin.com/salary/ | 
+https://www.indeed.com/career/salaries | 
+https://www.glassdoor.com/Salaries/index.htm'
+);
