@@ -1,8 +1,9 @@
-<template>
-  <link rel="stylesheet" href="main.css">
+<template>  
+  <!--added -register-container to grab this and manipulate it with css-->
   <div id="register" class="register-container text-center">
     <h1>Welcome to Chatbot</h1>
     <h2>Create Account</h2>
+    <!-- also added -container to this so that we make the form a box to manipulate with css-->
     <div class="form-container">
       <form v-on:submit.prevent="register">
 
@@ -22,10 +23,14 @@
           <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
         </div>
         <button type="submit">Create Account</button>
-        <p><router-link v-bind:to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
+        <p>
+          <!--added class login-link to manipulate this text with css-->
+          <router-link class="login-link" v-bind:to="{ name: 'login' }">Already have an account? Log in.</router-link>
+        </p>
       </form>
     </div>
   </div>
+  <!--add footer for the chicago skyline-->
   <div class="footer">
     <img src="img/Chicago-Grey.png" alt="City Skyline">
   </div>
@@ -131,7 +136,7 @@ h2 {
   margin-top: 5px;
   margin-bottom: 15px;
   border: none;
-  border-radius: 4px;
+  outline: none;
 }
 
 button {
@@ -150,6 +155,9 @@ button:hover {
   background-color: var(--color-light-blue);
 }
 
+.login-link {
+  font-size: 25px;
+}
 
 .error-message {
   color: red;
