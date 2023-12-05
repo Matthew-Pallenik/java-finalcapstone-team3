@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS pathway;
 CREATE TABLE pathway(
     entry_id serial NOT NULL,
     title VARCHAR(200) NOT NULL,
-    description VARCHAR(1000),
-    keywords VARCHAR(300),
-    link VARCHAR(500)
+    description VARCHAR(1500),
+    keywords VARCHAR(500),
+    link VARCHAR(2000)
 );
 COMMIT;
 
@@ -68,7 +68,7 @@ https://www.thebalancemoney.com/sample-career-change-cover-letter-2060185'
 (
 'LinkedIn',
 
-'Not only is LinkedIn a critical tool in your job search, but it will also become a major tool in managing your career after Tech Elevator. Social media has become integral to daily life. Platforms like Facebook, Instagram, and TikTok dominate personal interactions. In contrast, LinkedIn is a dedicated space for professional engagement. Functioning as an online resume, LinkedIn offers networking opportunities, job searches, experience sharing, and serves as a research tool for interviews. It plays a crucial role in managing and advancing ones professional life, distinguishing itself from other platforms focused on personal connections and content sharing.'
+'Not only is LinkedIn a critical tool in your job search, but it will also become a major tool in managing your career after Tech Elevator. Social media has become integral to daily life. Platforms like Facebook, Instagram, and TikTok dominate personal interactions. In contrast, LinkedIn is a dedicated space for professional engagement. Functioning as an online resume, LinkedIn offers networking opportunities, job searches, experience sharing, and serves as a research tool for interviews. It plays a crucial role in managing and advancing ones professional life, distinguishing itself from other platforms focused on personal connections and content sharing.',
 
 'LinkedIn | resume | job | job search | networking | research ',
 
@@ -90,8 +90,7 @@ IT Support Analyst: The IT Support Analyst  will provide front-line primary tech
 'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/12_Technical_Roles/01-technical-roles.md |
 https://en.wikipedia.org/wiki/Programmer#Application_versus_system_programming |
 https://en.wikipedia.org/wiki/Project_manager#Software_Project_Manager |
-https://yojji.io/blog/qa-automation-engineer |
-https://www.goconstruct.org/construction-careers/what-jobs-are-right-for-me/it-support-analyst/#:~:text=As%20an%20IT%20support%20analyst%20you%20will%20be%20responsible%20for,new%20systems%20or%20moving%20networks.'
+https://yojji.io/blog/qa-automation-engineer '
 
 ),
 (
@@ -141,6 +140,28 @@ Appearance: Dress in professional attire, things such as a button-up, skirt/dres
 https://drive.google.com/file/d/1tJ_H4PJKzoi9kmoikBnBHp7JYRKXumlT/preview  '
 ),
 (
-''
-)
+'HR Interviews',
 
+'HR interviews will be a big part of your job search as you begin applying for technology careers. Companies are not only looking for someone who checks the boxes in regard to technical skills, they want someone who is also a culture fit for their team and their company. The HR interview is a conversation to assess/confirm that your qualifications meet the needs of the role, to evaluate your level of cultural fit with the company, and to ask a varity of straighforward questions (for example, "Why are you switching careers?"). HR interviews/phone screens are shorter in length, lasting, on average, 15-30 minutes. 
+Examples of HR Interview questions may be: "Tell me why you are switching careers", "What is your target salary", "What are your strengths", "What are your weaknesses", etc ',
+
+'phone screen | interviews | interview | HR | job | culture | company',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/03_Behavioral_Interviews/01-introduction.md'
+),
+(
+'Behavioral Interviews',
+
+'Behavioral interviews are a more in-depth assessment of a candidate. Behavioral interviews are a structured interview technique used by hiring managers and HR professionals where they request information about a candidates past behavior in order to predict future behavior.  Behavioral interviews include a variety of open ended questions that will request context about a candidates specific past experience (key word: specific). The idea is that behavioral interview questions will force interviewees to give objective, real-life answers as opposed to telling the interviewer what they think they want to hear. Example behavioral questions may be: "Tell me about a time you failed", "Tell me about a time you ___ ". An efficient way to respond to these questions is by using Situation Task Action Result, or STAR stories for short.',
+
+'behavioral | interview | interviews | HR | questions | job | culture | company | STAR',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/03_Behavioral_Interviews/01-introduction.md |
+https://drive.google.com/file/d/1X-7mPFQeZo9AHM_WH_JZJCpSe238Ruca/preview'
+),
+(
+'Technical Interviews',
+
+'While you likely have experience in general or behavioral interviews, we are guessing you have yet to encounter a technical interview. The technical interview is very specific to the industry you are entering and is usually a blend of technical questions, whiteboarding, and/or coding problems.'
+
+)
