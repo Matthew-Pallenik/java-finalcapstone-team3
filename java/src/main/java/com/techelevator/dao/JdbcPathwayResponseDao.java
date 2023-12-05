@@ -64,7 +64,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         key = "%" + key + "%";
         String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE keywords ILIKE ?;";
         try {
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
             while (results.next()) {
                 PathwayResponse pathwayResponse = mapRowToPathwayResponse(results);
                 pathwayResponses.add(pathwayResponse);
@@ -101,7 +101,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
         key = "%" + key + "%";
         String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE description ILIKE ?;";
         try {
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
             while (results.next()) {
                 PathwayResponse pathwayResponse = mapRowToPathwayResponse(results);
                 pathwayResponses.add(pathwayResponse);
