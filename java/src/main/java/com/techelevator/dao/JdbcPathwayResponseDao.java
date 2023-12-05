@@ -44,7 +44,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     public PathwayResponse getResponseByKey(String key) {
         PathwayResponse pathwayResponse = null;
         key = "%" + key + "%";
-        String sql = "SELECT * FROM pathway WHERE keywords ILIKE ?";
+        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE keywords ILIKE ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
             if (results.next()) {
@@ -62,7 +62,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     public List<PathwayResponse> getResponsesByKey(String key) {
         List<PathwayResponse> pathwayResponses = new ArrayList<>();
         key = "%" + key + "%";
-        String sql = "SELECT * FROM pathway WHERE keywords ILIKE ?";
+        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE keywords ILIKE ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
@@ -81,7 +81,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     public PathwayResponse getResponseByDesc(String key) {
         PathwayResponse pathwayResponse = null;
         key = "%" + key + "%";
-        String sql = "SELECT * FROM pathway WHERE description ILIKE ?";
+        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE description ILIKE ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
             if (results.next()) {
@@ -99,7 +99,7 @@ public class JdbcPathwayResponseDao implements PathwayResponseDao {
     public List<PathwayResponse> getResponsesByDesc(String key) {
         List<PathwayResponse> pathwayResponses = new ArrayList<>();
         key = "%" + key + "%";
-        String sql = "SELECT * FROM pathway WHERE description ILIKE ?";
+        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE description ILIKE ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
