@@ -44,7 +44,7 @@ public class PathwayResponseController {
 
 
     // Endpoint to get a list of PathwayResponses by their key
-    @RequestMapping(path = "/keys/{key}/responses", method = RequestMethod.GET)
+    @RequestMapping(path = "/responses/{key}", method = RequestMethod.GET)
     public List<PathwayResponse> getResponsesByKey(@PathVariable("key") String key) {
         List<PathwayResponse> pathwayResponses = pathwayResponseDao.getResponsesByKey(key);
         if (pathwayResponses == null) {
