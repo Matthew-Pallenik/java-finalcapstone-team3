@@ -85,11 +85,62 @@ Project Manager: Project Managers have the responsibility of the planning and ex
 QA Automation Engineer: QA Automation Engineers design, program, simulate and test automated machinery and processes in order to complete exact tasks. |
 IT Support Analyst: The IT Support Analyst  will provide front-line primary technical support to end users on various technical issues and problems relating to hardware, software, and peripherals.',
 
-'technical role | job | title | position',
+'technical role | job | title | position | careers',
 
 'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/12_Technical_Roles/01-technical-roles.md |
 https://en.wikipedia.org/wiki/Programmer#Application_versus_system_programming |
 https://en.wikipedia.org/wiki/Project_manager#Software_Project_Manager |
 https://yojji.io/blog/qa-automation-engineer |
 https://www.goconstruct.org/construction-careers/what-jobs-are-right-for-me/it-support-analyst/#:~:text=As%20an%20IT%20support%20analyst%20you%20will%20be%20responsible%20for,new%20systems%20or%20moving%20networks.'
-);
+
+),
+(
+'Working With Recruiters',
+
+'As you begin your job search for a job in technology, you will find that it is not uncommon to work with third party recruiters for roles. Because technology is such an in-demand field, companies will often work with outside recruiting agencies to assist them with finding individuals for their roles. There are several well-known agencies that your Pathway Team will recommend working with once you begin your job search, but as a best practice, you should have a relationship with at least 2-3 recruiters when you are actively looking. There are efficient ways, such as LinkedIn to get in touch with recruiters. It is important to share MOATS: Money (Your salary and/or hourly wage goals), Opportunities (What kind of roles you are interested in), Area (How far you are willing to commute), Timing (When you can work), Skills(Important tech skills) ',
+
+'recruiters | recruiting | jobs | job search | employment | contract | recruitment | employers | offer',
+
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/04_Working_With_Recruiters/01-introduction.md | 
+https://www.roberthalf.com/ | 
+https://www.teksystems.com/en |
+https://www.randstadusa.com/ '
+
+),
+(
+'Portfolio Products',
+
+'Prepare for the common employer question about your outside projects by planning and starting early. Focus on your passions, tying your efforts to hobbies, sports, data, programming languages, or historical periods. This makes the work more motivating. Gain domain knowledge related to your chosen topic. Even small projects, like a unique mortgage calculator, or the beginning of a larger project with user stories, demonstrate initiative. Track activities like meetups, podcasts, and self-studying additional coding languages. Incomplete projects still offer valuable experiences—employers want insights into your design process, encountered roadblocks, alternative approaches, and future plans for the project. Showcase your ability to think through and learn from the development process beyond classroom projects.',
+
+'projects | side projects | portfolio | interview preparation | application | plans | career',
+
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/05_Portfolio_Projects/01-introduction.md'
+
+),
+(
+'Networking',
+
+'Networking in tech involves building professional connections to advance your career. Attend industry events, meetups, and conferences to meet professionals and potential mentors. Utilize online platforms like LinkedIn to connect with professionals in your field. Networking helps in job searches, provides learning opportunities, and fosters collaborations. Develop a strong online presence, share your expertise, and be proactive in reaching out to professionals. Building a robust network can lead to job opportunities, industry insights, and career growth.',
+
+'networking | social event | network | job search | meetups | career',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/01_Networking/01-introduction.md |
+https://drive.google.com/file/d/1b0vb7L2MICYxNZlTeRp_ywMrqLmvm0EK/preview'
+),
+(
+'Prepping For Interviews',
+
+'Interviewing begins the moment you receive a call or email from the recruiter informing you that they are interested in scheduling an interview. From that moment until the day of your interview, you need to ensure that you are as prepared as possible.
+Research: Research the company itself through their website, you should feel comfortable explaining to a friend or family member what the company actually does,
+Arrive Prepared: Bring copies of your resume, a notebook and pen, turn off your phone, make sure interview space has no distractions,
+Appearance: Dress in professional attire, things such as a button-up, skirt/dress, or suit and tie are good examples of professional attire; in addition to this be well groomed.',
+
+'interview | attire | preparation | prepare | job | offer | clothing | company | research | employer | employment| career',
+
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/02_Prepping_for_Interviews/01-introduction.md | 
+https://drive.google.com/file/d/1tJ_H4PJKzoi9kmoikBnBHp7JYRKXumlT/preview  '
+),
+(
+''
+)
+
