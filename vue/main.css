@@ -1,0 +1,22 @@
+:root {
+    --color-lightest: #dde1ec;    
+    --color-light-purple:#d2d2f3 ; 
+    --color-darker-purple: #665291; 
+    --color-light-blue: #47589e; 
+    --color-darkest: #0b0b2f; 
+}
+body {
+    background-color: var(--color-lightest);
+}
+
+.header {
+    background-color: var(--color-light);
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family:Source 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto;
+}
