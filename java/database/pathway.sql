@@ -54,4 +54,42 @@ https://drive.google.com/file/d/1w5K9SXOBLVG2KUu8AnupknA7r2B17Yam/preview'
 
 'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/01_Resumes/01-intro.md | 
 https://www.hiration.com/ '
+),
+(
+'Cover Letters',
+
+'For many technology roles, cover letters will be an optional addition to your application. Thus, it is recommended that you skip the addition of a cover letter unless the following 2 situations arise: It is a job you REALLY want, such as your dream job OR You have valuable information to share that is not already included within your resume. A one-page cover letter comprises key elements, starting with your contact information, date, and optionally the employers details. Introduce yourself in the first paragraph, stating your name, the company, the job title, and expressing why you are a suitable candidate. The body paragraphs (2-3) should directly align with the job description, emphasizing how your experiences, skills, and achievements meet the companys needs. Avoid repeating resume details and focus on relevant contributions. Conclude with a call-to-action paragraph, restating interest, providing contact information, and expressing gratitude.',
+
+'cover letter | resume | application | job',
+
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/11_Cover_Letters/01-introduction.md |
+https://www.thebalancemoney.com/sample-career-change-cover-letter-2060185'
+),
+(
+'LinkedIn',
+
+'Not only is LinkedIn a critical tool in your job search, but it will also become a major tool in managing your career after Tech Elevator. Social media has become integral to daily life. Platforms like Facebook, Instagram, and TikTok dominate personal interactions. In contrast, LinkedIn is a dedicated space for professional engagement. Functioning as an online resume, LinkedIn offers networking opportunities, job searches, experience sharing, and serves as a research tool for interviews. It plays a crucial role in managing and advancing ones professional life, distinguishing itself from other platforms focused on personal connections and content sharing.'
+
+'LinkedIn | resume | job | job search | networking | research ',
+
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/02_LinkedIn/05-introduction.md |
+ https://drive.google.com/file/d/1YJrci4XICJ_MIRX6vwkMkAIIGl2lekvS/preview'
+
+),
+(
+'Technical Roles',
+
+'As you explore potential technology career paths, you will discover a myriad of options. Our compiled list of common technology roles aims to provide clarity on post-graduation opportunities and familiarize you with the diverse positions you may encounter in your technology career. 
+Application Programmer/Developer: Write programs to handle a specific job, such as a program to track inventory within an organization. |
+Project Manager: Project Managers have the responsibility of the planning and execution of a project. |
+QA Automation Engineer: QA Automation Engineers design, program, simulate and test automated machinery and processes in order to complete exact tasks. |
+IT Support Analyst: The IT Support Analyst  will provide front-line primary technical support to end users on various technical issues and problems relating to hardware, software, and peripherals.',
+
+'technical role | job | title | position',
+
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/12_Technical_Roles/01-technical-roles.md |
+https://en.wikipedia.org/wiki/Programmer#Application_versus_system_programming |
+https://en.wikipedia.org/wiki/Project_manager#Software_Project_Manager |
+https://yojji.io/blog/qa-automation-engineer |
+https://www.goconstruct.org/construction-careers/what-jobs-are-right-for-me/it-support-analyst/#:~:text=As%20an%20IT%20support%20analyst%20you%20will%20be%20responsible%20for,new%20systems%20or%20moving%20networks.'
 );
