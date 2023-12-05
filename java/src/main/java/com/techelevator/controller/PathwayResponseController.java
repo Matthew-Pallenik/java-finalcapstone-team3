@@ -3,6 +3,8 @@ package com.techelevator.controller;
 import com.techelevator.dao.PathwayResponseDao;
 import com.techelevator.model.PathwayResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class PathwayResponseController {
     private PathwayResponseDao pathwayResponseDao;
 
