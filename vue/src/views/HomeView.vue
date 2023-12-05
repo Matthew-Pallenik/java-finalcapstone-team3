@@ -1,26 +1,27 @@
 <template>
   <div class="home">
     <h1>Welcome to Chatbot{{ userName ? ', ' + userName : '' }}!</h1>
-    
-    <!-- User name input -->
-    <div v-if="!userName">
-      <h2>What would you like me to call you?</h2>
-      <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
-    </div>
-    
-    <!-- User query input -->
-    <div v-if="userName">
-      <h2>What would you like help with?</h2>
-      <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
-    </div>
-    
-    <!-- Container for displaying Q&A -->
-    <div class="qa-container">
+
+    <!-- Display the prompt only if userName exists -->
+    <h2 v-if="userName">What would you like help with?</h2>
+
+    <!-- Container for displaying Q&A, shown only when userName is set -->
+    <div v-if="userName" class="qa-container">
       <!-- Iterate over the Q&A history and display each pair -->
-      <div v-for="(item, index) in qaHistory" :key="index">
+      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
         <p><strong>Q:</strong> {{ item.question }}</p>
         <p><strong>A:</strong> {{ item.answer }}</p>
       </div>
+    </div>
+
+    <!-- Input for asking questions, shown only when userName is set -->
+    <div v-if="userName" class="input-box">
+      <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
+    </div>
+
+    <!-- Input for setting userName, shown only if userName is not set -->
+    <div v-if="!userName">
+      <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
     </div>
   </div>
 
@@ -29,7 +30,6 @@
     <img src="img/Cleveland-grey.png" alt="City Skyline">
   </div>
 </template>
-
 <script>
 
 export default {
@@ -62,15 +62,28 @@ export default {
 </script>
 <style>
 .qa-container {
-  position: absolute;
-  bottom: 200px; /* Adjust this value so the box sits just above the skyline */
-  left: 0;
-  right: 0;
-  width: 80%; /* Or set a fixed width */
-  margin-left: auto;
-  margin-right: auto;
-  /* Additional styles for padding, background, etc. */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  border: 1px solid var(--color-darker-purple); /* Border color */
+  border-radius: 15px; /* Rounded corners for the chat bubble look */
+  padding: 20px;
+  margin: 20px auto; /* Center the container */
+  max-width: 1000px; /* Maximum width of the container */
+  max-height: 450px; /* Maximum height before scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
+
+.qa-container p {
+  background-color: var(--color-light-blue); /* Light blue background for chat messages */
+  color: #fff; /* White text color */
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners for messages */
+  margin-bottom: 10px; /* Space between messages */
+  width: fit-content; /* Fit the content's width */
+  max-width: 80%; /* Maximum width of a single message */
+}
+
+
 
 input[type="text"] {
   width: 45%; /* Adjust width as per requirement */
@@ -82,7 +95,7 @@ input[type="text"] {
   border: 2px solid var(--color-darker-purple); /* Border for definition */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  margin-top: 550px;
+  margin-top: 55px;
 }
 
 
