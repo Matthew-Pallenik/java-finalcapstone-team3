@@ -1,4 +1,5 @@
 <template>  
+<link rel="stylesheet" href="main.css">
   <!--added -register-container to grab this and manipulate it with css-->
   <div id="register" class="register-container text-center">
     <h1>Welcome to Chatbot</h1>
@@ -137,6 +138,9 @@ h2 {
   margin-bottom: 15px;
   border: none;
   outline: none;
+  border-radius: 4px;
+  font-size: 25px;
+  color:var(--color-darker-purple);
 }
 
 button {

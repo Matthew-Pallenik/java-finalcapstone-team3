@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="main.css">
   <!--added login-container to grab this and manipulate it with css-->
   <div id="login" class="login-container text-center">
     <!-- also added -container to this so that we make the form a box to manipulate with css-->
@@ -122,6 +123,9 @@ h2 {
   margin-bottom: 15px;
   border: none;
   outline: none;
+  border-radius: 4px;
+  font-size: 25px;
+  color:var(--color-darker-purple);
 }
 
 button {
