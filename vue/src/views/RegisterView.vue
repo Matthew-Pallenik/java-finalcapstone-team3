@@ -94,8 +94,8 @@ h2 {
 }
 
 h1 {
-  font-size: 85px;
-  margin-top: 60px;
+  font-size: 65px;
+  margin-top: 35px;
   padding: 20px;
 }
 
@@ -116,33 +116,33 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 500px;
+  max-height: 350px;
   /* Adjust as needed */
 
 }
-
 .form-input-group {
   display: flex;
-  font-size: 25px;
+  font-size: 16px; /* Reduced font size */
   font-weight: bold;
   color: var(--color-darker-purple);
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem; /* Reduced bottom margin */
   text-align: left;
 }
 
 .form-input-group label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; /* Reduced bottom margin */
 }
 
 .form-input-group input[type="text"],
 .form-input-group input[type="password"] {
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  padding: 5px; /* Reduced padding */
+  margin-top: 3px; /* Reduced top margin */
+  margin-bottom: 8px; /* Reduced bottom margin */
   border: none;
   outline: none;
   border-radius: 4px;
-  font-size: 25px;
+  font-size: 16px; /* Reduced font size */
   color: var(--color-darker-purple);
 }
 
@@ -157,6 +157,7 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
 
 button:hover {
   background-color: var(--color-light-blue);
