@@ -1,40 +1,58 @@
 <template>
   <div class="home">
+    <!-- Header section welcoming the user -->
     <h1>Welcome to Chatbot{{ userName ? ', ' + userName : '' }}!</h1>
 
-    <!-- Prompt for setting userName, shown only if userName is not set -->
-    <h2 v-if="!userName">What would you like me to call you?</h2>
+    <!-- Section for setting the user's name, visible only if userName is not set -->
     <div v-if="!userName">
+      <h2>What would you like me to call you?</h2>
       <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
     </div>
 
-    <!-- Prompt for help, shown only when userName is set -->
-    <h2 v-if="userName">What would you like help with?</h2>
+    <!-- Prompt for help, visible only when userName is set -->
+    <div v-if="userName">
+      <h2>What would you like help with?</h2>
+    </div>
 
-    <!-- Container for displaying Q&A, shown only when userName is set -->
+    <!-- Container for displaying Q&A history, visible only when userName is set -->
     <div v-if="userName" class="qa-container">
-      <!-- Iterate over the Q&A history and display each pair -->
       <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
         <p class="question"><strong>Q:</strong> {{ item.question }}</p>
         <p class="answer"><strong>A:</strong> {{ item.answer }}</p>
       </div>
     </div>
 
-    <!-- Input for asking questions, shown only when userName is set, positioned after Q&A container -->
+    <!-- Input for asking questions, shown only when userName is set -->
     <div v-if="userName" class="input-box">
       <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
     </div>
-  </div>
 
-  <!-- Footer with skyline image -->
-  <div class="footer">
-    <img src="img/Cleveland-grey.png" alt="City Skyline">
+    <!-- Display search results, visible only when there are results -->
+    <div v-if="searchResults && searchResults.length > 0" class="search-results">
+      <h2>Search Results</h2>
+      <!-- Loop through each search result and display its content -->
+      <div v-for="(result, index) in searchResults" :key="index" class="result-item">
+        <h3>{{ result.title }}</h3>
+        <p>{{ result.description }}</p>
+        <a :href="result.link" target="_blank">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <div class="footer">
+      <img src="img/Cleveland-grey.png" alt="City Skyline">
+    </div>
   </div>
 </template>
-
 <script>
 
 export default {
+  //this changes the pages tab name
+  mounted() {
+    document.title = "Home";
+  },
+  props: ['searchResults'],
+
   data() {
     return {
       potentialUserName: '',
@@ -48,13 +66,38 @@ export default {
       this.userName = this.potentialUserName;
       // Add additional logic if needed
     },
-    processQuery() {
-      // Here you would process the query and generate an answer
-      // This is a placeholder for the logic
-      const answer = 'This is a placeholder answer.';
+    async processQuery() {
+      // Emit the event with the user query
+      this.$emit('querySubmitted', this.userQuery);
 
-      // Add the Q&A pair to the history
-      this.qaHistory.push({ question: this.userQuery, answer: answer });
+      // Display a loading message in the Q&A history
+      this.qaHistory.push({
+        question: this.userQuery,
+        answer: 'Searching for answers...'
+      });
+
+      try {
+        // Assuming you have a method to fetch search results based on the user query
+        const searchResults = await this.fetchSearchResults(this.userQuery);
+
+        // Replace the loading message with actual search results
+        this.qaHistory.pop(); // Remove the loading message
+        searchResults.forEach((result) => {
+          this.qaHistory.push({
+            question: result.title, // Use the result title as the question
+            answer: result.description // Use the result description as the answer
+          });
+        });
+
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+        // Display an error message in the Q&A history
+        this.qaHistory.push({
+          question: this.userQuery,
+          answer: 'Error fetching search results'
+        });
+      }
+
 
       // Clear the input field
       this.userQuery = '';

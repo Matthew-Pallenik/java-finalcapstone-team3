@@ -40,6 +40,11 @@
 import authService from '../services/AuthService';
 
 export default {
+  //this changes the pages tab name
+  mounted() {
+    document.title = "Register";
+  },
+
   data() {
     return {
       user: {
