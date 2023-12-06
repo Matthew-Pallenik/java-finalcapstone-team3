@@ -23,12 +23,12 @@ INSERT INTO pathway(title, description, keywords, link) VALUES
 (
 'Time Management',
 
-'At any point in time during the cohort you are sure to be managing several different things at once: the coding bootcamp (which includes your technical education and your Pathway curriculum), your family and friends, a job or side hustle, and/or lifes general commitments. Thus, it is crucially important during the cohort that you practice productive time management techniques. Techniques such as Pomodoro technique are good methods for managing time during your cohort.',
+'At any point in time during the cohort you are sure to be managing several different things at once: the coding bootcamp (which includes your technical education and your Pathway curriculum), your family and friends, a job or side hustle, and/or life''s general commitments. Thus, it is crucially important during the cohort that you practice productive time management techniques. Techniques such as Pomodoro technique are good methods for managing time during your cohort.',
 
 'time | pomodoro | burnout | calendar | exhaustion | cynicism | inefficacy | management | time management',
 
-'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/07_Time_Management/03-burnout-prevention.md | 
-https://www.healthline.com/health/tips-for-identifying-and-preventing-burnout | 
+'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/07_Time_Management/03-burnout-prevention.md |
+https://www.healthline.com/health/tips-for-identifying-and-preventing-burnout |
 https://www.workplacestrategiesformentalhealth.com/resources/prevent-burnout |
 https://hbr.org/2016/11/beating-burnout'
 
@@ -41,7 +41,7 @@ https://hbr.org/2016/11/beating-burnout'
 
 'elevator pitch | interview | introduction | meeting | job ',
 
-'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/03_Elevator_Pitch/01-elevator-pitch.md | 
+'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/03_Elevator_Pitch/01-elevator-pitch.md |
 https://drive.google.com/file/d/1w5K9SXOBLVG2KUu8AnupknA7r2B17Yam/preview'
 
 ),
@@ -52,13 +52,13 @@ https://drive.google.com/file/d/1w5K9SXOBLVG2KUu8AnupknA7r2B17Yam/preview'
 
 'resume | resumes | skills | experience | education | job search | application | job',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/01_Resumes/01-intro.md | 
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/01_Resumes/01-intro.md |
 https://www.hiration.com/ '
 ),
 (
 'Cover Letters',
 
-'For many technology roles, cover letters will be an optional addition to your application. Thus, it is recommended that you skip the addition of a cover letter unless the following 2 situations arise: It is a job you REALLY want, such as your dream job OR You have valuable information to share that is not already included within your resume. A one-page cover letter comprises key elements, starting with your contact information, date, and optionally the employers details. Introduce yourself in the first paragraph, stating your name, the company, the job title, and expressing why you are a suitable candidate. The body paragraphs (2-3) should directly align with the job description, emphasizing how your experiences, skills, and achievements meet the companys needs. Avoid repeating resume details and focus on relevant contributions. Conclude with a call-to-action paragraph, restating interest, providing contact information, and expressing gratitude.',
+'For many technology roles, cover letters will be an optional addition to your application. Thus, it is recommended that you skip the addition of a cover letter unless the following 2 situations arise: It is a job you REALLY want, such as your dream job OR You have valuable information to share that is not already included within your resume. A one-page cover letter comprises key elements, starting with your contact information, date, and optionally the employer''s details. Introduce yourself in the first paragraph, stating your name, the company, the job title, and expressing why you are a suitable candidate. The body paragraphs (2-3) should directly align with the job description, emphasizing how your experiences, skills, and achievements meet the company''s needs. Avoid repeating resume details and focus on relevant contributions. Conclude with a call-to-action paragraph, restating interest, providing contact information, and expressing gratitude.',
 
 'cover letter | resume | application | job',
 
@@ -73,16 +73,16 @@ https://www.thebalancemoney.com/sample-career-change-cover-letter-2060185'
 'LinkedIn | resume | job | job search | networking | research ',
 
 'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/02_LinkedIn/05-introduction.md |
- https://drive.google.com/file/d/1YJrci4XICJ_MIRX6vwkMkAIIGl2lekvS/preview'
+https://drive.google.com/file/d/1YJrci4XICJ_MIRX6vwkMkAIIGl2lekvS/preview'
 
 ),
 (
 'Technical Roles',
 
-'As you explore potential technology career paths, you will discover a myriad of options. Our compiled list of common technology roles aims to provide clarity on post-graduation opportunities and familiarize you with the diverse positions you may encounter in your technology career. 
-Application Programmer/Developer: Write programs to handle a specific job, such as a program to track inventory within an organization. |
-Project Manager: Project Managers have the responsibility of the planning and execution of a project. |
-QA Automation Engineer: QA Automation Engineers design, program, simulate and test automated machinery and processes in order to complete exact tasks. |
+'As you explore potential technology career paths, you will discover a myriad of options. Our compiled list of common technology roles aims to provide clarity on post-graduation opportunities and familiarize you with the diverse positions you may encounter in your technology career.
+Application Programmer/Developer: Write programs to handle a specific job, such as a program to track inventory within an organization.
+Project Manager: Project Managers have the responsibility of the planning and execution of a project.
+QA Automation Engineer: QA Automation Engineers design, program, simulate and test automated machinery and processes in order to complete exact tasks.
 IT Support Analyst: The IT Support Analyst  will provide front-line primary technical support to end users on various technical issues and problems relating to hardware, software, and peripherals.',
 
 'technical role | job | title | position | careers',
@@ -100,8 +100,8 @@ https://yojji.io/blog/qa-automation-engineer '
 
 'recruiters | recruiting | jobs | job search | employment | contract | recruitment | employers | offer',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/04_Working_With_Recruiters/01-introduction.md | 
-https://www.roberthalf.com/ | 
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/04_Working_With_Recruiters/01-introduction.md |
+https://www.roberthalf.com/ |
 https://www.teksystems.com/en |
 https://www.randstadusa.com/ '
 
@@ -136,13 +136,13 @@ Appearance: Dress in professional attire, things such as a button-up, skirt/dres
 
 'interview | attire | preparation | prepare | job | offer | clothing | company | research | employer | employment| career',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/02_Prepping_for_Interviews/01-introduction.md | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/02_Prepping_for_Interviews/01-introduction.md |
 https://drive.google.com/file/d/1tJ_H4PJKzoi9kmoikBnBHp7JYRKXumlT/preview  '
 ),
 (
 'HR Interviews',
 
-'HR interviews will be a big part of your job search as you begin applying for technology careers. Companies are not only looking for someone who checks the boxes in regard to technical skills, they want someone who is also a culture fit for their team and their company. The HR interview is a conversation to assess/confirm that your qualifications meet the needs of the role, to evaluate your level of cultural fit with the company, and to ask a varity of straighforward questions (for example, "Why are you switching careers?"). HR interviews/phone screens are shorter in length, lasting, on average, 15-30 minutes. 
+'HR interviews will be a big part of your job search as you begin applying for technology careers. Companies are not only looking for someone who checks the boxes in regard to technical skills, they want someone who is also a culture fit for their team and their company. The HR interview is a conversation to assess/confirm that your qualifications meet the needs of the role, to evaluate your level of cultural fit with the company, and to ask a variety of straightforward questions (for example, "Why are you switching careers?"). HR interviews/phone screens are shorter in length, lasting, on average, 15-30 minutes.
 Examples of HR Interview questions may be: "Tell me why you are switching careers", "What is your target salary", "What are your strengths", "What are your weaknesses", etc ',
 
 'phone screen | interviews | interview | HR | job | culture | company',
@@ -178,7 +178,7 @@ https://drive.google.com/file/d/1vfHM8nq-RmB2v2h2G-i5-S2ll4LKYGmE/preview'
 
 'interview | rejection | communication | communicate | interviewer | linkedin | after interview | interest | follow up',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/05_After_Interviews/01-introduction.md | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/05_After_Interviews/01-introduction.md |
 https://drive.google.com/file/d/1mA3zZ9wVQ2t0kAVN-GF-w8iwURGv-cCs/preview'
 
 ),
@@ -189,11 +189,11 @@ https://drive.google.com/file/d/1mA3zZ9wVQ2t0kAVN-GF-w8iwURGv-cCs/preview'
 
 'job search | search | employer | employee | job | salary | linkedin | indeed | two-pronged approach | application | apply | search tools | employment | listing | apply | HR',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/06_Job_Search/01-introduction.md | 
-https://drive.google.com/file/d/1vj5a9J2QStNpUB6X90PyOhM2XwXf-2Vj/preview | 
-https://huntr.co/ | 
-https://indeed.com/ | 
-https://www.linkedin.com/ | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/06_Job_Search/01-introduction.md |
+https://drive.google.com/file/d/1vj5a9J2QStNpUB6X90PyOhM2XwXf-2Vj/preview |
+https://huntr.co/ |
+https://indeed.com/ |
+https://www.linkedin.com/ |
 https://www.hiration.com/'
 ),
 (
@@ -203,7 +203,7 @@ https://www.hiration.com/'
 
 'benefits | healthcare | wellness | retirement | leave | flexibility | flexible | family | travel | housing | bonuses | compensation | medical | pto | paid time off | co-pay | deductible | premium | insurance | 401k ',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/07_Benefits/01-introduction.md | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/07_Benefits/01-introduction.md |
 https://drive.google.com/file/d/16zOls126WD_fCrkuMWpT850gxImftgh3/preview'
 
 ),
@@ -214,20 +214,20 @@ https://drive.google.com/file/d/16zOls126WD_fCrkuMWpT850gxImftgh3/preview'
 
 'huntr | job search | job portal | pathway | tracking | organized | organization | organize | job | search | goals | application | apply',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/09_Huntr/01-introduction.md | 
-https://huntr.co/ | 
-https://blog.huntr.co/huntr-quickstart-guide/ | 
-https://drive.google.com/file/d/18VD-iB7MdqwUNfIra5Fn6FLuOKLmdJBN/preview | 
-https://drive.google.com/file/d/1HS70b-AfCR1463S64syP_kMpN82U6Tsa/preview | 
-https://drive.google.com/file/d/1f5lr7e2RrHQMyooYesmmvSwhs1TSnQ4P/preview | 
-https://drive.google.com/file/d/17VglGdHQ8_kwrg-W9b1-mL13XiD2ClqQ/preview | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/09_Huntr/01-introduction.md |
+https://huntr.co/ |
+https://blog.huntr.co/huntr-quickstart-guide/ |
+https://drive.google.com/file/d/18VD-iB7MdqwUNfIra5Fn6FLuOKLmdJBN/preview |
+https://drive.google.com/file/d/1HS70b-AfCR1463S64syP_kMpN82U6Tsa/preview |
+https://drive.google.com/file/d/1f5lr7e2RrHQMyooYesmmvSwhs1TSnQ4P/preview |
+https://drive.google.com/file/d/17VglGdHQ8_kwrg-W9b1-mL13XiD2ClqQ/preview |
 https://drive.google.com/file/d/1BCiZh6WHQ2OUIcZMrBcnL0sN2hnD8Nf2/preview'
 
 ),
 (
 'Matchmaking',
 
-'Matchmaking is designed to give you a head start on your job search. While Matchmaking occurs at the end of the cohort, it is just the start of your career journey! Use Matchmaking to put your best foot forward, to learn, and to grow professionally. The most successful graduates from Tech Elevator: Do their research prior to interviews, practice lessons from pathway, and follow-up after interviews. Your Pathway Team and Campus Director will work together to cultivate relationships with hiring managers and human resources professionals who register for the big event! Matchmaking is a two-day event with Day 1 occuring at the latter end of the cohort and Day 2 occuring the following week.',
+'Matchmaking is designed to give you a head start on your job search. While Matchmaking occurs at the end of the cohort, it is just the start of your career journey! Use Matchmaking to put your best foot forward, to learn, and to grow professionally. The most successful graduates from Tech Elevator: Do their research prior to interviews, practice lessons from pathway, and follow-up after interviews. Your Pathway Team and Campus Director will work together to cultivate relationships with hiring managers and human resources professionals who register for the big event! Matchmaking is a two-day event with Day 1 occurring at the latter end of the cohort and Day 2 occurring the following week.',
 
 'matchmaking | pathway | success | job search | interviews | interview | employer',
 
@@ -240,8 +240,8 @@ https://drive.google.com/file/d/1BCiZh6WHQ2OUIcZMrBcnL0sN2hnD8Nf2/preview'
 
 'relocation | relocate | moving | different area | leaving',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/12_Relocation/01-introduction.md | 
-https://www.uschamber.com/co/chambers | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/12_Relocation/01-introduction.md |
+https://www.uschamber.com/co/chambers |
 https://builtin.com/ '
 ),
 (
@@ -251,11 +251,11 @@ https://builtin.com/ '
 
 'offer | job | employment | pathway | success | victory | job search | interview | negotiate | employed',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/13_Job_Offer/05-intro.md | 
-https://www.payscale.com/research/US/Employer | 
-https://www.salarylist.com/jobs-salary-by-companies.htm | 
-https://www.salary.com/research/employer |  
-https://www.linkedin.com/salary/ | 
-https://www.indeed.com/career/salaries | 
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/13_Job_Offer/05-intro.md |
+https://www.payscale.com/research/US/Employer |
+https://www.salarylist.com/jobs-salary-by-companies.htm |
+https://www.salary.com/research/employer |
+https://www.linkedin.com/salary/ |
+https://www.indeed.com/career/salaries |
 https://www.glassdoor.com/Salaries/index.htm'
 );
