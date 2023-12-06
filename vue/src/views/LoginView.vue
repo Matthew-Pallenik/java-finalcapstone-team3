@@ -37,6 +37,11 @@
 import authService from "../services/AuthService";
 
 export default {
+  //this changes the pages tab name
+  mounted() {
+    document.title = "Login";
+  },
+
   components: {},
   data() {
     return {
