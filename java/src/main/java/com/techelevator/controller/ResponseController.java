@@ -14,7 +14,7 @@ import java.util.List;
 public class ResponseController {
     private ResponseDao responseDao;
 
-    // Constructor to inject PathwayResponseDao dependency
+    // Constructor to inject ResponseDao dependency
     public ResponseController(ResponseDao responseDao){
         this.responseDao = responseDao;
     }
