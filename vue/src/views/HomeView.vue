@@ -9,22 +9,13 @@
       <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
     </div>
 
-    <!-- Prompt for help, visible only when userName is set -->
+    <!-- Prompt for help and user input box, visible only when userName is set -->
     <div v-if="userName">
       <h2>What would you like help with?</h2>
-    </div>
-
-    <!-- Container for displaying Q&A history, visible only when userName is set -->
-    <div v-if="userName" class="qa-container">
-      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
-        <p class="question"><strong>Q:</strong> {{ item.question }}</p>
-        <p class="answer"><strong>A:</strong> {{ item.answer }}</p>
+      <!-- Input box for user to ask questions -->
+      <div class="input-box">
+        <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
       </div>
-    </div>
-
-    <!-- Input for asking questions, shown only when userName is set -->
-    <div v-if="userName" class="input-box">
-      <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
     </div>
 
     <!-- Display search results, visible only when there are results -->
@@ -38,20 +29,31 @@
       </div>
     </div>
 
-    <!-- Footer section -->
+    <!-- Container for displaying Q&A history, visible only when userName is set -->
+    <div v-if="userName" class="qa-container">
+      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
+        <p class="question"><strong>Q:</strong> {{ item.question }}</p>
+        <p class="answer"><strong>A:</strong> {{ item.answer }}</p>
+      </div>
+    </div>
+
+    <!-- Footer with skyline image -->
     <div class="footer">
       <img src="img/Cleveland-grey.png" alt="City Skyline">
     </div>
   </div>
 </template>
-<script>
 
+<script>
+import { mapState, mapActions } from 'vuex';
 export default {
-  //this changes the pages tab name
   mounted() {
     document.title = "Home";
   },
-  props: ['searchResults'],
+
+  computed: {
+    ...mapState(['searchResults']), // Map the searchResults from Vuex state
+  },
 
   data() {
     return {
@@ -61,50 +63,49 @@ export default {
       qaHistory: [] // Array to hold the history of Q&A
     };
   },
+
   methods: {
+    ...mapActions(['performSearch']), // Map the performSearch action from Vuex
+
     saveName() {
-      this.userName = this.potentialUserName;
-      // Add additional logic if needed
+      this.userName = this.potentialUserName.trim();
+      this.potentialUserName = ''; // Reset the potential user name
     },
+
     async processQuery() {
-      // Emit the event with the user query
-      this.$emit('querySubmitted', this.userQuery);
+      if (!this.userQuery) return;
 
-      // Display a loading message in the Q&A history
-      this.qaHistory.push({
-        question: this.userQuery,
-        answer: 'Searching for answers...'
-      });
+      const placeholderAnswer = 'Processing your request...';
+      this.qaHistory.push({ question: this.userQuery, answer: placeholderAnswer });
 
-      try {
-        // Assuming you have a method to fetch search results based on the user query
-        const searchResults = await this.fetchSearchResults(this.userQuery);
+      // Dispatch the Vuex action to perform the search
+      await this.performSearch(this.userQuery);
 
-        // Replace the loading message with actual search results
-        this.qaHistory.pop(); // Remove the loading message
-        searchResults.forEach((result) => {
-          this.qaHistory.push({
-            question: result.title, // Use the result title as the question
-            answer: result.description // Use the result description as the answer
-          });
-        });
+      // Retrieve the updated search results from Vuex state
+      const results = this.searchResults.map(result =>
+        `${result.title}: ${result.description}. More info: ${result.link}`
+      ).join('\n');
 
-      } catch (error) {
-        console.error('Error fetching search results:', error);
-        // Display an error message in the Q&A history
-        this.qaHistory.push({
-          question: this.userQuery,
-          answer: 'Error fetching search results'
-        });
-      }
+      // Update the answer in qaHistory with actual search results
+      const updatedAnswer = results ? `Here are your search results:\n${results}` : 'No results found.';
+      this.qaHistory[this.qaHistory.length - 1].answer = updatedAnswer;
 
+      this.userQuery = ''; // Reset the user query input
+    }
+  },
 
-      // Clear the input field
-      this.userQuery = '';
+  watch: {
+    // Watch for changes in the Vuex state's searchResults and update local data
+    searchResults(newResults) {
+      this.qaHistory[this.qaHistory.length - 1].searchResults = newResults;
     }
   }
 };
 </script>
+
+<style>
+  /* Add your CSS styles here */
+</style>
 <!--added scoped here so this css doesn't affect other css views-->
 <style scoped>
 .qa-container {

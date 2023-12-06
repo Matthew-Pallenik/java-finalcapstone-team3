@@ -1,4 +1,3 @@
-
 <!--Create search logic
     Breaks the users input into an array 
     uses the new array to send over each word in the array and search the key word
@@ -14,42 +13,45 @@
 
 <template>
     <div>
-      <!-- Loading Indicator -->
-      <div v-if="isLoading">
-        Loading...
-      </div>
-  
-      <!-- Search Results -->
-      <div v-else>
-        <!-- Check if there are results -->
-        <div v-if="results.length > 0">
-          <!-- Loop through each result and display it -->
-          <div v-for="(result, index) in results" :key="index">
-            <h3>{{ result.title }}</h3>
-            <p>{{ result.description }}</p>
-            <a :href="result.link" target="_blank">Learn More</a>            
-            <!-- You can add more details based on your result structure -->
-          </div>
-        </div>
-        <!-- Message if No Results are Found -->
+        <div v-if="isLoading">Loading...</div>
         <div v-else>
-          No results found.
+            <div v-if="searchResults && searchResults.length > 0">
+                <div v-for="(result, index) in searchResults" :key="index">
+                    <h3>{{ result.title }}</h3>
+                    <p>{{ result.description }}</p>
+                    <a :href="result.link" target="_blank">Learn More</a>
+                </div>
+            </div>
+            <div v-else>No results found.</div>
         </div>
-      </div>
     </div>
-  </template>
-
+</template>
+  
 <script>
-import pathwayService from '../services/PathwayService';
+import { mapState, mapActions } from 'vuex';
 
 export default {
     data() {
         return {
-            results: [],    // Array to store search results
-            isLoading: false // Boolean to track loading state
+            isLoading: false
         };
     },
-    props: ['query'],
+    computed: {
+        ...mapState(['searchResults']),
+    },
+    methods: {
+        ...mapActions(['performSearch']),
+        async processSearch(query) {
+            this.isLoading = true;
+            try {
+                await this.performSearch(query);
+            } catch (error) {
+                console.error('Search error:', error);
+            } finally {
+                this.isLoading = false;
+            }
+        },
+    },
     watch: {
         query(newQuery) {
             if (newQuery) {
@@ -57,60 +59,6 @@ export default {
             }
         }
     },
-    methods: {
-        async processSearch(query) {
-            this.isLoading = true;
-            // Splits the query into an array of strings
-            const keyWords = query.split(/[\s,.?]+/);
-
-            //log the keywords to see if its splitting correctly
-            console.log('KeyWords:', keyWords);
-
-            try {
-                let allResponses = [];
-                // Fetches results from API
-                for (const key of keyWords) {
-                    const response = await pathwayService.addUserInput(key);
-                    allResponses.push(response.data);
-                }
-
-                // Log the allResponses to see if you're getting data from the API
-                console.log('All Responses:', allResponses);
-
-                // Process and prioritize all responses
-                this.results = this.processAllResponses(allResponses, keyWords);
-                this.$emit('searchCompleted', this.results); // Emit the event with the results
-
-            } catch (error) {
-                console.error('Search error:', error);
-            } finally {
-                this.isLoading = false;
-            }
-        },
-
-        processAllResponses(allResponses, keyWords) {
-            // Flatten the array of arrays
-            let flattenedResults = allResponses.flat();
-
-            // Count keyword matches for each result
-            flattenedResults = flattenedResults.map(result => {
-                let keywordCount = 0;
-                keyWords.forEach(keyWord => {
-                    if (result.keywords && result.keywords.includes(keyWord)) {
-                        keywordCount++;
-                    }
-                });
-                return { ...result, keywordCount };
-            });
-
-            // Sort results based on keyword count
-            flattenedResults.sort((a, b) => b.keywordCount - a.keywordCount);
-
-            return flattenedResults;
-        }
-    }
-}
+    props: ['query'],
+};
 </script>
-
-<style scoped>
-</style>
