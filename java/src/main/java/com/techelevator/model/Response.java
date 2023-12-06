@@ -1,6 +1,6 @@
 package com.techelevator.model;
 
-public class PathwayResponse {
+public class Response {
 
     // Private fields to store pathway information
     private int id;
@@ -10,10 +10,10 @@ public class PathwayResponse {
     private String link;
 
     //Default constructor
-    public PathwayResponse() { }
+    public Response() { }
 
     //Parameterized constructor to initialize the pathway with values
-    public PathwayResponse(int id, String title, String description, String key, String link){
+    public Response(int id, String title, String description, String key, String link){
         this.id = id;
         this.title = title;
         this.description = description;
