@@ -106,7 +106,7 @@ public class ResponseController {
     // Endpoint to get a list of CurriculumResponses by their description
     @RequestMapping(path = "/description/{desc}/curriculumResponses", method = RequestMethod.GET)
     public List<Response> getResponsesByDescCurriculum(@PathVariable("desc") String key) {
-        List<Response> respons = responseDao.getResponsesByDescCurriculumsz                                                                                                                                                                                                                                                                                                                                                                                                f(key);
+        List<Response> respons = responseDao.getResponsesByDescCurriculum(key);
         if (respons == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Response(s) not found.");
         } else {
