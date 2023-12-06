@@ -66,17 +66,38 @@ export default {
       this.userName = this.potentialUserName;
       // Add additional logic if needed
     },
-    processQuery() {
+    async processQuery() {
       // Emit the event with the user query
       this.$emit('querySubmitted', this.userQuery);
 
-
-      // Assuming you want to show a placeholder or loading message
-      // in the Q&A history until the real answer is received
+      // Display a loading message in the Q&A history
       this.qaHistory.push({
         question: this.userQuery,
         answer: 'Searching for answers...'
       });
+
+      try {
+        // Assuming you have a method to fetch search results based on the user query
+        const searchResults = await this.fetchSearchResults(this.userQuery);
+
+        // Replace the loading message with actual search results
+        this.qaHistory.pop(); // Remove the loading message
+        searchResults.forEach((result) => {
+          this.qaHistory.push({
+            question: result.title, // Use the result title as the question
+            answer: result.description // Use the result description as the answer
+          });
+        });
+
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+        // Display an error message in the Q&A history
+        this.qaHistory.push({
+          question: this.userQuery,
+          answer: 'Error fetching search results'
+        });
+      }
+
 
       // Clear the input field
       this.userQuery = '';
