@@ -63,6 +63,9 @@ export default {
             // Splits the query into an array of strings
             const keyWords = query.split(/[\s,.?]+/);
 
+            //log the keywords to see if its splitting correctly
+            console.log('KeyWords:', keyWords);
+
             try {
                 let allResponses = [];
                 // Fetches results from API
@@ -70,6 +73,9 @@ export default {
                     const response = await pathwayService.addUserInput(key);
                     allResponses.push(response.data);
                 }
+
+                // Log the allResponses to see if you're getting data from the API
+                console.log('All Responses:', allResponses);
 
                 // Process and prioritize all responses
                 this.results = this.processAllResponses(allResponses, keyWords);
