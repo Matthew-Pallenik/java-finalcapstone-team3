@@ -61,10 +61,14 @@ public class JdbcResponseDao implements ResponseDao {
     @Override
     public List<Response> getResponsesByKeyPathway(String key) {
         List<Response> respons = new ArrayList<>();
-        key = "%" + key + "%";
-        String sql = "SELECT entry_id, title, description, keywords, link FROM pathway WHERE keywords ILIKE ?;";
+
+        String sql = "SELECT * FROM pathway " +
+                "WHERE keywords ILIKE '%' || ? || ' |%' " +
+                "OR keywords ILIKE ? || ' |%' " +
+                "OR keywords ILIKE '%' || ? " +
+                "OR keywords ILIKE ?;";
         try {
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key, key, key, key);
             while (results.next()) {
                 Response response = mapRowToResponse(results);
                 respons.add(response);
