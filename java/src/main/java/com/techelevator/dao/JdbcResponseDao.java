@@ -135,7 +135,11 @@ public class JdbcResponseDao implements ResponseDao {
     public List<Response> getResponsesByKeyCurriculum(String key) {
         List<Response> respons = new ArrayList<>();
         key = "%" + key + "%";
-        String sql = "SELECT entry_id, title, description, keywords, link FROM curriculum WHERE keywords ILIKE ?;";
+        String sql = "SELECT * FROM curriculum " +
+                "WHERE keywords ILIKE '%' || ? || ' |%' " +
+                "OR keywords ILIKE ? || ' |%' " +
+                "OR keywords ILIKE '%' || ? " +
+                "OR keywords ILIKE ?;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
             while (results.next()) {
