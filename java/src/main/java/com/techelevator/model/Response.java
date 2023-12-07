@@ -55,7 +55,7 @@ public class Response {
     }
 
     public String getLink() {
-        return title;
+        return link;
     }
 
     public void setLink(String link) {
