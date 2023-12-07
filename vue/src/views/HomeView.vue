@@ -15,19 +15,17 @@
     </div>
 
     <!-- Container for displaying Q&A history, visible only when userName is set -->
-      <div v-if="userName" class="qa-container">
-    <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
-      <p class="question"><strong>Q:</strong> {{ item.question }}</p>
-      <div v-if="Array.isArray(item.answer)">
-        <div v-for="(result, resultIndex) in item.answer" :key="resultIndex" class="answer">
-          <p><strong>Title:</strong> {{ result.title }}</p>
-          <p><strong>Description:</strong> {{ result.description }}</p>
-          <p><strong>Link:</strong> <a :href="result.link" target="_blank">{{ result.link }}</a></p>
+    <div v-if="userName" class="qa-container">
+      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
+        <p class="question"><strong>Q:</strong> {{ item.question }}</p>
+        <div v-if="typeof item.answer === 'object'">
+          <p><strong>Title:</strong> {{ item.answer.title }}</p>
+          <p><strong>Description:</strong> {{ item.answer.description }}</p>
+          <p><strong>Link:</strong> <a :href="item.answer.link" target="_blank">{{ item.answer.link }}</a></p>
         </div>
+        <p v-else class="answer">{{ item.answer }}</p>
       </div>
-      <p v-else class="answer">{{ item.answer }}</p>
     </div>
-  </div>
 
     <!-- Input box for user to ask questions, visible only when userName is set -->
     <div v-if="userName" class="input-box">
@@ -74,28 +72,25 @@ export default {
       if (!this.userQuery) return;
 
       // Add a placeholder answer to the Q&A history indicating that the search is in progress.
-      // This is done before the actual search to provide immediate feedback to the user.
       const placeholderAnswer = 'Processing your request...';
       this.qaHistory.push({ question: this.userQuery, answer: placeholderAnswer });
 
       // Perform the search using the Vuex action 'performSearch'.
-      // 'await' is used to wait for the search to complete before moving to the next line of code.
-      // The user's query is passed as a parameter to the search function.
       await this.performSearch(this.userQuery);
 
       // Check if there are search results and format them accordingly.
-      // If there are search results, store them as an array of objects.
-      // Each object contains the title, description, and link of a result.
-      const formattedResults = this.searchResults.length > 0
-        ? this.searchResults.map(result => ({
-          title: result.title,
-          description: result.description,
-          link: result.link
-        }))
+      // If there are search results, store only the first result as an object.
+      // The object contains the title, description, and link of the first result.
+      const formattedResult = this.searchResults.length > 0
+        ? {
+          title: this.searchResults[0].title,
+          description: this.searchResults[0].description,
+          link: this.searchResults[0].link
+        }
         : 'No results found.';
 
-      // Update the latest answer in qaHistory with the formatted search results.
-      this.qaHistory[this.qaHistory.length - 1].answer = formattedResults;
+      // Update the latest answer in qaHistory with the formatted search result.
+      this.qaHistory[this.qaHistory.length - 1].answer = formattedResult;
 
       // Reset the user query input field to be ready for a new query.
       this.userQuery = '';
