@@ -134,14 +134,13 @@ public class JdbcResponseDao implements ResponseDao {
     @Override
     public List<Response> getResponsesByKeyCurriculum(String key) {
         List<Response> respons = new ArrayList<>();
-        key = "%" + key + "%";
         String sql = "SELECT * FROM curriculum " +
                 "WHERE keywords ILIKE '%' || ? || ' |%' " +
                 "OR keywords ILIKE ? || ' |%' " +
                 "OR keywords ILIKE '%' || ? " +
                 "OR keywords ILIKE ?;";
         try {
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, key, key, key, key);
             while (results.next()) {
                 Response response = mapRowToResponse(results);
                 respons.add(response);
