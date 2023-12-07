@@ -1,44 +1,80 @@
 <template>
-  <div class="home">
-    <!-- Header section welcoming the user -->
-    <h1>Welcome to Chatbot{{ userName ? ', ' + userName : '' }}!</h1>
-
-    <!-- Section for setting the user's name, visible only if userName is not set -->
-    <div v-if="!userName">
-      <h2>What would you like me to call you?</h2>
-      <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
+  <div class="home grid-container">
+    <!-- Top Row -->
+    <!-- TE Logo on the top-left -->
+    <div class="grid-item logo">
+      <img src="img/TE_LOGO.jpg" alt="TE Logo">
     </div>
 
-    <!-- Greeting and asking for user's query, visible only when userName is set -->
-    <div v-if="userName">
-      <h2>How can I help you?</h2>
+    <!-- Welcome Message in the top-center -->
+    <div class="grid-item welcome">
+      <!-- If userName is not set, welcome the user and ask for the user's name -->
+      <div v-if="!userName">
+        <h1>Welcome to Chatbot</h1>
+        <h2>What would you like me to call you?</h2>
+        <input type="text" v-model="potentialUserName" @keyup.enter="saveName" class="initial-input" placeholder="Enter your name here">
+      </div>
+
+      <!-- If userName is set, display a personalized welcome message and ask what the user needs help with -->
+      <div v-else>
+        <h1>Welcome to Chatbot, {{ userName }}</h1>
+        <h2>What would you like help with?</h2>
+      </div>
+    </div>
+    <!-- Placeholder for the top-right content -->
+    <div class="grid-item right-top-placeholder">
+      <!-- Future content or additional features can go here -->
     </div>
 
-    <!-- Container for displaying Q&A history, visible only when userName is set -->
-    <div v-if="userName" class="qa-container">
-      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
-        <p class="question"><strong>Q:</strong> {{ item.question }}</p>
-        <div v-if="typeof item.answer === 'object'">
-          <p><strong>Title:</strong> {{ item.answer.title }}</p>
-          <p><strong>Description:</strong> {{ item.answer.description }}</p>
-          <p><strong>Link:</strong> <a :href="item.answer.link" target="_blank">{{ item.answer.link }}</a></p>
+      <!-- Middle Row -->
+  <div class="grid-item home-nav">
+    <!-- Navigation links like Home/Logout will be placed here -->
+    <!-- Existing navigation functionality should be transferred here -->
+  </div>
+
+    <!-- Q.A Container and Input Box in the middle-center -->
+    <div class="grid-item qa-section">
+      <!-- Container for displaying Q&A history -->
+      <div v-if="userName" class="qa-container">
+        <!-- Iterates over each item in qaHistory to display questions and answers -->
+        <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
+          <p class="question">{{ item.question }}</p>
+          <div v-if="typeof item.answer === 'object'">
+            <p class="title"><strong>Title:</strong> {{ item.answer.title }}</p>
+            <p class="description">{{ item.answer.description }}</p>
+            <p class="link"><a :href="item.answer.link" target="_blank">{{ item.answer.link }}</a></p>
+          </div>
+          <p v-else class="answer">{{ item.answer }}</p>
         </div>
-        <p v-else class="answer">{{ item.answer }}</p>
+      </div>
+      <!-- Input Box for user to ask questions -->
+      <div v-if="userName" class="input-box">
+        <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
       </div>
     </div>
 
-    <!-- Input box for user to ask questions, visible only when userName is set -->
-    <div v-if="userName" class="input-box">
-      <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
+    <!-- Placeholder for the motivational quote in the middle-right -->
+    <div class="grid-item motivational-quote">
+      <!-- Motivational quote can be dynamically inserted here -->
     </div>
 
-    <!-- Footer with skyline image -->
-    <div class="footer">
-      <img src="img/Cleveland-grey.png" alt="City Skyline">
+    <!-- Bottom Row -->
+    <!-- Placeholder for the bottom-left content -->
+    <div class="grid-item bottom-left-placeholder">
+      <!-- This can be left empty or used for future content -->
+    </div>
+
+    <!-- Skyline image in the bottom-center -->
+    <div class="grid-item skyline">
+      <img src="img/Cleveland-90s.png" alt="City Skyline">
+    </div>
+
+    <!-- Placeholder for the bottom-right content -->
+    <div class="grid-item bottom-right-placeholder">
+      <!-- This can be left empty or used for future content -->
     </div>
   </div>
 </template>
-
 <script>
 import { mapState, mapActions } from 'vuex';
 export default {
@@ -106,275 +142,159 @@ export default {
 };
 </script>
 
-<style>
-  /* Add your CSS styles here */
-</style>
+
 <!--added scoped here so this css doesn't affect other css views-->
 <style scoped>
-.qa-container {
-  background-color: rgba(255, 255, 255, 0.5);
-  /* Semi-transparent white */
-  border: 1px solid var(--color-darker-purple);
-  /* Border color */
-  border-radius: 15px;
-  /* Rounded corners for the chat bubble look */
-  padding: 20px;
-  margin: 20px auto;
-  /* Center the container */
-  width: 800px;
-  /* Maximum width of the container */
-  height: 350px;
-  /* Maximum height before scrolling */
-  overflow-y: auto;
-  /* Enable vertical scrolling */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Subtle shadow for depth */
+
+/* Layout for the entire grid */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  grid-template-rows: auto; /* Rows adjust to content height */
+  gap: 20px; /* Space between grid items */
+  align-items: start; /* Align items to the top of their cell */
+  grid-template-areas: 
+    "logo welcome right-top-placeholder"
+    "nav qa-section motivational-quote"
+    "bottom-left-placeholder skyline bottom-right-placeholder";
 }
 
-/* Styles for questions */
-.qa-container .question {
-  color: var(--color-darker-purple);
-  font-weight: bold;
-  font-size: 25px;
-  /* Color for questions */
-  margin-bottom: 5px;
-  /* Space between question and answer */
+/* Assign grid area names to the children */
+.logo { grid-area: logo; }
+.welcome { grid-area: welcome; }
+.right-top-placeholder { grid-area: right-top-placeholder; }
+.nav { grid-area: nav; }
+.qa-section { grid-area: qa-section; }
+.motivational-quote { grid-area: motivational-quote; }
+.bottom-left-placeholder { grid-area: bottom-left-placeholder; }
+.skyline { grid-area: skyline; }
+.bottom-right-placeholder { grid-area: bottom-right-placeholder; }
+
+/* Styling for the logo to make it smaller and align properly */
+/* Styling for the logo container */
+/* Styling for the logo container */
+.grid-item.logo {
+  /* Center the logo within its grid cell */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-/* Styles for answers */
-.qa-container .answer {
-  color: var(--color-light-blue);
-  font-weight: bold;
-  font-size: 25px;
-  /* Color for answers */
-  margin-bottom: 10px;
-  /* Space between answer and next question */
+/* Styling for the logo image */
+.grid-item.logo img {
+  width: 300px; /* Explicit width for the logo */
+  height: auto; /* Maintain aspect ratio based on width */
+  /* Ensure the image doesn't exceed the container's height */
+  max-height: 100%;
 }
 
-input[type="text"] {
-  width: 45%;
-  /* Adjust width as per requirement */
-  height: 50px;
-  /* Adjust height as needed */
-  margin: 0 auto;
-  /* Center the input horizontally */
-  display: block;
-  padding: 10px 15px;
-  /* Adjust padding for better text spacing */
-  font-size: 1.5rem;
-  /* Adjust font size for larger text */
-  border: 2px solid var(--color-darker-purple);
-  /* Border for definition */
-  border-radius: 8px;
-  /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  /* Subtle shadow for depth */
-  margin-top: 55px;
-}
-
-
-input[type="text"]:focus {
-  outline: none;
-  border-color: var(--color-light-blue);
-}
-
-h1,
-h2 {
-  color: var(--color-darker-purple);
-  text-align: center;
+/* Welcome message styling */
+/* Styling for the welcome message container */
+/* Styling for the welcome container */
+.welcome {
+  display: flex; /* Use Flexbox for alignment */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Ensure text is centered */
+  grid-column: 1 / -1; /* Span across all columns */
+  margin-top: 0; /* Remove top margin to bring closer to the top */
+  padding-top: 1em; /* Add padding to space it from the top edge */
+  color: var(--color-pink);
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
+/* Styling for h1 inside the welcome container */
+/* Styling for h1 inside the welcome container */
+/* Styling for h1 inside the welcome container */
+.welcome h1 {
+  font-size: 45px; /* Size relative to the viewport width */
+  margin-top: 0; /* Remove top margin to bring closer to the top */
+  margin-bottom: 0; /* Spacing between h1 and h2 */
+}
 
-h1 {
-  font-size: 85px;
-  margin-top: 15px;
-  padding: 20px;
+/* Styling for the prompt beneath the welcome message */
+.welcome h2 {
+  font-size: 45px; /* Slightly smaller than the h1 */
+  margin-top: 0; /* Remove top margin to reduce space */
+  margin-bottom: 0.5em; /* Consistent spacing */
+}
+
+/* Align navigation links to the left */
+.nav.home-nav {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+}
+
+/* Styling for the initial input box */
+.initial-input {
+  width: 800px; /* Adjust width considering the padding */
+  height: 50px; /* Standard input height */
+  padding: 0 15px; /* Padding inside the input */
+  font-size: 1rem; /* Standard font size */  
+  border-radius: 8px; /* Rounded corners */
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  margin-top: 10px; /* Space above the input box */
+  
+}
+
+/* Styling for the placeholder text in input */
+.input-box input[type="text"]::placeholder,
+.initial-input::placeholder {
+  color: #999; /* Change the color to a desired color */
+  font-style: italic; /* Apply italic font style */
+  /* You can also adjust other properties like font-size, font-weight, etc. */
+}
+
+/* QA Section specific styles */
+.qa-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the children horizontally */
+  width: 80%; /* Set a max width for the Q&A section */
+  max-width: 100%; /* Ensure this does not exceed the viewport width */
+  margin: auto; /* Center the section in the grid area */
   margin-bottom: 0px;
 }
 
-h2 {
-  margin-top: 0px;
-  font-size: 50px;
+/* QA Container specific styles */
+.qa-container {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */  
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  margin-bottom: 10px; /* Space between the QA container and the input box */
+  width: 800px; /* Full width of the qa-section */
+  height: 300px; /* Fixed height with scrolling */
+  overflow-y: auto; /* Scrollbar for overflow content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  /* Adjust the height as needed */
-  /* Other styles for your footer */
+/* Input box styling */
+.input-box input[type="text"] {
+  width: 800px; /* Adjust width considering the padding */
+  height: 50px; /* Standard input height */
+  padding: 0 15px; /* Padding inside the input */
+  font-size: 1rem; /* Standard font size */  
+  border-radius: 8px; /* Rounded corners */
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  margin-top: 10px; /* Space above the input box */
+  margin-bottom: 0px;
 }
 
-.footer img {
-  width: 100%;
-  height: 250px;
-  object-fit: none;
-  filter: drop-shadow(-10px -10px 10px #9c9ce0);
+/* Styling for the skyline image, serving as the footer visually */
+.skyline img {
+  width: 100%; /* Full width of the grid area */
+  height: auto; /* Height to maintain aspect ratio */
+  object-fit: cover; /* Cover the grid area without stretching */
+  filter: drop-shadow(-10px -10px 10px #c3c3f0); /* Shadow effect for depth */  
 }
-/* Tablet size @media query */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .qa-container {
-    width: 80%; /* Adjust the width to be more responsive */
-    height: 400px; /* Slightly reduced height */
-    padding: 15px; /* Adjust padding */
-    margin: 15px auto; /* Adjust margin */
-  }
 
-  .qa-container .question,
-  .qa-container .answer {
-    font-size: 15px; /* Slightly reduced font size for better readability */
-  }
-
-  input[type="text"] {
-    width: 70%; /* Adjust width for better fit */
-    font-size: 1.2rem; /* Adjust font size */
-  }
-
-  h1 {
-    font-size: 45px; /* Reduced font size */
-    margin-top: 20px; /* Adjusted margin */
-  }
-
-  h2 {
-    font-size: 40px; /* Reduced font size */
-  }
-
-  .footer {
-    height: 120px; /* Adjusted footer height */
-  }
-
-  .footer img {
-    height: 200px; /* Adjust image size in the footer */
-  }
-
-  /* Additional tablet-specific styles can be added here */
-}
-/* Phone size @media query */
-@media (max-width: 430px) {
-  .qa-container {
-    width: 80%; /* Full width for smaller screens */
-    height: auto; /* Dynamic height based on content */
-    padding: 10px; /* Adjusted padding */
-    margin: 10px auto; /* Adjusted margin */
-    overflow-y: auto; /* Ensuring vertical scrolling if needed */
-    max-height: 325px;
-  }
-
-  .qa-container .question,
-  .qa-container .answer {
-    font-size: 18px; /* Smaller font size for better readability */
-  }
-
-  input[type="text"] {
-    width: 85%; /* Adjust width for better fit */
-    height: 40px; /* Adjust height */
-    font-size: 1rem; /* Smaller font size */
-    margin-top: 20px; /* Adjusted top margin */
-  }
-
-  h1 {
-    font-size: 25px; /* Reduced font size for smaller screens */
-    margin-top: 0px; /* Adjusted top margin */
-  }
-
-  h2 {
-    font-size: 20px; /* Reduced font size */
-  }
-
-  .footer {
-    height: auto; /* Adjusted footer height */
-  }
-
-  .footer img {
-    height: 250px; /* Adjusted image size in the footer */
-  }
-
-  /* Additional phone-specific styles can be added here */
-}
-/* Phone size @media query */
-@media (max-width: 390px) {
-  .qa-container {
-    width: 80%; /* Full width for smaller screens */
-    height: auto; /* Dynamic height based on content */
-    padding: 10px; /* Adjusted padding */
-    margin: 10px auto; /* Adjusted margin */
-    overflow-y: auto; /* Ensuring vertical scrolling if needed */
-    max-height: 325px;
-  }
-
-  .qa-container .question,
-  .qa-container .answer {
-    font-size: 18px; /* Smaller font size for better readability */
-  }
-
-  input[type="text"] {
-    width: 85%; /* Adjust width for better fit */
-    height: 40px; /* Adjust height */
-    font-size: 1rem; /* Smaller font size */
-    margin-top: 20px; /* Adjusted top margin */
-  }
-
-  h1 {
-    font-size: 25px; /* Reduced font size for smaller screens */
-    margin-top: 0px; /* Adjusted top margin */
-  }
-
-  h2 {
-    font-size: 20px; /* Reduced font size */
-  }
-
-  .footer {
-    height: auto; /* Adjusted footer height */
-  }
-
-  .footer img {
-    height: 250px; /* Adjusted image size in the footer */
-  }
-
-  /* Additional phone-specific styles can be added here */
-}
-/* Phone size @media query */
-@media (max-width: 360px) {
-  .qa-container {
-    width: 80%; /* Full width for smaller screens */
-    height: auto; /* Dynamic height based on content */
-    padding: 10px; /* Adjusted padding */
-    margin: 10px auto; /* Adjusted margin */
-    overflow-y: auto; /* Ensuring vertical scrolling if needed */
-    max-height: 200px;
-  }
-
-  .qa-container .question,
-  .qa-container .answer {
-    font-size: 18px; /* Smaller font size for better readability */
-  }
-
-  input[type="text"] {
-    width: 85%; /* Adjust width for better fit */
-    height: 40px; /* Adjust height */
-    font-size: 1rem; /* Smaller font size */
-    margin-top: 20px; /* Adjusted top margin */
-  }
-
-  h1 {
-    font-size: 25px; /* Reduced font size for smaller screens */
-    margin-top: 0px; /* Adjusted top margin */
-  }
-
-  h2 {
-    font-size: 20px; /* Reduced font size */
-  }
-
-  .footer {
-    height: auto; /* Adjusted footer height */
-  }
-
-  .footer img {
-    height: 250px; /* Adjusted image size in the footer */    
-  }
-
-  /* Additional phone-specific styles can be added here */
-}
 </style>

@@ -1,9 +1,11 @@
 :root {
-    --color-lightest: #dde1ec;    
-    --color-light-purple:#d2d2f3 ; 
-    --color-darker-purple: #665291; 
-    --color-light-blue: #47589e; 
-    --color-darkest: #0b0b2f; 
+    --color-white: white;    
+    --color-pink:#D1439E; 
+    --color-purple: #54276f; 
+    --color-light-purple: #c575f3;
+    --color-light-blue: #1da5be; 
+    --color-dark-blue: #131c5a; 
+    --color-neon-green: #15c508;
 }
 body {
     background-color: var(--color-lightest);

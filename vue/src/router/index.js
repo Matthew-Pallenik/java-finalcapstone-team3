@@ -6,6 +6,10 @@ import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import PathwaysView from '../views/PathwayView.vue';
+import CurriculumView from '../views/CurriculumView.vue';
+import JobsView from '../views/JobsView.vue';
+import AskForHelpView from '../views/AskForHelpView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -47,7 +51,40 @@ const routes = [
     meta: {
       requiresAuth: false
     }
-  }
+  },
+  {
+    path: "/pathway",
+    name: "Pathway",
+    component: PathwaysView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/curriculum",
+    name: "Curriculum",
+    component: CurriculumView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/jobs",
+    name: "Jobs",
+    component: JobsView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/askForHelp",
+    name: "AskForHelp",
+    component: AskForHelpView,
+    meta: {
+      requiresAuth: false
+    }
+  } 
+
 ];
 
 // Create the router
