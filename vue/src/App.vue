@@ -1,13 +1,16 @@
-<template>  
+<template>
   <div id="capstone-app">
     <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <!-- Add a class to the router-link elements -->
+      <router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" class="nav-link">Logout</router-link>
+      
+
     </div>
     <router-view />
   </div>
 </template>
-<style>
+<style scoped>
 #nav {
   display: flex;
   justify-content: flex-end; /* Aligns content to the right */  
