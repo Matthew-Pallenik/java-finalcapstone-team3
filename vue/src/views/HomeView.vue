@@ -9,32 +9,29 @@
       <input type="text" v-model="potentialUserName" @keyup.enter="saveName" placeholder="Enter your name here">
     </div>
 
-    <!-- Prompt for help and user input box, visible only when userName is set -->
+    <!-- Greeting and asking for user's query, visible only when userName is set -->
     <div v-if="userName">
-      <h2>What would you like help with?</h2>
-      <!-- Input box for user to ask questions -->
-      <div class="input-box">
-        <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
-      </div>
-    </div>
-
-    <!-- Display search results, visible only when there are results -->
-    <div v-if="searchResults && searchResults.length > 0" class="search-results">
-      <h2>Search Results</h2>
-      <!-- Loop through each search result and display its content -->
-      <div v-for="(result, index) in searchResults" :key="index" class="result-item">
-        <h3>{{ result.title }}</h3>
-        <p>{{ result.description }}</p>
-        <a :href="result.link" target="_blank">Learn More</a>
-      </div>
+      <h2>How can I help you?</h2>
     </div>
 
     <!-- Container for displaying Q&A history, visible only when userName is set -->
-    <div v-if="userName" class="qa-container">
-      <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
-        <p class="question"><strong>Q:</strong> {{ item.question }}</p>
-        <p class="answer"><strong>A:</strong> {{ item.answer }}</p>
+      <div v-if="userName" class="qa-container">
+    <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
+      <p class="question"><strong>Q:</strong> {{ item.question }}</p>
+      <div v-if="Array.isArray(item.answer)">
+        <div v-for="(result, resultIndex) in item.answer" :key="resultIndex" class="answer">
+          <p><strong>Title:</strong> {{ result.title }}</p>
+          <p><strong>Description:</strong> {{ result.description }}</p>
+          <p><strong>Link:</strong> <a :href="result.link" target="_blank">{{ result.link }}</a></p>
+        </div>
       </div>
+      <p v-else class="answer">{{ item.answer }}</p>
+    </div>
+  </div>
+
+    <!-- Input box for user to ask questions, visible only when userName is set -->
+    <div v-if="userName" class="input-box">
+      <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
     </div>
 
     <!-- Footer with skyline image -->
@@ -73,24 +70,35 @@ export default {
     },
 
     async processQuery() {
+      // Check if the userQuery is empty. If it is, exit the function early.
       if (!this.userQuery) return;
 
+      // Add a placeholder answer to the Q&A history indicating that the search is in progress.
+      // This is done before the actual search to provide immediate feedback to the user.
       const placeholderAnswer = 'Processing your request...';
       this.qaHistory.push({ question: this.userQuery, answer: placeholderAnswer });
 
-      // Dispatch the Vuex action to perform the search
+      // Perform the search using the Vuex action 'performSearch'.
+      // 'await' is used to wait for the search to complete before moving to the next line of code.
+      // The user's query is passed as a parameter to the search function.
       await this.performSearch(this.userQuery);
 
-      // Retrieve the updated search results from Vuex state
-      const results = this.searchResults.map(result =>
-        `${result.title}: ${result.description}. More info: ${result.link}`
-      ).join('\n');
+      // Check if there are search results and format them accordingly.
+      // If there are search results, store them as an array of objects.
+      // Each object contains the title, description, and link of a result.
+      const formattedResults = this.searchResults.length > 0
+        ? this.searchResults.map(result => ({
+          title: result.title,
+          description: result.description,
+          link: result.link
+        }))
+        : 'No results found.';
 
-      // Update the answer in qaHistory with actual search results
-      const updatedAnswer = results ? `Here are your search results:\n${results}` : 'No results found.';
-      this.qaHistory[this.qaHistory.length - 1].answer = updatedAnswer;
+      // Update the latest answer in qaHistory with the formatted search results.
+      this.qaHistory[this.qaHistory.length - 1].answer = formattedResults;
 
-      this.userQuery = ''; // Reset the user query input
+      // Reset the user query input field to be ready for a new query.
+      this.userQuery = '';
     }
   },
 
