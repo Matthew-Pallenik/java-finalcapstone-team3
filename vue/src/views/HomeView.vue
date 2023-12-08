@@ -312,6 +312,7 @@ span {
 
 
 
+
 /* Input box styling */
 .input-box input[type="text"] {
   width: 800px; /* Adjust width considering the padding */

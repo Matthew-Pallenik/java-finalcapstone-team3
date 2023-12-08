@@ -3,6 +3,10 @@
     <div id="nav">
       <!-- Add a class to the router-link elements -->
       <router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{name: 'Pathway'}" class="nav-link">Pathway</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{name: 'Curriculum'}" class="nav-link">Curriculum</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{name: 'Jobs'}" class="nav-link">Jobs</router-link>&nbsp;|&nbsp;
+      <router-link v-bind:to="{name: 'AskForHelp'}" class="nav-link">Ask For Help</router-link>&nbsp;|&nbsp;
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" class="nav-link">Logout</router-link>
       
 
