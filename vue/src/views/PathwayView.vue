@@ -17,10 +17,13 @@
         <!-- Navigation content goes here -->
       </div>
       <div class="grid-item middle-center pathway-content">
-        <!-- Pathway content goes here -->
-        <div v-for="pathway in pathways" :key="pathway.id" class="pathway-item">
-          <div class="pathway-title">{{ pathway.title }}</div>
-        </div>
+        <!-- Displaying only the first 9 pathway titles -->
+        <div class="grid-item middle-center pathway-content">
+      <!-- Loop over the first 9 pathways and display each title in its own <p> tag -->
+      <p v-for="pathway in pathways.slice(0, 9)" :key="pathway.id" class="pathway-title" @click="goToLink(pathway.link)">
+        {{ pathway.title }}
+      </p>
+    </div>
       </div>
       <div class="grid-item middle-right motivational-quotes">
         <!-- Motivational quotes content goes here -->
@@ -34,16 +37,31 @@
         <img src="img/Pittsburgh-90s.png" alt="City Skyline">
       </div>
       <div class="grid-item bottom-right">
-        <!-- This cell is intentionally left empty -->
+        <!-- Input Box Below the Titles -->
+        <input type="text" placeholder="Input Routes Back to homeview" class="pathway-input">
       </div>
     </div>
   </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 export default {
     mounted() {
     document.title = "Pathway";
+    this.fetchRandomPathways();
+  },  
+  computed: {
+    ...mapState(['pathways']),
   },
+
+  methods: {
+    ...mapActions(['fetchRandomPathways']),
+
+    goToLink(url) {
+      window.open(url, '_blank');
+    }
+  },
+  
 }
 </script>
 
