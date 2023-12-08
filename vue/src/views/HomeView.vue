@@ -192,7 +192,8 @@ export default {
   display: flex;
   justify-content:center;
   align-items:center;
-  margin-top: opx;
+  margin-top: 0px;
+  filter: drop-shadow(-1px -1px 1px #b5b6b8); /* Shadow effect for depth */  
   
 }
 
