@@ -142,6 +142,7 @@ export default {
   color: var(--color-pink);  
   text-align: center;
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+  font-family: prompt;
 }
 
 #register .welcome-section h1 {
@@ -167,7 +168,7 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 500px;
-  max-height: 350px;
+  max-height: 400px;
 }
 
 #register .form-container .form-input-group {
@@ -175,6 +176,7 @@ export default {
   flex-direction: column;
   margin-bottom: 1rem;
   text-align: left;
+  font-family: prompt;
 }
 
 #register .form-container .form-input-group label {
@@ -200,6 +202,7 @@ export default {
   color: #fff;
   font-weight: bold;
   font-size: 25px;
+  font-family: prompt;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -214,6 +217,7 @@ export default {
 #register .form-container .login-link {
   font-size: 25px;
   color: var(--color-light-purple);
+  font-family: prompt;
 }
 
 /* Styling for the Skyline section */
@@ -229,6 +233,6 @@ export default {
   width: 1000px;
   height: 375px;
   object-fit: cover; /* Adjust to 'cover' for better aspect ratio handling */
-  filter: drop-shadow(-10px -10px 10px #c3c3f0);
+  filter: drop-shadow(-10px -10px 10px #b5b6b8);
 }
 </style>
