@@ -95,7 +95,7 @@ export default {
   /* Additional styling for the welcome section */
 }
 
-#login .form-container {
+#login .form-section {
   grid-area: form-container;
   /* Additional styling for the form container */
 }
@@ -106,6 +106,7 @@ export default {
 }
 h1.welcome-section {
   font-size: 100px;
+  font-family: prompt;
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 20px;
@@ -131,8 +132,7 @@ h1.welcome-section {
 
 
 /* Styling for the Form container */
-#login .form-container {
-  grid-area: form-section;
+#login .form-container {  
   background-color: var(--color-white);
   padding: 20px;
   margin-left: auto;
@@ -150,6 +150,8 @@ h1.welcome-section {
 
 #login .form-container .form-input-group {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column; 
   margin-bottom: 1rem;
   text-align: left;
@@ -157,15 +159,17 @@ h1.welcome-section {
 
 #login .form-container .form-input-group label {
   margin-bottom: 0.25rem;
-  font-size: 20px;
+  font-size: 35px;
+  font-family: prompt;
   color: var(--color-light-purple);
   font-weight: bold;  
 }
 
 .form-input-group input[type="text"],
 .form-input-group input[type="password"] {
+  display: flex;  
   padding: 10px;
-  width: 100%; /* Explicitly set the width */
+  width: 150%; /* Explicitly set the width */
   margin: 0; /* Remove any default margins */
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -174,6 +178,7 @@ h1.welcome-section {
   box-sizing: border-box; /* Padding and border are included in the width */
 }
 
+
 /* Styling for the Sign in button */
 #login .form-container button {
   padding: 10px;
@@ -181,19 +186,24 @@ h1.welcome-section {
   color: #fff;
   font-weight: bold;
   font-size: 25px;
+  font-family: prompt;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 100%; /* Stretch to the width of the container */
+  box-sizing: border-box; /* Include padding and border in the width */
+  display: block; /* Block-level for applying margin */
+  margin: 0 auto; /* Center the button */
 }
-
 #login .form-container button:hover {
   background-color: var(--color-light-blue);
 }
 
 /* Styling for the Register link */
-#login .form-container .register-link {
+.register-link {
+  text-align: left;
   font-size: 25px;
+  font-family: prompt;
   color: var(--color-light-purple);
 }
 
@@ -212,6 +222,6 @@ h1.welcome-section {
   max-width: 100%; /* Allow image to scale down */
   max-height: 100%; /* Keep image within the section */
   object-fit: contain; /* Ensures the entire image is visible */
-  filter: drop-shadow(-10px -10px 10px #c3c3f0);
+  filter: drop-shadow(-10px -10px 10px #b5b6b8);
 }
 </style>

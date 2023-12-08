@@ -3,7 +3,7 @@
     <!-- Top Row -->
     <!-- TE Logo on the top-left -->
     <div class="grid-item logo">
-      <img src="img/TE_LOGO.jpg" alt="TE Logo">
+      <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
     </div>
 
     <!-- Welcome Message in the top-center -->
@@ -12,7 +12,8 @@
       <div v-if="!userName">
         <h1>Welcome to Chatbot</h1>
         <h2>What would you like me to call you?</h2>
-        <input type="text" v-model="potentialUserName" @keyup.enter="saveName" class="initial-input" placeholder="Enter your name here">
+        <input type="text" v-model="potentialUserName" @keyup.enter="saveName" class="initial-input"
+          placeholder="Enter your name here">
       </div>
 
       <!-- If userName is set, display a personalized welcome message and ask what the user needs help with -->
@@ -26,11 +27,11 @@
       <!-- Future content or additional features can go here -->
     </div>
 
-      <!-- Middle Row -->
-  <div class="grid-item home-nav">
-    <!-- Navigation links like Home/Logout will be placed here -->
-    <!-- Existing navigation functionality should be transferred here -->
-  </div>
+    <!-- Middle Row -->
+    <div class="grid-item home-nav">
+      <!-- Navigation links like Home/Logout will be placed here -->
+      <!-- Existing navigation functionality should be transferred here -->
+    </div>
 
     <!-- Q.A Container and Input Box in the middle-center -->
     <div class="grid-item qa-section">
@@ -40,9 +41,20 @@
         <div v-for="(item, index) in qaHistory" :key="index" class="qa-message">
           <p class="question">{{ item.question }}</p>
           <div v-if="typeof item.answer === 'object'">
-            <p class="title"><strong>Title:</strong> {{ item.answer.title }}</p>
-            <p class="description">{{ item.answer.description }}</p>
-            <p class="link"><a :href="item.answer.link" target="_blank">{{ item.answer.link }}</a></p>
+            <p class="title">
+              <span class="label">Title: </span>
+              <span class="content">{{ item.answer.title }}</span>
+            </p>
+            <p class="description">
+              <span class="label">Description: </span>
+              <span class="content">{{ item.answer.description }}</span>
+            </p>
+            <p class="link">
+              <span class="label">Link: </span>
+              <span class="content">
+                <a :href="item.answer.link" target="_blank">{{ item.answer.link }}</a>
+              </span>
+            </p>
           </div>
           <p v-else class="answer">{{ item.answer }}</p>
         </div>
@@ -56,6 +68,7 @@
     <!-- Placeholder for the motivational quote in the middle-right -->
     <div class="grid-item motivational-quote">
       <!-- Motivational quote can be dynamically inserted here -->
+
     </div>
 
     <!-- Bottom Row -->
@@ -177,18 +190,19 @@ export default {
 .grid-item.logo {
   /* Center the logo within its grid cell */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:center;
+  margin-top: opx;
   
 }
 
 /* Styling for the logo image */
 .grid-item.logo img {
-  width: 300px; /* Explicit width for the logo */
-  height: auto; /* Maintain aspect ratio based on width */
-  /* Ensure the image doesn't exceed the container's height */
-  max-height: 100%;
+  width: 250px; /* You may set a max-width instead if the image is too large */
+  height: auto; /* Maintain aspect ratio */
+  /* Remove max-height if it's not needed or adjust accordingly */
 }
+
 
 /* Welcome message styling */
 /* Styling for the welcome message container */
@@ -212,6 +226,7 @@ export default {
   font-size: 45px; /* Size relative to the viewport width */
   margin-top: 0; /* Remove top margin to bring closer to the top */
   margin-bottom: 0; /* Spacing between h1 and h2 */
+  font-family: prompt;
 }
 
 /* Styling for the prompt beneath the welcome message */
@@ -219,6 +234,7 @@ export default {
   font-size: 45px; /* Slightly smaller than the h1 */
   margin-top: 0; /* Remove top margin to reduce space */
   margin-bottom: 0.5em; /* Consistent spacing */
+  font-family: prompt;
 }
 
 /* Align navigation links to the left */
@@ -238,6 +254,7 @@ export default {
   height: 50px; /* Standard input height */
   padding: 0 15px; /* Padding inside the input */
   font-size: 1rem; /* Standard font size */  
+  font-family: prompt;
   border-radius: 8px; /* Rounded corners */
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
@@ -249,6 +266,7 @@ export default {
 .input-box input[type="text"]::placeholder,
 .initial-input::placeholder {
   color: #999; /* Change the color to a desired color */
+  font-family: prompt;
   font-style: italic; /* Apply italic font style */
   /* You can also adjust other properties like font-size, font-weight, etc. */
 }
@@ -271,10 +289,28 @@ export default {
   padding: 20px; /* Padding inside the container */
   margin-bottom: 10px; /* Space between the QA container and the input box */
   width: 800px; /* Full width of the qa-section */
-  height: 300px; /* Fixed height with scrolling */
+  height: 450px; /* Fixed height with scrolling */
   overflow-y: auto; /* Scrollbar for overflow content */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
+.question{
+  font-family: prompt;
+  font-size: 20px;
+  color: var(--color-light-purple);
+}
+.label {
+  font-family: prompt;
+  font-size: 20px;
+  color: var(--color-light-purple);
+}
+
+span {
+  font-family: prompt;
+  font-size: 20px;
+  color: var(--color-light-blue);
+}
+
+
 
 /* Input box styling */
 .input-box input[type="text"] {
@@ -294,7 +330,7 @@ export default {
   width: 100%; /* Full width of the grid area */
   height: auto; /* Height to maintain aspect ratio */
   object-fit: cover; /* Cover the grid area without stretching */
-  filter: drop-shadow(-10px -10px 10px #c3c3f0); /* Shadow effect for depth */  
+  filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */  
 }
 
 </style>
