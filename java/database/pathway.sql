@@ -27,10 +27,7 @@ INSERT INTO pathway(title, description, keywords, link) VALUES
 
 'time | pomodoro | burnout | calendar | exhaustion | cynicism | inefficacy | management | time management',
 
-'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/07_Time_Management/03-burnout-prevention.md |
-https://www.healthline.com/health/tips-for-identifying-and-preventing-burnout |
-https://www.workplacestrategiesformentalhealth.com/resources/prevent-burnout |
-https://hbr.org/2016/11/beating-burnout'
+'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/07_Time_Management/03-burnout-prevention.md'
 
 
 ),
@@ -41,8 +38,7 @@ https://hbr.org/2016/11/beating-burnout'
 
 'elevator pitch | interview | introduction | meeting | job ',
 
-'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/03_Elevator_Pitch/01-elevator-pitch.md |
-https://drive.google.com/file/d/1w5K9SXOBLVG2KUu8AnupknA7r2B17Yam/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/29/content_files/03_Elevator_Pitch/01-elevator-pitch.md'
 
 ),
 (
@@ -52,8 +48,7 @@ https://drive.google.com/file/d/1w5K9SXOBLVG2KUu8AnupknA7r2B17Yam/preview'
 
 'resume | resumes | skills | experience | education | job search | application | job',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/01_Resumes/01-intro.md |
-https://www.hiration.com/ '
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/01_Resumes/01-intro.md'
 ),
 (
 'Cover Letters',
@@ -62,8 +57,7 @@ https://www.hiration.com/ '
 
 'cover letter | resume | application | job',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/11_Cover_Letters/01-introduction.md |
-https://www.thebalancemoney.com/sample-career-change-cover-letter-2060185'
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/11_Cover_Letters/01-introduction.md'
 ),
 (
 'LinkedIn',
@@ -72,8 +66,7 @@ https://www.thebalancemoney.com/sample-career-change-cover-letter-2060185'
 
 'LinkedIn | resume | job | job search | networking | research ',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/02_LinkedIn/05-introduction.md |
-https://drive.google.com/file/d/1YJrci4XICJ_MIRX6vwkMkAIIGl2lekvS/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/02_LinkedIn/05-introduction.md'
 
 ),
 (
@@ -87,10 +80,7 @@ IT Support Analyst: The IT Support Analyst  will provide front-line primary tech
 
 'technical role | job | title | position | careers',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/12_Technical_Roles/01-technical-roles.md |
-https://en.wikipedia.org/wiki/Programmer#Application_versus_system_programming |
-https://en.wikipedia.org/wiki/Project_manager#Software_Project_Manager |
-https://yojji.io/blog/qa-automation-engineer '
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/12_Technical_Roles/01-technical-roles.md'
 
 ),
 (
@@ -100,10 +90,7 @@ https://yojji.io/blog/qa-automation-engineer '
 
 'recruiters | recruiting | jobs | job search | employment | contract | recruitment | employers | offer',
 
-'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/04_Working_With_Recruiters/01-introduction.md |
-https://www.roberthalf.com/ |
-https://www.teksystems.com/en |
-https://www.randstadusa.com/ '
+'https://lms.techelevator.com/cohorts/542/blocks/30/content_files/04_Working_With_Recruiters/01-introduction.md'
 
 ),
 (
@@ -123,8 +110,7 @@ https://www.randstadusa.com/ '
 
 'networking | social event | network | job search | meetups | career',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/01_Networking/01-introduction.md |
-https://drive.google.com/file/d/1b0vb7L2MICYxNZlTeRp_ywMrqLmvm0EK/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/01_Networking/01-introduction.md'
 ),
 (
 'Prepping For Interviews',
@@ -136,8 +122,7 @@ Appearance: Dress in professional attire, things such as a button-up, skirt/dres
 
 'interview | attire | preparation | prepare | job | offer | clothing | company | research | employer | employment| career',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/02_Prepping_for_Interviews/01-introduction.md |
-https://drive.google.com/file/d/1tJ_H4PJKzoi9kmoikBnBHp7JYRKXumlT/preview  '
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/02_Prepping_for_Interviews/01-introduction.md'
 ),
 (
 'HR Interviews',
@@ -156,8 +141,7 @@ Examples of HR Interview questions may be: "Tell me why you are switching career
 
 'behavioral | interview | interviews | HR | questions | job | culture | company | STAR',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/03_Behavioral_Interviews/01-introduction.md |
-https://drive.google.com/file/d/1X-7mPFQeZo9AHM_WH_JZJCpSe238Ruca/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/03_Behavioral_Interviews/01-introduction.md'
 ),
 (
 'Technical Interviews',
@@ -167,8 +151,7 @@ Interviewers know what junior developers should and should not know, if you brav
 
 'technical | interview | practice | tech | managers | problems | whiteboard | whiteboarding | questions | coding | code | review',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/04_Technical_Interviews/01-introduction.md | 
-https://drive.google.com/file/d/1vfHM8nq-RmB2v2h2G-i5-S2ll4LKYGmE/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/04_Technical_Interviews/01-introduction.md'
 
 ),
 (
@@ -178,8 +161,7 @@ https://drive.google.com/file/d/1vfHM8nq-RmB2v2h2G-i5-S2ll4LKYGmE/preview'
 
 'interview | rejection | communication | communicate | interviewer | linkedin | after interview | interest | follow up',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/05_After_Interviews/01-introduction.md |
-https://drive.google.com/file/d/1mA3zZ9wVQ2t0kAVN-GF-w8iwURGv-cCs/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/05_After_Interviews/01-introduction.md'
 
 ),
 (
@@ -189,12 +171,7 @@ https://drive.google.com/file/d/1mA3zZ9wVQ2t0kAVN-GF-w8iwURGv-cCs/preview'
 
 'job search | search | employer | employee | job | salary | linkedin | indeed | two-pronged approach | application | apply | search tools | employment | listing | apply | HR',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/06_Job_Search/01-introduction.md |
-https://drive.google.com/file/d/1vj5a9J2QStNpUB6X90PyOhM2XwXf-2Vj/preview |
-https://huntr.co/ |
-https://indeed.com/ |
-https://www.linkedin.com/ |
-https://www.hiration.com/'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/06_Job_Search/01-introduction.md'
 ),
 (
 'Benefits',
@@ -203,8 +180,7 @@ https://www.hiration.com/'
 
 'benefits | healthcare | wellness | retirement | leave | flexibility | flexible | family | travel | housing | bonuses | compensation | medical | pto | paid time off | co-pay | deductible | premium | insurance | 401k ',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/07_Benefits/01-introduction.md |
-https://drive.google.com/file/d/16zOls126WD_fCrkuMWpT850gxImftgh3/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/07_Benefits/01-introduction.md'
 
 ),
 (
@@ -214,14 +190,7 @@ https://drive.google.com/file/d/16zOls126WD_fCrkuMWpT850gxImftgh3/preview'
 
 'huntr | job search | job portal | pathway | tracking | organized | organization | organize | job | search | goals | application | apply',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/09_Huntr/01-introduction.md |
-https://huntr.co/ |
-https://blog.huntr.co/huntr-quickstart-guide/ |
-https://drive.google.com/file/d/18VD-iB7MdqwUNfIra5Fn6FLuOKLmdJBN/preview |
-https://drive.google.com/file/d/1HS70b-AfCR1463S64syP_kMpN82U6Tsa/preview |
-https://drive.google.com/file/d/1f5lr7e2RrHQMyooYesmmvSwhs1TSnQ4P/preview |
-https://drive.google.com/file/d/17VglGdHQ8_kwrg-W9b1-mL13XiD2ClqQ/preview |
-https://drive.google.com/file/d/1BCiZh6WHQ2OUIcZMrBcnL0sN2hnD8Nf2/preview'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/09_Huntr/01-introduction.md'
 
 ),
 (
@@ -240,9 +209,7 @@ https://drive.google.com/file/d/1BCiZh6WHQ2OUIcZMrBcnL0sN2hnD8Nf2/preview'
 
 'relocation | relocate | moving | different area | leaving',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/12_Relocation/01-introduction.md |
-https://www.uschamber.com/co/chambers |
-https://builtin.com/ '
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/12_Relocation/01-introduction.md'
 ),
 (
 'Job Offer',
@@ -251,11 +218,5 @@ https://builtin.com/ '
 
 'offer | job | employment | pathway | success | victory | job search | interview | negotiate | employed',
 
-'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/13_Job_Offer/05-intro.md |
-https://www.payscale.com/research/US/Employer |
-https://www.salarylist.com/jobs-salary-by-companies.htm |
-https://www.salary.com/research/employer |
-https://www.linkedin.com/salary/ |
-https://www.indeed.com/career/salaries |
-https://www.glassdoor.com/Salaries/index.htm'
+'https://lms.techelevator.com/cohorts/542/blocks/31/content_files/13_Job_Offer/05-intro.md'
 );
