@@ -15,6 +15,15 @@
         <!-- Middle Row -->
         <div class="grid-item middle-left nav">
             <!-- Navigation content goes here -->
+            <ul>
+                <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
+                <li><router-link v-bind:to="{ name: 'Pathway' }" class="nav-link">Pathway</router-link></li>
+                <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
+                <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
+                <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
+                <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
+                        class="nav-link">Logout</router-link></li>
+            </ul>
         </div>
         <div class="grid-item middle-center pathway-content">
             <!-- Create a grid container for the pathway titles -->
@@ -27,7 +36,8 @@
             </div>
             <!-- Input Container -->
             <div class="input-container">
-                <input type="text" placeholder="Input Routes Back to homeview" class="pathway-input">
+                <input type="text" placeholder="Ask me anything..." class="pathway-input"
+                    @keyup.enter="handleInputEnter($event.target.value)">
             </div>
         </div>
         <div class="grid-item middle-right motivational-quotes">
@@ -49,6 +59,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
+import router from '@/router';
+
 export default {
     mounted() {
     document.title = "Pathway";
@@ -57,118 +69,177 @@ export default {
   computed: {
     ...mapState(['pathways']),
   },
-
   methods: {
     ...mapActions(['fetchRandomPathways']),
-
     goToLink(url) {
       window.open(url, '_blank');
-    }
+    },
+    handleInputEnter(query) {
+      // Redirect to the home route with the query
+      this.$router.push({ name: 'home', query: { search: query } });
+    },
   },
-  
 }
 </script>
 
 <style scoped>
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns of equal size */
-  grid-template-rows: auto auto auto; /* Three rows, size determined by content */
-  gap: 10px; /* Space between grid items */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns of equal size */
+    grid-template-rows: auto auto auto;
+    /* Three rows, size determined by content */
+    gap: 10px;
+    /* Space between grid items */
 }
 
 /* Assign the grid-template-areas to match the layout */
 .grid-container {
-  grid-template-areas:
-    "logo welcome empty1"
-    "nav pathway-content motivational-quotes"
-    "empty2 skyline empty3";
+    grid-template-areas:
+        "logo welcome empty1"
+        "nav pathway-content motivational-quotes"
+        "empty2 skyline empty3";
 }
 
 /* Place each grid-item in the correct grid area */
-.logo { 
-    grid-area: logo; 
+.logo {
+    grid-area: logo;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     margin-top: 0px;
     margin-left: 100px;
-    filter: drop-shadow(-1px -1px 1px #b5b6b8); /* Shadow effect for depth */  
-    
+    filter: drop-shadow(-1px -1px 1px #b5b6b8);
+    /* Shadow effect for depth */
+
 }
 
 #TE Logo {
-    width: 250px; /* You may set a max-width instead if the image is too large */
-    height: auto; /* Maintain aspect ratio */
-    
+    width: 250px;
+    /* You may set a max-width instead if the image is too large */
+    height: auto;
+    /* Maintain aspect ratio */
+
 }
-.welcome { 
-    grid-area: welcome; 
+
+.welcome {
+    grid-area: welcome;
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     font-family: prompt;
     font-size: 45px;
     color: var(--color-pink);
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
+
 /* empty1 does not need a style since it is intentionally left empty */
 
-.nav { grid-area: nav; }
+.nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: flex-start;
+    /* Aligns content to the left */
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+}
+
+li {
+    display: list-item;
+    list-style-type: none;
+    padding: 5px;
+}
+
 .pathways-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create three columns */
-  grid-gap: 20px; /* Adjust to your preference for space between grid items */
-  padding: 20px; /* Padding around the entire grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create three columns */
+    grid-gap: 20px;
+    /* Adjust to your preference for space between grid items */
+    padding: 20px;
+    /* Padding around the entire grid */
 }
 
 .pathway-cell {
-  background-color: #fff; /* White background for the cell */
-  border-radius: 10px; /* Rounded corners for the cells */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  padding: 20px; /* Padding inside each cell */
-  display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  cursor: pointer; /* Change cursor to indicate the cell is clickable */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    background-color: #fff;
+    /* White background for the cell */
+    border-radius: 10px;
+    /* Rounded corners for the cells */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    padding: 20px;
+    /* Padding inside each cell */
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    cursor: pointer;
+    /* Change cursor to indicate the cell is clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
 }
 
 .pathway-cell:hover {
-  transform: translateY(-5px); /* Slightly raise the cell on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow for lifted effect */
+    transform: translateY(-5px);
+    /* Slightly raise the cell on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Larger shadow for lifted effect */
 }
 
 .pathway-title {
-  margin: 0; /* Remove default margin from paragraph tags */
-  font-size: 20px; /* Adjust font size as needed */
-  font-family: prompt;
-  color: var(--color-light-blue);
-  text-align: center; /* Center text */
+    margin: 0;
+    /* Remove default margin from paragraph tags */
+    font-size: 20px;
+    /* Adjust font size as needed */
+    font-family: prompt;
+    color: var(--color-light-blue);
+    text-align: center;
+    /* Center text */
 }
+
 /* Style for the input container */
 .input-container {
-  display: flex;
-  justify-content: center; /* Center the input horizontally */
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center the input horizontally */
+    height: 50px;
+    padding: 20px;
 }
 
 /* Style for the input box */
 .pathway-input {
-  width: 100%; /* Make the input box as wide as its container */
-  max-width: calc(100% - 40px); /* Adjust based on the padding of the parent container */
-  margin: 0 auto; /* Center the input box if it's not as wide as the container */
-  padding: 10px 15px; /* Padding inside the input box */
-  border-radius: 10px; /* Rounded corners for the input box */
-  border: 1px solid #ccc; /* Border for the input box */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the input box */
+    width: 100%;
+    /* Make the input box as wide as its container */
+    max-width: calc(100% - 40px);
+    /* Adjust based on the padding of the parent container */
+    margin: 0 auto;
+    /* Center the input box if it's not as wide as the container */
+    padding: 10px 15px;
+    /* Padding inside the input box */
+    border-radius: 10px;
+    /* Rounded corners for the input box */
+    border: none;
+    /* Border for the input box */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    font-family: prompt;
+    font-size: 18px;
+    color: #5f5b5b;
 }
-.motivational-quotes { grid-area: motivational-quotes; }
+
+.motivational-quotes {
+    grid-area: motivational-quotes;
+}
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
-.skyline { 
-    grid-area: skyline; 
-    filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */  
+.skyline {
+    grid-area: skyline;
+    filter: drop-shadow(-10px -10px 10px #b5b6b8);
+    /* Shadow effect for depth */
 }
 </style>

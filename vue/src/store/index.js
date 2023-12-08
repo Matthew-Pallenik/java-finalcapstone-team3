@@ -7,7 +7,8 @@ export function createStore(currentToken, currentUser) {
     state: {
       token: currentToken || '',
       user: currentUser || {},
-      pathways: [] 
+      pathways: [],
+      preferredName: '' // Store the user's preferred name
     },
     mutations: {
       SET_AUTH_TOKEN(state, token) {
@@ -31,6 +32,9 @@ export function createStore(currentToken, currentUser) {
       },
       SET_PATHWAYS(state, pathways) {
         state.pathways = pathways;
+      },
+      SET_PREFERRED_NAME(state, name) {
+        state.preferredName = name;
       },
       
     },
