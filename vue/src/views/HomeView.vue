@@ -196,10 +196,17 @@ export default {
 <style scoped>
 
 /* Layout for the entire grid */
-
+/* .home.grid-container{
+  min-block-size: 100vb;
+  background-image: linear-gradient(
+    to right bottom, 
+  rgb(214, 135, 226), 
+  rgb(204, 120, 120), 
+  rgb(218, 137, 71));
+} */
 .grid-container {
   display: grid;
-  grid-template-columns: 200px 1fr 200px; /* Three unequal columns */
+  grid-template-columns: 275px 1fr 200px; /* Three unequal columns */
   grid-template-rows: auto; /* Rows adjust to content height */
   gap: 20px; /* Space between grid items */
   align-items: start; /* Align items to the top of their cell */
@@ -279,19 +286,37 @@ export default {
 /* Align navigation links to the left */
 .home-nav {
   display: flex;
-  justify-content: flex-start; /* Aligns content to the left */
+  justify-content: space-between;
   padding: 10px;
   margin-top: 20px;
+  margin-left: 20px;
   text-align: center;
   font-size: 25px;
-  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+  background-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 0.5rem;
+}
+
+.home-nav a{
+  color: #ffffff;
+  text-decoration: none;
+  font-family: prompt;
+  transition: color 0.2s ease-in-out;
+}
+.home-nav a:hover{
+  color: #1dd3da;
+  
 }
 
 li {
   display: list-item;
   list-style-type: none;
-  padding: 5px;
+  padding: 10px;
 }
+
+ul{
+  white-space: nowrap;
+}
+
 
 /* Styling for the initial input box */
 .initial-input {
