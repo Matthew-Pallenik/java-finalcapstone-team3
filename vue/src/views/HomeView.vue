@@ -12,7 +12,7 @@
       <div v-if="!userName">
         <h1>Welcome to Chatbot</h1>
         <h2>What would you like me to call you?</h2>
-        <input type="text" v-model="potentialUserName" @keyup.enter="saveName" class="initial-input"
+        <input type="text" v-model="preferredName" @keyup.enter="saveName" class="initial-input"
           placeholder="Enter your name here">
       </div>
 
@@ -99,6 +99,7 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
+
 export default {
   mounted() {
     document.title = "Home";
@@ -110,19 +111,37 @@ export default {
 
   data() {
     return {
-      potentialUserName: '',
+      preferredName: '', // Store the user's preferred name
       userName: '',
       userQuery: '',
       qaHistory: [] // Array to hold the history of Q&A
     };
+  },
+  created() {
+    // When the component is created, check for a search query parameter and process it
+    this.checkRouteForSearchQuery();
+
+    // Set the preferredName from the Vuex store if available
+    if(!this.userName){
+      this.userName = this.$store.state.preferredName;
+    }
+    
   },
 
   methods: {
     ...mapActions(['performSearch']), // Map the performSearch action from Vuex
 
     saveName() {
-      this.userName = this.potentialUserName.trim();
-      this.potentialUserName = ''; // Reset the potential user name
+      this.userName = this.preferredName.trim();   
+      this.$store.commit('SET_PREFERRED_NAME', this.userName); 
+    },
+    //this checks for a query form another view
+    checkRouteForSearchQuery() {
+      const searchQuery = this.$route.query.search;
+      if (searchQuery) {
+        this.userQuery = searchQuery;
+        this.processQuery();
+      }     
     },
 
     async processQuery() {
@@ -160,7 +179,15 @@ export default {
     searchResults(newResults) {
       this.qaHistory[this.qaHistory.length - 1].searchResults = newResults;
     }
-  }
+  },
+  // Watch for changes in the route, especially for the 'search' query parameter
+  $route(to, from) {
+    // If the route change involves a change in the search query, process the new query
+    if (to.query.search !== from.query.search) {
+      this.userQuery = to.query.search || ''; // Set the userQuery to the new query or an empty string
+      this.processQuery(); // Call processQuery to handle the new query
+    }
+  },
 };
 </script>
 
@@ -327,10 +354,6 @@ span {
   font-size: 20px;
   color: var(--color-light-blue);
 }
-
-
-
-
 /* Input box styling */
 .input-box input[type="text"] {
   width: 800px; /* Adjust width considering the padding */
