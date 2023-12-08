@@ -6,7 +6,8 @@ export function createStore(currentToken, currentUser) {
   let store = _createStore({
     state: {
       token: currentToken || '',
-      user: currentUser || {}
+      user: currentUser || {},
+      pathways: [] 
     },
     mutations: {
       SET_AUTH_TOKEN(state, token) {
@@ -28,6 +29,9 @@ export function createStore(currentToken, currentUser) {
       SET_SEARCH_RESULTS(state, results) {
         state.searchResults = results;
       },
+      SET_PATHWAYS(state, pathways) {
+        state.pathways = pathways;
+      },
       
     },
     actions: {
@@ -45,6 +49,30 @@ export function createStore(currentToken, currentUser) {
           commit('SET_SEARCH_RESULTS', allResults);
         } catch (error) {
           console.error('Search error:', error);
+        }
+      },
+      async fetchRandomPathways({ commit }) {
+        try {
+          const totalItems = 21; // Total number of items available
+          const numberOfItemsToFetch = 9; // Number of items to display
+          let selectedIds = new Set();
+      
+          // Randomly pick unique IDs
+          while (selectedIds.size < numberOfItemsToFetch) {
+            const randomId = Math.floor(Math.random() * totalItems) + 1;
+            selectedIds.add(randomId);
+          }
+      
+          let pathways = [];
+          for (let id of selectedIds) {
+            const response = await PathwayService.getResultById(id);
+            pathways.push(response.data);
+          }
+      
+          // Assuming each response.data is an individual pathway item
+          commit('SET_PATHWAYS', pathways);
+        } catch (error) {
+          console.error('Error fetching random pathways:', error);
         }
       },
     }
