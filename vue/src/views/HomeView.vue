@@ -31,6 +31,15 @@
     <div class="grid-item home-nav">
       <!-- Navigation links like Home/Logout will be placed here -->
       <!-- Existing navigation functionality should be transferred here -->
+
+      <ul>
+        <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
+        <li><router-link v-bind:to="{name: 'Pathway'}" class="nav-link">Pathway</router-link></li>
+        <li><router-link v-bind:to="{name: 'Curriculum'}" class="nav-link">Curriculum</router-link></li>
+        <li><router-link v-bind:to="{name: 'Jobs'}" class="nav-link">Jobs</router-link></li>
+        <li><router-link v-bind:to="{name: 'AskForHelp'}" class="nav-link">Ask For Help</router-link></li>
+        <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" class="nav-link">Logout</router-link></li>
+      </ul>
     </div>
 
     <!-- Q.A Container and Input Box in the middle-center -->
@@ -163,7 +172,7 @@ export default {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  grid-template-columns: 200px 1fr 200px; /* Three unequal columns */
   grid-template-rows: auto; /* Rows adjust to content height */
   gap: 20px; /* Space between grid items */
   align-items: start; /* Align items to the top of their cell */
@@ -177,7 +186,9 @@ export default {
 .logo { grid-area: logo; }
 .welcome { grid-area: welcome; }
 .right-top-placeholder { grid-area: right-top-placeholder; }
-.nav { grid-area: nav; }
+.home-nav { 
+  grid-area: nav; 
+}
 .qa-section { grid-area: qa-section; }
 .motivational-quote { grid-area: motivational-quote; }
 .bottom-left-placeholder { grid-area: bottom-left-placeholder; }
@@ -239,7 +250,7 @@ export default {
 }
 
 /* Align navigation links to the left */
-.nav.home-nav {
+.home-nav {
   display: flex;
   justify-content: flex-start; /* Aligns content to the left */
   padding: 10px;
@@ -247,6 +258,12 @@ export default {
   text-align: center;
   font-size: 25px;
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+}
+
+li {
+  display: list-item;
+  list-style-type: none;
+  padding: 5px;
 }
 
 /* Styling for the initial input box */
