@@ -1,47 +1,51 @@
 <template>
     <div class="pathway grid-container">
-      <!-- Top Row -->
-      <div class="grid-item top-left logo">
-        <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
-      </div>
-      <div class="grid-item top-center welcome">
-        <h2>Pathway</h2>
-        <!-- Welcome content goes here -->
-      </div>
-      <div class="grid-item top-right">
-        <!-- This cell is intentionally left empty -->
-      </div>
-  
-      <!-- Middle Row -->
-      <div class="grid-item middle-left nav">
-        <!-- Navigation content goes here -->
-      </div>
-      <div class="grid-item middle-center pathway-content">
-        <!-- Displaying only the first 9 pathway titles -->
+        <!-- Top Row -->
+        <div class="grid-item top-left logo">
+            <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
+        </div>
+        <div class="grid-item top-center welcome">
+            <h2>Pathway</h2>
+            <!-- Welcome content goes here -->
+        </div>
+        <div class="grid-item top-right">
+            <!-- This cell is intentionally left empty -->
+        </div>
+
+        <!-- Middle Row -->
+        <div class="grid-item middle-left nav">
+            <!-- Navigation content goes here -->
+        </div>
         <div class="grid-item middle-center pathway-content">
-      <!-- Loop over the first 9 pathways and display each title in its own <p> tag -->
-      <p v-for="pathway in pathways.slice(0, 9)" :key="pathway.id" class="pathway-title" @click="goToLink(pathway.link)">
-        {{ pathway.title }}
-      </p>
+            <!-- Create a grid container for the pathway titles -->
+            <div class="pathways-grid">
+                <!-- Loop over the first 9 pathways and display each title in its own cell -->
+                <div v-for="pathway in pathways.slice(0, 9)" :key="pathway.id" class="pathway-cell"
+                    @click="goToLink(pathway.link)">
+                    <p class="pathway-title">{{ pathway.title }}</p>
+                </div>
+            </div>
+            <!-- Input Container -->
+            <div class="input-container">
+                <input type="text" placeholder="Input Routes Back to homeview" class="pathway-input">
+            </div>
+        </div>
+        <div class="grid-item middle-right motivational-quotes">
+            <!-- Motivational quotes content goes here -->
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="grid-item bottom-left">
+            <!-- This cell is intentionally left empty -->
+        </div>
+        <div class="grid-item bottom-center skyline">
+            <img src="img/Pittsburgh-90s.png" alt="City Skyline">
+        </div>
+        <div class="grid-item bottom-right">
+            <!-- this is intentionally right empty-->
+        </div>
     </div>
-      </div>
-      <div class="grid-item middle-right motivational-quotes">
-        <!-- Motivational quotes content goes here -->
-      </div>
-  
-      <!-- Bottom Row -->
-      <div class="grid-item bottom-left">
-        <!-- This cell is intentionally left empty -->
-      </div>
-      <div class="grid-item bottom-center skyline">
-        <img src="img/Pittsburgh-90s.png" alt="City Skyline">
-      </div>
-      <div class="grid-item bottom-right">
-        <!-- Input Box Below the Titles -->
-        <input type="text" placeholder="Input Routes Back to homeview" class="pathway-input">
-      </div>
-    </div>
-  </template>
+</template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
@@ -111,7 +115,54 @@ export default {
 /* empty1 does not need a style since it is intentionally left empty */
 
 .nav { grid-area: nav; }
-.pathway-content { grid-area: pathway-content; }
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create three columns */
+  grid-gap: 20px; /* Adjust to your preference for space between grid items */
+  padding: 20px; /* Padding around the entire grid */
+}
+
+.pathway-cell {
+  background-color: #fff; /* White background for the cell */
+  border-radius: 10px; /* Rounded corners for the cells */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 20px; /* Padding inside each cell */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  cursor: pointer; /* Change cursor to indicate the cell is clickable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.pathway-cell:hover {
+  transform: translateY(-5px); /* Slightly raise the cell on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow for lifted effect */
+}
+
+.pathway-title {
+  margin: 0; /* Remove default margin from paragraph tags */
+  font-size: 20px; /* Adjust font size as needed */
+  font-family: prompt;
+  color: var(--color-light-blue);
+  text-align: center; /* Center text */
+}
+/* Style for the input container */
+.input-container {
+  display: flex;
+  justify-content: center; /* Center the input horizontally */
+  padding: 20px;
+}
+
+/* Style for the input box */
+.pathway-input {
+  width: 100%; /* Make the input box as wide as its container */
+  max-width: calc(100% - 40px); /* Adjust based on the padding of the parent container */
+  margin: 0 auto; /* Center the input box if it's not as wide as the container */
+  padding: 10px 15px; /* Padding inside the input box */
+  border-radius: 10px; /* Rounded corners for the input box */
+  border: 1px solid #ccc; /* Border for the input box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the input box */
+}
 .motivational-quotes { grid-area: motivational-quotes; }
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
