@@ -1,0 +1,24 @@
+:root {
+    --color-white: white;    
+    --color-pink:#D1439E; 
+    --color-purple: #54276f; 
+    --color-light-purple: #c575f3;
+    --color-light-blue: #1da5be; 
+    --color-dark-blue: #131c5a; 
+    --color-neon-green: #15c508;
+}
+body {
+    background-color: var(--color-lightest);
+}
+
+.header {
+    background-color: var(--color-light);
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family:Source 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: auto;
+}
