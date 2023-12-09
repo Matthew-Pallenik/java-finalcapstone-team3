@@ -177,13 +177,14 @@ export default {
       this.userQuery = '';
     }
   },
-  filterResults(){
+  scoreAndSort(){
     //grab the current keyword array
     //loop through the result's titles and keywords checking if they contain the keywords in the array
     //make sure to account for case
     //assign a score to the results 10 points for each keyword in the title
     //5 points for each key word in the result's key words
-    // compare results scores and push the highest scoring result to the front of the result array to be displayed
+    //update each results score in the store (each object already has a score set to zero)
+    // compare results scores and and reorder the results array from highest score to lowest score
     //make sure the new array is sorted properly and displaying properly( this part may affect or be called in the process query)    
   },
 
