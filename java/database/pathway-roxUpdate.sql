@@ -1,34 +1,13 @@
 START TRANSACTION;
-
 DROP TABLE IF EXISTS pathway;
 
--- Create a sequence for generating numbers
-CREATE SEQUENCE pathway_entry_id_seq;
-
--- Create the pathway table
 CREATE TABLE pathway(
-    entry_id VARCHAR(255) NOT NULL,
+    entry_id serial NOT NULL,
     title VARCHAR(200) NOT NULL,
     description VARCHAR(1500),
     keywords VARCHAR(500),
-    link VARCHAR(2000),
-    PRIMARY KEY (entry_id)
+    link VARCHAR(2000)
 );
-
--- Create a trigger function
-CREATE OR REPLACE FUNCTION pathway_entry_id_trigger()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.entry_id := 'p' || NEXTVAL('pathway_entry_id_seq');
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Add the trigger to the table
-CREATE TRIGGER pathway_before_insert
-BEFORE INSERT ON pathway
-FOR EACH ROW EXECUTE FUNCTION pathway_entry_id_trigger();
-
 COMMIT;
 
 INSERT INTO pathway(title, description, keywords, link) VALUES

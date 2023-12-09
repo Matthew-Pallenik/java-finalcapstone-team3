@@ -173,6 +173,9 @@ export default {
       this.userQuery = '';
     }
   },
+  filterResults(){
+
+  },
 
   watch: {
     // Watch for changes in the Vuex state's searchResults and update local data

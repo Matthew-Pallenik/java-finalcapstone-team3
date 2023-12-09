@@ -8,7 +8,7 @@ const http = axios.create({
 export default {
     //sends the keys over and then gets a response that matches the key word
     addUserInput(key){
-        return http.get(`/curriculumResponses/keys/${key}`)
+        return http.get(`/curriculumResponses/${key}`)
     },
 
     //send id over and then gets a response that matches the id

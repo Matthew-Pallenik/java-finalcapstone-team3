@@ -1,34 +1,13 @@
 START TRANSACTION;
-
 DROP TABLE IF EXISTS curriculum;
 
--- Create a new sequence with a different name
-CREATE SEQUENCE curriculum_entry_id_seq2;
-
--- Create the curriculum table
 CREATE TABLE curriculum(
-    entry_id VARCHAR(255) NOT NULL,
+    entry_id serial NOT NULL,
     title VARCHAR(200) NOT NULL,
-    description VARCHAR(1500),
+    description VARCHAR(2000),
     keywords VARCHAR(500),
-    link VARCHAR(2000),
-    PRIMARY KEY (entry_id)
+    link VARCHAR(2000)
 );
-
--- Create a trigger function
-CREATE OR REPLACE FUNCTION curriculum_entry_id_trigger()
-RETURNS TRIGGER AS $$
-BEGIN
-    NEW.entry_id := 'c' || NEXTVAL('curriculum_entry_id_seq2');
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Add the trigger to the table
-CREATE TRIGGER curriculum_before_insert
-BEFORE INSERT ON curriculum
-FOR EACH ROW EXECUTE FUNCTION curriculum_entry_id_trigger();
-
 COMMIT;
 
 INSERT INTO curriculum(title, description, keywords, link) VALUES
@@ -53,7 +32,7 @@ INSERT INTO curriculum(title, description, keywords, link) VALUES
 (
 'Java - Intro',
 
-'Java is a computer programming language developed by Sun Microsystems in 1995, later acquired by Oracle. Java’s syntax is similar to earlier programming languages like C and C++. However, unlike those languages, Java was designed to be compiled and run on a virtual machine, making it more readily deployable on a wide variety of platforms. When you write a Java program, the code you write is referred to as source code and is stored in a file named with the “.java�? extension. Before you can run the program, you must compile that source code into bytecode. The bytecode file has the same name as the source code file, but it has the “.class�? extension. Bytecode is highly optimized and is intended for processing by the virtual machine, rather than being read or edited by programmers. A JVM (Java Virtual Machine) is a program that runs Java bytecode. A JDK (Java Development Kit) is a collection of software that includes a JVM along with other development tools and standard libraries.',
+'Java is a computer programming language developed by Sun Microsystems in 1995, later acquired by Oracle. Java’s syntax is similar to earlier programming languages like C and C++. However, unlike those languages, Java was designed to be compiled and run on a virtual machine, making it more readily deployable on a wide variety of platforms. When you write a Java program, the code you write is referred to as source code and is stored in a file named with the “.java�? extension. Before you can run the program, you must compile that source code into bytecode. The bytecode file has the same name as the source code file, but it has the “.class�? extension. Bytecode is highly optimized and is intended for processing by the virtual machine, rather than being read or edited by programmers. A JVM (Java Virtual Machine) is a program that runs Java bytecode. A JDK (Java Development Kit) is a collection of software that includes a JVM along with other development tools and standard libraries.',
 
 'Java | intro | JVM | JDK | source code | bytecode | virtual machine | compiler | language | .class',
 

@@ -33,10 +33,20 @@ export function createStore(currentToken, currentUser) {
         state.searchResults = results;
       },
       SET_PATHWAYS(state, pathways) {
-        state.pathways = pathways;
+        state.pathways = pathways.map(pathway => ({
+          ...pathway,
+          originalId: pathway.id, // Preserve the original ID
+          id: `p${pathway.id}`, // Adding unique identifier
+          score: 0 // Initializing score
+        }));
       },
       SET_CURRICULUM(state, curriculums){
-        state.curriculums = curriculums;
+        state.curriculums = curriculums.map(curriculum => ({
+          ...curriculum,
+          originalId: curriculum.id, // Preserve the original ID
+          id: `c${curriculum.id}`, // Adding unique identifier
+          score: 0 // Initializing score
+        }));
       },
       SET_PREFERRED_NAME(state, name) {
         state.preferredName = name;
@@ -50,8 +60,12 @@ export function createStore(currentToken, currentUser) {
           let allResults = [];
     
           for (const key of keywords) {
-            const response = await PathwayService.addUserInput(key);
-            allResults.push(...response.data); // Assuming each response is an array of results
+            const pathwayResponse = await PathwayService.addUserInput(key);
+            allResults.push(...pathwayResponse.data); // Assuming each response is an array of results
+
+            const curriculumResponse = await CurriculumService.addUserInput(key);
+            allResults.push(...curriculumResponse.data);
+
           }
     
           // Combine and possibly de-duplicate results here, if necessary
