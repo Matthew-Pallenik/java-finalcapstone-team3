@@ -225,10 +225,6 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: 275px 1fr 200px; /* Three unequal columns */
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px; /* Three unequal columns */
   grid-template-rows: auto; /* Rows adjust to content height */
   gap: 20px; /* Space between grid items */
   align-items: start; /* Align items to the top of their cell */
@@ -315,8 +311,6 @@ export default {
   margin-left: 20px;
   text-align: center;
   font-size: 25px;
-  font-family: prompt;
-  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
   background-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 0.5rem;
 }
@@ -330,12 +324,6 @@ export default {
 .home-nav a:hover{
   color: #1dd3da;
   
-  justify-content: flex-start; /* Aligns content to the left */
-  padding: 10px;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 25px;
-  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
 }
 
 li {
@@ -344,7 +332,7 @@ li {
   padding: 10px;
 }
 
-ul {
+ul{
   white-space: nowrap;
 }
 
