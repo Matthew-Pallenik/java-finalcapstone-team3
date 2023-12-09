@@ -181,11 +181,10 @@ export default {
     //grab the current keyword array
     //loop through the result's titles and keywords checking if they contain the keywords in the array
     //make sure to account for case
-    //sign a score to the results 10 points for each keyword in the title
+    //assign a score to the results 10 points for each keyword in the title
     //5 points for each key word in the result's key words
     // compare results scores and push the highest scoring result to the front of the result array to be displayed
-    //make sure the new array is sorted properly and displaying properly( this part may affect or be called in the process query)
-    
+    //make sure the new array is sorted properly and displaying properly( this part may affect or be called in the process query)    
   },
 
   watch: {

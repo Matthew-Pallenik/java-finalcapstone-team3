@@ -29,7 +29,7 @@ export function createStore(currentToken, currentUser) {
         state.token = '';
         state.user = {};
         axios.defaults.headers.common = {};
-      },
+      },      
       SET_SEARCH_RESULTS(state, results) {
         state.searchResults = results;
       },
@@ -40,7 +40,7 @@ export function createStore(currentToken, currentUser) {
           id: `p${pathway.id}`, // Adding unique identifier
           score: 0 // Initializing score
         }));
-      },
+      }, 
       SET_CURRICULUM(state, curriculums){
         state.curriculums = curriculums.map(curriculum => ({
           ...curriculum,
@@ -56,7 +56,8 @@ export function createStore(currentToken, currentUser) {
         state.queryKeywords = keywords;
       },
       
-    },
+    },   
+    
     actions: {
       // New action to process the query into keywords and store them
       processQuery({ commit }, query) {
@@ -71,16 +72,23 @@ export function createStore(currentToken, currentUser) {
       // Modified performSearch action
       async performSearch({ commit, state }) {
         try {
-          let allResults = [];
+          let pathway = [];
+          let curriculum = [];
+
           for (const key of state.queryKeywords) {
             const pathwayResponse = await PathwayService.addUserInput(key);
-            allResults.push(...pathwayResponse.data);
+            pathway.push(...pathwayResponse.data);
+            commit('SET_PATHWAYS', pathway);
 
             const curriculumResponse = await CurriculumService.addUserInput(key);
-            allResults.push(...curriculumResponse.data);
+            curriculum.push(...curriculumResponse.data);
+            commit('SET_CURRICULUM', curriculum);
           }
 
-          // Combine and possibly de-duplicate results here, if necessary
+          // Use the getter to get the combined results
+          let allResults = [...state.pathways, ...state.curriculums];
+
+          // Commit the combined results
           commit('SET_SEARCH_RESULTS', allResults);
         } catch (error) {
           console.error('Search error:', error);
