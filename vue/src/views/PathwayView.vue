@@ -90,6 +90,13 @@ export default {
     gap: 10px;/* Space between grid items */    
     justify-items: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns of equal size */
+    grid-template-rows: auto auto auto;
+    /* Three rows, size determined by content */
+    gap: 10px;
+    /* Space between grid items */
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -113,6 +120,19 @@ export default {
 #TE Logo {
     width: 250px;    
     height: auto;/* Maintain aspect ratio */ 
+    margin-top: 0px;
+    margin-left: 100px;
+    filter: drop-shadow(-1px -1px 1px #b5b6b8);
+    /* Shadow effect for depth */
+
+}
+
+#TE Logo {
+    width: 250px;
+    /* You may set a max-width instead if the image is too large */
+    height: auto;
+    /* Maintain aspect ratio */
+
 }
 
 .welcome {
@@ -132,6 +152,8 @@ export default {
     grid-area: nav;
     display: flex;
     justify-content: flex-start;/* Aligns content to the left */    
+    justify-content: flex-start;
+    /* Aligns content to the left */
     padding: 10px;
     margin-top: 20px;
     text-align: center;
@@ -177,12 +199,57 @@ li {
     font-family: prompt;
     color: var(--color-light-blue);
     text-align: center;/* Center text */
+    grid-template-columns: repeat(3, 1fr);
+    /* Create three columns */
+    grid-gap: 20px;
+    /* Adjust to your preference for space between grid items */
+    padding: 20px;
+    /* Padding around the entire grid */
+}
+
+.pathway-cell {
+    background-color: #fff;
+    /* White background for the cell */
+    border-radius: 10px;
+    /* Rounded corners for the cells */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    padding: 20px;
+    /* Padding inside each cell */
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    cursor: pointer;
+    /* Change cursor to indicate the cell is clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.pathway-cell:hover {
+    transform: translateY(-5px);
+    /* Slightly raise the cell on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Larger shadow for lifted effect */
+}
+
+.pathway-title {
+    margin: 0;
+    /* Remove default margin from paragraph tags */
+    font-size: 20px;
+    /* Adjust font size as needed */
+    font-family: prompt;
+    color: var(--color-light-blue);
+    text-align: center;
+    /* Center text */
 }
 
 /* Style for the input container */
 .input-container {
     display: flex;
-    justify-content: center;/* Center the input horizontally */    
+    justify-content: center;/* Center the input horizontally */        
+    /* Center the input horizontally */
     height: 50px;
     padding: 20px;
 }
@@ -195,10 +262,7 @@ li {
     padding: 10px 15px;    
     border-radius: 10px;    
     border: none;    
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);    
-    font-family: prompt;
-    font-size: 18px;
-    color: #5f5b5b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);        
 }
 
 .motivational-quotes {
@@ -209,6 +273,6 @@ li {
 
 .skyline {
     grid-area: skyline;
-    filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */   
+    filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */       
 }
 </style>

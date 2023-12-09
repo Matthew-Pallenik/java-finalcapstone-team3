@@ -210,6 +210,10 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: 275px 1fr 200px; /* Three unequal columns */
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px; /* Three unequal columns */
   grid-template-rows: auto; /* Rows adjust to content height */
   gap: 20px; /* Space between grid items */
   align-items: start; /* Align items to the top of their cell */
@@ -250,6 +254,7 @@ export default {
   width: 250px; /* You may set a max-width instead if the image is too large */
   height: auto; /* Maintain aspect ratio */
   margin-left: 75px;
+  /* Remove max-height if it's not needed or adjust accordingly */
 }
 
 
@@ -310,6 +315,12 @@ export default {
 .home-nav a:hover{
   color: #1dd3da;
   
+  justify-content: flex-start; /* Aligns content to the left */
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
 }
 
 li {
@@ -318,7 +329,7 @@ li {
   padding: 10px;
 }
 
-ul{
+ul {
   white-space: nowrap;
 }
 
