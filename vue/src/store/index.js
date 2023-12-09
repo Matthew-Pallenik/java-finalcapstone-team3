@@ -10,7 +10,8 @@ export function createStore(currentToken, currentUser) {
       user: currentUser || {},
       pathways: [],      
       preferredName: '', // Store the user's preferred name
-      curriculums: []
+      curriculums: [],
+      queryKeywords: [] //this is the user query broken into a array to be used in other methods like the perform search and filterResults.
     },
     mutations: {
       SET_AUTH_TOKEN(state, token) {
@@ -51,29 +52,41 @@ export function createStore(currentToken, currentUser) {
       SET_PREFERRED_NAME(state, name) {
         state.preferredName = name;
       },
+      SET_QUERY_KEYWORDS(state, keywords) {
+        state.queryKeywords = keywords;
+      },
       
     },
     actions: {
-      async performSearch({ commit }, query) {
+      // New action to process the query into keywords and store them
+      processQuery({ commit }, query) {
+        // Remove punctuation and split the query into individual words
+        const keywords = query.replace(/[.,/#!$%^&*;:{}=\-_`~()?]/g, '')
+                              .replace(/\s{2,}/g, ' ')
+                              .toLowerCase()
+                              .split(/\s+/);
+        commit('SET_QUERY_KEYWORDS', keywords);
+      },
+
+      // Modified performSearch action
+      async performSearch({ commit, state }) {
         try {
-          const keywords = query.split(/\s+/); // Split the query into individual words
           let allResults = [];
-    
-          for (const key of keywords) {
+          for (const key of state.queryKeywords) {
             const pathwayResponse = await PathwayService.addUserInput(key);
-            allResults.push(...pathwayResponse.data); // Assuming each response is an array of results
+            allResults.push(...pathwayResponse.data);
 
             const curriculumResponse = await CurriculumService.addUserInput(key);
             allResults.push(...curriculumResponse.data);
-
           }
-    
+
           // Combine and possibly de-duplicate results here, if necessary
           commit('SET_SEARCH_RESULTS', allResults);
         } catch (error) {
           console.error('Search error:', error);
         }
       },
+
       async fetchRandomPathways({ commit }) {
         try {
           const totalItems = 21; // Total number of items available
