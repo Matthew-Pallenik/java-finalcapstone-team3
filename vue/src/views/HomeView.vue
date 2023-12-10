@@ -140,8 +140,9 @@ export default {
       const searchQuery = this.$route.query.search;
       if (searchQuery) {
         this.userQuery = searchQuery;
+        // Use the updated processQuery method
         this.processQuery();
-      }     
+      }
     },
 
     async processQuery() {
@@ -152,8 +153,11 @@ export default {
       const placeholderAnswer = 'Processing your request...';
       this.qaHistory.push({ question: this.userQuery, answer: placeholderAnswer });
 
-      // Perform the search using the Vuex action 'performSearch'.
-      await this.performSearch(this.userQuery);
+      // Process the query into keywords and store them in Vuex state
+      await this.$store.dispatch('processQuery', this.userQuery);
+
+      // Perform the search using the stored keywords
+      await this.$store.dispatch('performSearch');
 
       // Check if there are search results and format them accordingly.
       // If there are search results, store only the first result as an object.
@@ -173,20 +177,34 @@ export default {
       this.userQuery = '';
     }
   },
+  scoreAndSort(){
+    //grab the current keyword array
+    //loop through the result's titles and keywords checking if they contain the keywords in the array
+    //make sure to account for case
+    //assign a score to the results 10 points for each keyword in the title
+    //5 points for each key word in the result's key words
+    //update each results score in the store (each object already has a score set to zero)
+    // compare results scores and and reorder the results array from highest score to lowest score
+    //make sure the new array is sorted properly and displaying properly( this part may affect or be called in the process query)    
+  },
 
   watch: {
-    // Watch for changes in the Vuex state's searchResults and update local data
+    // Watch for changes in the Vuex state's searchResults
     searchResults(newResults) {
-      this.qaHistory[this.qaHistory.length - 1].searchResults = newResults;
-    }
-  },
-  // Watch for changes in the route, especially for the 'search' query parameter
-  $route(to, from) {
-    // If the route change involves a change in the search query, process the new query
-    if (to.query.search !== from.query.search) {
-      this.userQuery = to.query.search || ''; // Set the userQuery to the new query or an empty string
-      this.processQuery(); // Call processQuery to handle the new query
-    }
+      // Assuming filterResults method is implemented to process the results
+      this.filterResults(newResults);
+    },
+
+    // Watch for changes in the route, especially for the 'search' query parameter
+    $route(to, from) {
+      // If the route change involves a change in the search query, process the new query
+      if (to.query.search !== from.query.search) {
+        this.userQuery = to.query.search || ''; // Set the userQuery to the new query or an empty string
+
+        // Instead of calling processQuery directly, call a method that handles the entire search process
+        this.processSearch(this.userQuery);
+      }
+    },
   },
 };
 </script>
@@ -246,6 +264,7 @@ export default {
 .grid-item.logo img {
   width: 250px; /* You may set a max-width instead if the image is too large */
   height: auto; /* Maintain aspect ratio */
+  margin-left: 75px;
   /* Remove max-height if it's not needed or adjust accordingly */
 }
 

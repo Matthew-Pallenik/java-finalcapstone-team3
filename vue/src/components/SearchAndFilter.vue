@@ -40,11 +40,12 @@ export default {
         ...mapState(['searchResults']),
     },
     methods: {
-        ...mapActions(['performSearch']),
+        ...mapActions(['performSearch', 'processQuery']), // Map the new processQuery action
         async processSearch(query) {
             this.isLoading = true;
             try {
-                await this.performSearch(query);
+                await this.processQuery(query); // Process the query into keywords
+                await this.performSearch(); // Perform the search with stored keywords
             } catch (error) {
                 console.error('Search error:', error);
             } finally {

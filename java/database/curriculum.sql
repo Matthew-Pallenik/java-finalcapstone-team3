@@ -240,6 +240,10 @@ https://blog.codinghorror.com/code-smells/'
 'abstract | final | protected | access | concrete | polymorphism',
 
 'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_Inheritance/01-introduction.md'
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1f20e022c5daa0f3e9dee9669a24bb08624a6018
 ),
 (
 'Unit Testing'
@@ -428,4 +432,6 @@ https://jwt.io/#debugger-io |
 https://en.wikipedia.org/wiki/JSON_Web_Token#Standard_fields |
 https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions |
 https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html'
+<<<<<<< HEAD
 ),
+
