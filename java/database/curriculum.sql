@@ -18,8 +18,7 @@ INSERT INTO curriculum(title, description, keywords, link) VALUES
 
 'file | command | command-line | CLI | explorer | terminal | Bash | folders | paths | directory',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/command-line/01-introduction.md |
-https://en.wikibooks.org/wiki/Guide_to_Unix/Commands/File_System_Utilities'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/command-line/01-introduction.md'
 ),
 (
 'Git',
@@ -74,8 +73,7 @@ There are many options available for storing data. Some reasons a developer migh
 
 'package | node | node.js | package.json | package-lock.json | node_modules | NPM | package manager | install',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/npm/01-whats-a-package.md |
-https://www.npmjs.com/'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/npm/01-whats-a-package.md'
 ),
 (
 'Visual Studio Code',
@@ -94,8 +92,7 @@ The Elements view includes an interactive tree view of the DOM (Document Object 
 
 'DevTools | Google Chrome | view | Elements | Console | Sources | Network',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/chrome-dev-tools/01-introduction.md |
-https://developer.chrome.com/docs/devtools/'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/chrome-dev-tools/01-introduction.md'
 ),
 (
 'Cypress',
@@ -104,8 +101,7 @@ https://developer.chrome.com/docs/devtools/'
 
 'Cypress | testing | framework | npm | tests | npm run test | headless | npm run test-headless',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/cypress/01-intro-to-cypress.md |
-https://lms.techelevator.com/content_link/gitlab.com/te-curriculum/intro-to-tools-lms/npm/01-whats-a-package.md'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/cypress/01-intro-to-cypress.md'
 ),
 (
 'Vue',
@@ -114,11 +110,7 @@ https://lms.techelevator.com/content_link/gitlab.com/te-curriculum/intro-to-tool
 
 'Vue | dependencies | project | JavaScript | framework | single-page application | SPA | VueJS | Vue DevTools | Volar | ESLint',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/vue/01-introduction-to-vue.md |
-https://vuejs.org/guide/introduction.html |
-https://eslint.org/ |
-https://vitejs.dev/ |
-https://vuejs.org/guide/quick-start.html#creating-a-vue-application'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/vue/01-introduction-to-vue.md'
 ),
 (
 'Variables and Data Types',
@@ -127,10 +119,7 @@ https://vuejs.org/guide/quick-start.html#creating-a-vue-application'
 
 'variable | comment | line comment | data type | boolean | byte | short | int | long | float | double | char | string | declare | data-type identifier | camel-case | constant | expression | precedence | concatenate | type conversion | widen | narrow | literal',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/01_Variables_Data_Types/01-variables.md |
-https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html |
-https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html |
-https://docs.oracle.com/javase/specs/jls/se11/html/jls-15.html#jls-15.17.3'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/01_Variables_Data_Types/01-variables.md'
 ),
 (
 'Logical Branching',
@@ -175,16 +164,7 @@ https://docs.oracle.com/javase/specs/jls/se11/html/jls-15.html#jls-15.17.3'
 
 'collection | fixed | import | data structures | java.util.list | list | ArrayList | ordered | foreach | stack | queue | push | pop | LinkedList | offer | poll | add | remove | get',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/06_Collections_Part_1_Lists_Stacks_Queues/01-array-recap.md |
-https://docs.oracle.com/javase/tutorial/java/package/usepkgs.html |
-https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html |
-https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html |
-https://docs.oracle.com/javase/tutorial/essential/exceptions/ |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/06_Collections_Part_1_Lists_Stacks_Queues/01-array-recap.md'
 ),
 (
 'Collections (Part 2)',
@@ -193,11 +173,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedLis
 
 'binary search | map | key | value | put | get | containsKey | entry set | hashmap | set | hashcode | add | remove | hashset',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/07_Collections_Part_2_Maps/01-introduction.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/07_Collections_Part_2_Maps/01-introduction.md'
 ),
 (
 'Classes and Encapsulation',
@@ -206,8 +182,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.h
 
 'class | state | instance | blueprint | behavior | encapsulation | object-oriented-programming | oop | attribute | property | properties | getter | setter | access modifier | this | derived | default | constructor | static | overload | coupled | loose | tight',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/01_Classes_and_Encapsulation/01-introduction.md |
-https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/01_Classes_and_Encapsulation/01-introduction.md'
 ),
 (
 'Inheritance',
@@ -216,10 +191,7 @@ https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html'
 
 'object-oriented-programming | oop | inheritance | superclass | subclass | super | override | extend',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/02_Inheritance/01-inheritance.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/02_Inheritance/01-inheritance.md'
 ),
 (
 'Polymorphism',
@@ -228,8 +200,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.ht
 
 'object-oriented-programming | oop | polymorphism | code smell | loosely coupled | interface | implement',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/03_Polymorphism/01-whats-polymorphism.md |
-https://blog.codinghorror.com/code-smells/'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/03_Polymorphism/01-whats-polymorphism.md'
 ),
 (
 'Managing Inheritance',
@@ -256,9 +227,7 @@ x'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_In
 
 'java | exception handling | feedback | error | raising exceptions | try | catch | try-catch | block | defensive programming | finally'
 
-'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/01_Exception_Handling/01-handling-program-errors.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html'
+'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/01_Exception_Handling/01-handling-program-errors.md'
 ),
 (
 'File I/O Reading'
@@ -330,10 +299,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception
 
 'JDBC | connection string | dataSource | JdbcTemplate | Spring framework | database connection | one-to-many | jdbcAuthorDao | sql queries'
 
-'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/01_Data_Access_Part_1/01-introduction.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html |
-https://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html | https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html | 
-https://spring.io/'
+'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/01_Data_Access_Part_1/01-introduction.md'
 ),
 (
 'Data Access (Part 2)'
@@ -360,10 +326,7 @@ https://spring.io/'
 
 'data security | data breaches | SQL injection | hashing | prevention | security | password'
 
-'https://lms.techelevator.com/cohorts/535/blocks/18/content_files/01_Data_Security/01-introduction.md |
-https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/ |
-https://en.wikipedia.org/wiki/Cryptographic_hash_function |
-https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/'
+'https://lms.techelevator.com/cohorts/535/blocks/18/content_files/01_Data_Security/01-introduction.md'
 ),
 (
 'Networking and HTTP'
@@ -381,10 +344,7 @@ https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/'
 
 'HTTP | web API | API | REST | Representational state transfer | public API | parsing JSON | status code | error handling | deserialization | Spring restTemplate | application programming interface | restTemplate'
 
-'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/02_Consuming_RESTful_APIs_Part_1/01-introduction.md |
-https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-resttemplate |
-https://www.exchangerate-api.com/ |
-https://www.postman.com/'
+'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/02_Consuming_RESTful_APIs_Part_1/01-introduction.md'
 ),
 (
 'Consuming RESTful APIs (Part 2)'
@@ -393,8 +353,7 @@ https://www.postman.com/'
 
 'put | get | post| delete | serialization | deserialization | http status code | caching | Postman | REST | API | HTTP methods | API endpoint | JSON format | web API | URL'
 
-'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/03_Consuming_RESTful_APIs_Part_2/01-introduction.md |
-https://httpwg.org/specs/rfc7231.html#method.definitions'
+'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/03_Consuming_RESTful_APIs_Part_2/01-introduction.md'
 ),
 (
 'Server-side APIs (Part 1)'
@@ -403,8 +362,7 @@ https://httpwg.org/specs/rfc7231.html#method.definitions'
 
 'API | Design patterns | MVC | Model | view | controller | Spring boot | restController | handler methods | RequestMapping | RequestBody | pathVariable | JSON | content negotiation'
 
-'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/01_Server_Side_APIs_Part_1/01-introduction-to-mvc.md |
-https://spring.io/projects/spring-framework'
+'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/01_Server_Side_APIs_Part_1/01-introduction-to-mvc.md'
 ),
 (
 'Server-side APIs (Part 2)'
@@ -422,11 +380,7 @@ https://spring.io/projects/spring-framework'
 
 'Authentication | Authorization | Knowledge factors | Ownership factors | Inherence factors | JSON Web Token | header | payload | signature | restTemplate | responseEntity| http response code | Unauthorized | forbidden'
 
-'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/03_Securing_APIs/01-introduction.md |
-https://jwt.io/#debugger-io |
-https://en.wikipedia.org/wiki/JSON_Web_Token#Standard_fields |
-https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions |
-https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html'
+'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/03_Securing_APIs/01-introduction.md'
 ),
 (
 'Intro to HTML',
@@ -435,8 +389,7 @@ https://docs.spring.io/spring-security/reference/servlet/authorization/expressio
 
 'http | tag | tags | hyper | text | markup | language | markup | header | web | visual studio code | visual',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/01-html-and-css.md | 
-https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/01-html-and-css.md'
 ),
 (
 'Intro to CSS',
@@ -454,8 +407,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'
 
 'css | box | model | box model | decorate | layout | web design | properties | selectors | elements | attributes | appearance',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/02_CSS_Selectors/07-cascading-and-specificity.md | 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/02_CSS_Selectors/07-cascading-and-specificity.md'
 ),
 (
 'CSS Grid',
@@ -464,9 +416,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'
 
 'grid | css | formatting | format | layout | appearance | appear | attributes | model | position | positioning | css grid | experience | organize | organization ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/03_CSS_Grid/01-layouts-in-css.md | 
-https://getbootstrap.com/ | 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/03_CSS_Grid/01-layouts-in-css.md'
 ),
 (
 'CSS Flexbox',
@@ -484,14 +434,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queri
 
 'javascript | script | web design | web | functionality | dynamic | variable | loosely typed | programming | language | ecma script | ecma  ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/01_Intro_to_JavaScript/01-introduction.md | 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence | 
-https://en.wikipedia.org/wiki/NaN | 
-https://en.wikipedia.org/wiki/ECMAScript | 
-https://stackoverflow.com/questions/912479/what-is-the-difference-between-javascript-and-ecmascript/913064 | 
-https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839 | 
-https://medium.freecodecamp.org/google-publishes-a-javascript-style-guide-here-are-some-key-lessons-1810b8ad050b | 
-https://softwareengineering.stackexchange.com/questions/134118/why-are-shortcuts-like-x-y-considered-good-practice'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/01_Intro_to_JavaScript/01-introduction.md'
 ),
 (
 'JavaScript Functions',
@@ -500,9 +443,7 @@ https://softwareengineering.stackexchange.com/questions/134118/why-are-shortcuts
 
 'javascript | script | web design | web | function | functions | anonymous function | anonymous | jsdoc | parameters | parameter | rest parameter',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/02_JavaScript_Functions/01-javascript-functions.md | 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters | 
-https://www.youtube.com/embed/_sifYGxcSA8'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/02_JavaScript_Functions/01-javascript-functions.md'
 ),
 (
 'Document Object Model',
@@ -511,8 +452,7 @@ https://www.youtube.com/embed/_sifYGxcSA8'
 
 'document object model | document | object | model | structure | dom | manipulate | manipulation | manipulating elements | append ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/03_DOM/01-introduction.md | 
-https://www.youtube.com/embed/r0IIW4-11T4'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/03_DOM/01-introduction.md'
 ),
 (
 'Event Handling',
@@ -521,9 +461,7 @@ https://www.youtube.com/embed/r0IIW4-11T4'
 
 'event | event handling | listener | javascript',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/04_Event_Handling/01-event-driven-programming.md | 
-https://developer.mozilla.org/en-US/docs/Web/API/Event | 
-https://www.sitepoint.com/event-bubbling-javascript/'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/04_Event_Handling/01-event-driven-programming.md'
 ),
 (
 'Intro to Vue.JS',
@@ -532,9 +470,7 @@ https://www.sitepoint.com/event-bubbling-javascript/'
 
 'vue | component | modular | web design | web application | web | reusability | reusable',
 
-'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/01_Intro_to_Vue_JS/01-introduction.md | 
-https://vuejs.org/guide/introduction.html | 
-https://te-video.netlify.app/vue-devtools/vue-devtools_player'
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/01_Intro_to_Vue_JS/01-introduction.md'
 ),
 (
 'Vue Event Handling',
