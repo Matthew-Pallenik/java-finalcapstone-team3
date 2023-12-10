@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS curriculum;
 CREATE TABLE curriculum(
     entry_id serial NOT NULL,
     title VARCHAR(200) NOT NULL,
-    description VARCHAR(1500),
+    description VARCHAR(3000),
     keywords VARCHAR(500),
     link VARCHAR(2000)
 );
@@ -18,8 +18,7 @@ INSERT INTO curriculum(title, description, keywords, link) VALUES
 
 'file | command | command-line | CLI | explorer | terminal | Bash | folders | paths | directory',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/command-line/01-introduction.md |
-https://en.wikibooks.org/wiki/Guide_to_Unix/Commands/File_System_Utilities'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/command-line/01-introduction.md'
 ),
 (
 'Git',
@@ -74,8 +73,7 @@ There are many options available for storing data. Some reasons a developer migh
 
 'package | node | node.js | package.json | package-lock.json | node_modules | NPM | package manager | install',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/npm/01-whats-a-package.md |
-https://www.npmjs.com/'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/npm/01-whats-a-package.md'
 ),
 (
 'Visual Studio Code',
@@ -94,8 +92,7 @@ The Elements view includes an interactive tree view of the DOM (Document Object 
 
 'DevTools | Google Chrome | view | Elements | Console | Sources | Network',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/chrome-dev-tools/01-introduction.md |
-https://developer.chrome.com/docs/devtools/'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/chrome-dev-tools/01-introduction.md'
 ),
 (
 'Cypress',
@@ -104,8 +101,7 @@ https://developer.chrome.com/docs/devtools/'
 
 'Cypress | testing | framework | npm | tests | npm run test | headless | npm run test-headless',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/cypress/01-intro-to-cypress.md |
-https://lms.techelevator.com/content_link/gitlab.com/te-curriculum/intro-to-tools-lms/npm/01-whats-a-package.md'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/cypress/01-intro-to-cypress.md'
 ),
 (
 'Vue',
@@ -114,11 +110,7 @@ https://lms.techelevator.com/content_link/gitlab.com/te-curriculum/intro-to-tool
 
 'Vue | dependencies | project | JavaScript | framework | single-page application | SPA | VueJS | Vue DevTools | Volar | ESLint',
 
-'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/vue/01-introduction-to-vue.md |
-https://vuejs.org/guide/introduction.html |
-https://eslint.org/ |
-https://vitejs.dev/ |
-https://vuejs.org/guide/quick-start.html#creating-a-vue-application'
+'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/vue/01-introduction-to-vue.md'
 ),
 (
 'Variables and Data Types',
@@ -127,10 +119,7 @@ https://vuejs.org/guide/quick-start.html#creating-a-vue-application'
 
 'variable | comment | line comment | data type | boolean | byte | short | int | long | float | double | char | string | declare | data-type identifier | camel-case | constant | expression | precedence | concatenate | type conversion | widen | narrow | literal',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/01_Variables_Data_Types/01-variables.md |
-https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html |
-https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html |
-https://docs.oracle.com/javase/specs/jls/se11/html/jls-15.html#jls-15.17.3'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/01_Variables_Data_Types/01-variables.md'
 ),
 (
 'Logical Branching',
@@ -175,16 +164,7 @@ https://docs.oracle.com/javase/specs/jls/se11/html/jls-15.html#jls-15.17.3'
 
 'collection | fixed | import | data structures | java.util.list | list | ArrayList | ordered | foreach | stack | queue | push | pop | LinkedList | offer | poll | add | remove | get',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/06_Collections_Part_1_Lists_Stacks_Queues/01-array-recap.md |
-https://docs.oracle.com/javase/tutorial/java/package/usepkgs.html |
-https://docs.oracle.com/javase/tutorial/collections/interfaces/index.html |
-https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html |
-https://docs.oracle.com/javase/tutorial/essential/exceptions/ |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/06_Collections_Part_1_Lists_Stacks_Queues/01-array-recap.md'
 ),
 (
 'Collections (Part 2)',
@@ -193,11 +173,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedLis
 
 'binary search | map | key | value | put | get | containsKey | entry set | hashmap | set | hashcode | add | remove | hashset',
 
-'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/07_Collections_Part_2_Maps/01-introduction.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html'
+'https://lms.techelevator.com/cohorts/535/blocks/7/content_files/07_Collections_Part_2_Maps/01-introduction.md'
 ),
 (
 'Classes and Encapsulation',
@@ -206,8 +182,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.h
 
 'class | state | instance | blueprint | behavior | encapsulation | object-oriented-programming | oop | attribute | property | properties | getter | setter | access modifier | this | derived | default | constructor | static | overload | coupled | loose | tight',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/01_Classes_and_Encapsulation/01-introduction.md |
-https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/01_Classes_and_Encapsulation/01-introduction.md'
 ),
 (
 'Inheritance',
@@ -216,10 +191,7 @@ https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html'
 
 'object-oriented-programming | oop | inheritance | superclass | subclass | super | override | extend',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/02_Inheritance/01-inheritance.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/02_Inheritance/01-inheritance.md'
 ),
 (
 'Polymorphism',
@@ -228,8 +200,7 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.ht
 
 'object-oriented-programming | oop | polymorphism | code smell | loosely coupled | interface | implement',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/03_Polymorphism/01-whats-polymorphism.md |
-https://blog.codinghorror.com/code-smells/'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/03_Polymorphism/01-whats-polymorphism.md'
 ),
 (
 'Managing Inheritance',
@@ -238,195 +209,178 @@ https://blog.codinghorror.com/code-smells/'
 
 'abstract | final | protected | access | concrete | polymorphism',
 
-x'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_Inheritance/01-introduction.md'
+'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_Inheritance/01-introduction.md'
 ),
 (
-'Unit Testing'
+'Unit Testing',
 
-'Unit testing is a crucial aspect of software testing, focusing on verifying the functionality of individual components or units within an application. These units represent the smallest testable parts of the software, typically corresponding to methods in object-oriented languages like Java. Unit tests are code snippets designed to automatically run and evaluate the performance of specific units, ensuring that each unit operates according to its design. By automating the testing process, unit tests seamlessly integrate into the overall development cycle. To illustrate, consider the analogy of building a car with components such as ball bearings, brakes, and wheels. Unit tests for ball bearings might assess their ability to handle a billion rotations, while brake tests may evaluate stability in slippery conditions. Each component undergoes thorough testing, mirroring the meticulous inspection of individual parts in car manufacturing. Key characteristics of unit tests include automation, isolation of program parts for individual correctness verification, early detection of issues, and the promotion of thoughtful consideration by developers regarding inputs, outputs, and error conditions. In essence, unit tests play a fundamental role in maintaining software integrity and reliability throughout the development process.'
+'Unit testing is a crucial aspect of software testing, focusing on verifying the functionality of individual components or units within an application. These units represent the smallest testable parts of the software, typically corresponding to methods in object-oriented languages like Java. Unit tests are code snippets designed to automatically run and evaluate the performance of specific units, ensuring that each unit operates according to its design. By automating the testing process, unit tests seamlessly integrate into the overall development cycle. To illustrate, consider the analogy of building a car with components such as ball bearings, brakes, and wheels. Unit tests for ball bearings might assess their ability to handle a billion rotations, while brake tests may evaluate stability in slippery conditions. Each component undergoes thorough testing, mirroring the meticulous inspection of individual parts in car manufacturing. Key characteristics of unit tests include automation, isolation of program parts for individual correctness verification, early detection of issues, and the promotion of thoughtful consideration by developers regarding inputs, outputs, and error conditions. In essence, unit tests play a fundamental role in maintaining software integrity and reliability throughout the development process.',
 
-'unit testing | testing | edge case | quality assurance | manual testing | automated testing | test | debug'
+'unit testing | testing | edge case | quality assurance | manual testing | automated testing | test | debug',
 
 'https://lms.techelevator.com/cohorts/535/blocks/12/content_files/01_Unit_Testing/01-whats-unit-testing.md'
 ),
 (
-'Exception Handling'
+'Exception Handling',
 
-'Java incorporates a robust exception handling mechanism to address unexpected scenarios during program execution, known as exception handling. This practice involves anticipating and managing anomalies to provide meaningful feedback to users when interacting with applications. Mistakes are inevitable, and effective exception handling is essential to convey clear error messages rather than cryptic ones. Properly implemented exception handling in Java enables the display of specific error messages to users and notifies other programmers about incomplete code execution. Without such handling, uncaught exceptions could potentially expose sensitive program information. Key concepts include the raising of exceptions during unexpected situations, abrupt program control stops, and the propagation of exceptions until caught. Developers utilize the try-catch keywords to manage potential errors, where the try block encapsulates code that might trigger an exception, and the catch block handles the exception, displaying relevant messages or logging them. Additionally, developers can employ the throw keyword to raise custom exceptions when code cannot complete its task, such as encountering null parameters or out-of-range values. In summary, Java''s exception handling is integral for user-friendly error messages, developer notification, and safeguarding against unintended exposure of sensitive information, contributing to the reliability and security of Java programs.'
+'Java incorporates a robust exception handling mechanism to address unexpected scenarios during program execution, known as exception handling. This practice involves anticipating and managing anomalies to provide meaningful feedback to users when interacting with applications. Mistakes are inevitable, and effective exception handling is essential to convey clear error messages rather than cryptic ones. Properly implemented exception handling in Java enables the display of specific error messages to users and notifies other programmers about incomplete code execution. Without such handling, uncaught exceptions could potentially expose sensitive program information. Key concepts include the raising of exceptions during unexpected situations, abrupt program control stops, and the propagation of exceptions until caught. Developers utilize the try-catch keywords to manage potential errors, where the try block encapsulates code that might trigger an exception, and the catch block handles the exception, displaying relevant messages or logging them. Additionally, developers can employ the throw keyword to raise custom exceptions when code cannot complete its task, such as encountering null parameters or out-of-range values. In summary, Java''s exception handling is integral for user-friendly error messages, developer notification, and safeguarding against unintended exposure of sensitive information, contributing to the reliability and security of Java programs.',
 
-'java | exception handling | feedback | error | raising exceptions | try | catch | try-catch | block | defensive programming | finally'
+'java | exception handling | feedback | error | raising exceptions | try | catch | try-catch | block | defensive programming | finally',
 
-'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/01_Exception_Handling/01-handling-program-errors.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html'
+'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/01_Exception_Handling/01-handling-program-errors.md'
 ),
 (
-'File I/O Reading'
+'File I/O Reading',
 
-'In programming, managing files—reading and writing—is commonplace, with file handling being a crucial skill. Understanding file manipulation is vital, given that data often resides in text files. Programming languages universally offer classes in their standard libraries for consistent file handling patterns. Java employs the Scanner class for file reading, capable of processing files character by character, line by line, or entirely. Understanding file reading involves grasping data streams—structures in computer science that read data as ordered bytes, akin to an assembly line. This stream-based approach accommodates varying file sizes, even exceeding gigabytes. To open a file in Java, obtain the file path, create a File object, and utilize a Scanner to open the file, preparing the data stream for text reading. Reading text involves a systematic while loop using hasNextLine() and nextLine() methods, processing the file line by line. File input and output inevitably introduce errors, like FileNotFoundExceptions for absent or deleted files. Efficient file closing is crucial to prevent locks that may impede other applications. The try-with-resources block in Java addresses these concerns, automatically closing the file and handling exceptions. This structure ensures a clean and secure file handling approach in Java programs.'
+'In programming, managing files—reading and writing—is commonplace, with file handling being a crucial skill. Understanding file manipulation is vital, given that data often resides in text files. Programming languages universally offer classes in their standard libraries for consistent file handling patterns. Java employs the Scanner class for file reading, capable of processing files character by character, line by line, or entirely. Understanding file reading involves grasping data streams—structures in computer science that read data as ordered bytes, akin to an assembly line. This stream-based approach accommodates varying file sizes, even exceeding gigabytes. To open a file in Java, obtain the file path, create a File object, and utilize a Scanner to open the file, preparing the data stream for text reading. Reading text involves a systematic while loop using hasNextLine() and nextLine() methods, processing the file line by line. File input and output inevitably introduce errors, like FileNotFoundExceptions for absent or deleted files. Efficient file closing is crucial to prevent locks that may impede other applications. The try-with-resources block in Java addresses these concerns, automatically closing the file and handling exceptions. This structure ensures a clean and secure file handling approach in Java programs.',
 
-'file | input | output | reading | scanner | data | stream | file path | try | try-with-resources'
+'file | input | output | reading | scanner | data | stream | file path | try | try-with-resources',
 
 'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/02_File_IO_Reading/01-file-input-and-output.md'
 ),
 (
-'File I/O Writing'
+'File I/O Writing',
 
-'Reading from one file and writing to another, a common practice in text file manipulations such as search and replace, can be facilitated using a try-with-resources block. This involves opening the relevant files for reading and writing simultaneously. However, a crucial cautionary note advises against reading and writing to the same file, as it can lead to various complications. To modify a file directly, like finding and replacing a word, it is recommended to follow an alternative approach: read from the original file, write to a new empty file, and only replace the original file with the new one once the process is successfully completed. This ensures data integrity and circumvents potential issues associated with simultaneous reading and writing to the same file.'
+'Reading from one file and writing to another, a common practice in text file manipulations such as search and replace, can be facilitated using a try-with-resources block. This involves opening the relevant files for reading and writing simultaneously. However, a crucial cautionary note advises against reading and writing to the same file, as it can lead to various complications. To modify a file directly, like finding and replacing a word, it is recommended to follow an alternative approach: read from the original file, write to a new empty file, and only replace the original file with the new one once the process is successfully completed. This ensures data integrity and circumvents potential issues associated with simultaneous reading and writing to the same file.',
 
-'file | input | output | writing | try-with-resources | scanner | print-writer | overwrites | file-output-stream'
+'file | input | output | writing | try-with-resources | scanner | print-writer | overwrites | file-output-stream',
 
 'https://lms.techelevator.com/cohorts/535/blocks/13/content_files/03_File_IO_Writing/01-writing-to-files.md'
 ),
 (
-'Intro to Databases'
+'Intro to Databases',
 
-'Persisting data is crucial to retain information beyond program execution. Simple text files suffice for small applications with limited, loosely organized data. However, business-oriented applications, like online bookstores, demand more robust solutions. Relational databases, organized collections of data with quick retrieval and update capabilities, excel in such scenarios. Unlike text files, relational databases, managed by Relational Database Management Systems (RDBMS), support large datasets and maintain consistency and integrity. A relational database resembles an Excel spreadsheet, consisting of tables with named columns and data types, allowing efficient storage and retrieval. The Structured Query Language (SQL) facilitates interaction with relational databases. SQL, a declarative language, enables developers to specify desired outcomes rather than step-by-step instructions. Three types of SQL statements serve distinct purposes: Data Manipulation Language (DML) for inserting, updating, deleting, and selecting data; Data Definition Language (DDL) for creating tables and defining data types; and Data Control Language (DCL) for managing database users and access permissions. RDBMS ensures data consistency by enforcing data type specifications for each table column. SQL accommodates various data types, including strings, numbers, booleans, dates, IP addresses, and geographic points.'
+'Persisting data is crucial to retain information beyond program execution. Simple text files suffice for small applications with limited, loosely organized data. However, business-oriented applications, like online bookstores, demand more robust solutions. Relational databases, organized collections of data with quick retrieval and update capabilities, excel in such scenarios. Unlike text files, relational databases, managed by Relational Database Management Systems (RDBMS), support large datasets and maintain consistency and integrity. A relational database resembles an Excel spreadsheet, consisting of tables with named columns and data types, allowing efficient storage and retrieval. The Structured Query Language (SQL) facilitates interaction with relational databases. SQL, a declarative language, enables developers to specify desired outcomes rather than step-by-step instructions. Three types of SQL statements serve distinct purposes: Data Manipulation Language (DML) for inserting, updating, deleting, and selecting data; Data Definition Language (DDL) for creating tables and defining data types; and Data Control Language (DCL) for managing database users and access permissions. RDBMS ensures data consistency by enforcing data type specifications for each table column. SQL accommodates various data types, including strings, numbers, booleans, dates, IP addresses, and geographic points.',
 
-'database | relational | RDBMS | SQL | data-type | varchar | DML | DDL | DCL | select | from | where'
+'database | relational | RDBMS | SQL | data-type | varchar | DML | DDL | DCL | select | from | where',
 
 'https://lms.techelevator.com/cohorts/535/blocks/10/content_files/01_Intro_to_Databases/01-relational-databases.md'
 ),
 (
-'Ordering, Limiting, and Grouping'
+'Ordering, Limiting, and Grouping',
 
-'By default, rows come back from the database in an unspecified order. It''s up to the DBMS to decide how it returns rows from a SELECT statement. However, by adding an ORDER BY clause, you can set the order the database returns your rows in. By default, all ORDER BY clauses are ASC or ascending, starting at the lowest value and going to the highest value. So if you''re ordering by a number, the first row you get back has the lowest value, and the last row has the highest value. For strings, a is considered the lowest value, so ASC order goes from a to z, which means it''s alphabetical. Adding two columns to the ORDER BY clause indicates to the server that you want it to first sort by the first column and then sort by the second column. You can also add another clause to your SQL to only return a certain number of rows, called the LIMIT clause. This can be useful for retrieving the top result of a query or for paging results from a SQL query. In PostgreSQL, the string concatenation operator is ||. Placing it between the names of two fields combines the contents of those fields into a single column in the result set. You can combine any number of fields and literal strings with the concatenation operator, and you can include any number of concatenated columns in the query results.'
+'By default, rows come back from the database in an unspecified order. It''s up to the DBMS to decide how it returns rows from a SELECT statement. However, by adding an ORDER BY clause, you can set the order the database returns your rows in. By default, all ORDER BY clauses are ASC or ascending, starting at the lowest value and going to the highest value. So if you''re ordering by a number, the first row you get back has the lowest value, and the last row has the highest value. For strings, a is considered the lowest value, so ASC order goes from a to z, which means it''s alphabetical. Adding two columns to the ORDER BY clause indicates to the server that you want it to first sort by the first column and then sort by the second column. You can also add another clause to your SQL to only return a certain number of rows, called the LIMIT clause. This can be useful for retrieving the top result of a query or for paging results from a SQL query. In PostgreSQL, the string concatenation operator is ||. Placing it between the names of two fields combines the contents of those fields into a single column in the result set. You can combine any number of fields and literal strings with the concatenation operator, and you can include any number of concatenated columns in the query results.',
 
-'SQL | ordering | limiting | grouping | order | aggregate function | concatenation | table'
+'SQL | ordering | limiting | grouping | order | aggregate function | concatenation | table',
 
 'https://lms.techelevator.com/cohorts/535/blocks/10/content_files/02_Ordering_Limiting_and_Grouping/01-introduction.md'
 ),
 (
-'SQL Joins'
+'SQL Joins',
 
-'Understanding relationships in databases is crucial for using the SELECT statement effectively. Relational databases derive their power from linking tables rather than just storing data. Two primary relationship types are one-to-many and many-to-many. In a one-to-many relationship, like cities and countries, a city is in one country, and a country has many cities. SQL tables model this with primary keys on both tables and a foreign key on the ''many'' side. Conversely, a many-to-many relationship, like films and actors, requires a join table, such as actor_film, connecting primary keys from both tables through foreign keys. The naming convention for tables and columns is usually singular and snake-cased. Primary keys follow the pattern (tablename)_id, and foreign keys share the name with their corresponding primary key. Join tables concatenate both table names alphabetically with an underscore. The query introduces subqueries, allowing SELECT statements within other statements. Subqueries enable dynamic retrieval without hardcoding IDs. The operation performed is an inner join, excluding entities with no corresponding entries in the linked table. To include all entities, an outer join is employed, providing flexibility in querying databases. SQL uses "left" and "right" to describe the two tables, designating the first as the left table and the second as the right table. A left outer join retrieves all rows from the left table, enhancing flexibility in querying databases.'
+'Understanding relationships in databases is crucial for using the SELECT statement effectively. Relational databases derive their power from linking tables rather than just storing data. Two primary relationship types are one-to-many and many-to-many. In a one-to-many relationship, like cities and countries, a city is in one country, and a country has many cities. SQL tables model this with primary keys on both tables and a foreign key on the ''many'' side. Conversely, a many-to-many relationship, like films and actors, requires a join table, such as actor_film, connecting primary keys from both tables through foreign keys. The naming convention for tables and columns is usually singular and snake-cased. Primary keys follow the pattern (tablename)_id, and foreign keys share the name with their corresponding primary key. Join tables concatenate both table names alphabetically with an underscore. The query introduces subqueries, allowing SELECT statements within other statements. Subqueries enable dynamic retrieval without hardcoding IDs. The operation performed is an inner join, excluding entities with no corresponding entries in the linked table. To include all entities, an outer join is employed, providing flexibility in querying databases. SQL uses "left" and "right" to describe the two tables, designating the first as the left table and the second as the right table. A left outer join retrieves all rows from the left table, enhancing flexibility in querying databases.',
 
-'SQL Joins | SQL | primary key | foreign key | constraint | cardinality | one-to-many | many-to-many | subquery | join | table'
+'SQL Joins | SQL | primary key | foreign key | constraint | cardinality | one-to-many | many-to-many | subquery | join | table',
 
 'https://lms.techelevator.com/cohorts/535/blocks/10/content_files/03_Joins/01-primary-and-foreign-keys.md'
 ),
 (
-' Insert, Update, and Delete'
+'Insert, Update, and Delete',
 
-'To modify data in a database, SQL employs three key statements: INSERT for adding rows, UPDATE for altering existing data, and DELETE for removing records. When inserting, the INSERT statement is used, and it''s recommended to specify columns to avoid ambiguity. Serial columns, such as auto-incrementing integers, serve as surrogate primary keys. Although these keys aren''t explicitly included in INSERT statements, a RETURNING clause can retrieve the newly generated values, eliminating the need for additional queries. In situations involving foreign keys, subqueries are employed to dynamically obtain primary key values from related tables. The UPDATE statement facilitates changing existing data, necessitating a WHERE clause to specify the target rows. Caution is urged to avoid unintended modifications, emphasizing the importance of using a WHERE clause. Overall, understanding these SQL statements is essential for effective data management within a relational database system.'
+'To modify data in a database, SQL employs three key statements: INSERT for adding rows, UPDATE for altering existing data, and DELETE for removing records. When inserting, the INSERT statement is used, and it''s recommended to specify columns to avoid ambiguity. Serial columns, such as auto-incrementing integers, serve as surrogate primary keys. Although these keys aren''t explicitly included in INSERT statements, a RETURNING clause can retrieve the newly generated values, eliminating the need for additional queries. In situations involving foreign keys, subqueries are employed to dynamically obtain primary key values from related tables. The UPDATE statement facilitates changing existing data, necessitating a WHERE clause to specify the target rows. Caution is urged to avoid unintended modifications, emphasizing the importance of using a WHERE clause. Overall, understanding these SQL statements is essential for effective data management within a relational database system.',
 
-'SQL | insert | update | delete | column | natural keys | surrogate keys | returning | subquery | where | constraint | foreign key constraint'
+'SQL | insert | update | delete | column | natural keys | surrogate keys | returning | subquery | where | constraint | foreign key constraint',
 
 'https://lms.techelevator.com/cohorts/535/blocks/10/content_files/04_INSERT_UPDATE_and_DELETE/01-introduction.md'
 ),
 (
-'Database Design'
+'Database Design',
 
-'In the journey through database fundamentals, you''ve mastered CRUD operations, understood table components, and comprehended the significance of primary and foreign keys. Now, it''s time to delve into database design. This process involves data modeling, logical design adhering to relational model rules, physical design optimization, and eventual implementation. A developer''s tasks encompass creating tables, sequences, indexes, views, and ensuring user access. Long-term database administration involves monitoring access, backups, performance enhancements, and privilege management, typically handled by a Database Administrator. Designing a relational database begins with data modeling, identifying key entities, determining primary keys for uniqueness, and establishing relationships like one-to-one, one-to-many, or many-to-many. The iterative process involves identifying main entities, assigning primary keys, and recognizing relationships. In the scenario of a recipe database, a many-to-many relationship between recipes and ingredients necessitates an associative entity—a linking table with composite primary keys. Additionally, considerations like cardinality and ordinality guide the representation of entity relationships in the design. This comprehensive overview equips you to embark on effective database design and implementation.'
+'In the journey through database fundamentals, you''ve mastered CRUD operations, understood table components, and comprehended the significance of primary and foreign keys. Now, it''s time to delve into database design. This process involves data modeling, logical design adhering to relational model rules, physical design optimization, and eventual implementation. A developer''s tasks encompass creating tables, sequences, indexes, views, and ensuring user access. Long-term database administration involves monitoring access, backups, performance enhancements, and privilege management, typically handled by a Database Administrator. Designing a relational database begins with data modeling, identifying key entities, determining primary keys for uniqueness, and establishing relationships like one-to-one, one-to-many, or many-to-many. The iterative process involves identifying main entities, assigning primary keys, and recognizing relationships. In the scenario of a recipe database, a many-to-many relationship between recipes and ingredients necessitates an associative entity—a linking table with composite primary keys. Additionally, considerations like cardinality and ordinality guide the representation of entity relationships in the design. This comprehensive overview equips you to embark on effective database design and implementation.',
 
-'database design | CRUD | primary key | foreign key | data modeling | logical design | physical design | simple key | composite key | one-to-one | one-to-many | many-to-many'
+'database design | CRUD | primary key | foreign key | data modeling | logical design | physical design | simple key | composite key | one-to-one | one-to-many | many-to-many',
 
 'https://lms.techelevator.com/cohorts/535/blocks/10/content_files/05_Database_Design/01-introduction.md'
 ),
 (
-'Data access (Part 1)'
+'Data access (Part 1)',
 
-'To connect to a database in a Java application, you need to understand the Java Database Connectivity (JDBC) API. For example, connecting to a database named "bookstore" on localhost and port 5432 would use "jdbc:postgresql://localhost:5432/bookstore." Next, you utilize the JDBC DataSource interface, responsible for creating database connections. The Apache BasicDataSource, an open-source implementation, is commonly used for simplicity. This DataSource is then passed to JdbcTemplate, a class from the Spring framework, which streamlines SQL database interactions by managing low-level details like connection handling. In the context of a one-to-many relationship between two tables (authors and books), exemplified by the JdbcAuthorDao and JdbcBookDao classes, running SQL queries is facilitated by JdbcTemplate''s methods. The queryForRowSet() method, for instance, takes a SQL query as a parameter. However, dealing with null values in database columns requires caution. For instance, attempting to convert a database NULL for a value type may yield default values (0 for integers, false for booleans), while for reference types, like Date or BigDecimal, a null value can lead to NullPointerExceptions when calling methods or attributes. To mitigate this, it''s crucial to check for null before invoking any methods on potentially null values.'
+'To connect to a database in a Java application, you need to understand the Java Database Connectivity (JDBC) API. For example, connecting to a database named "bookstore" on localhost and port 5432 would use "jdbc:postgresql://localhost:5432/bookstore." Next, you utilize the JDBC DataSource interface, responsible for creating database connections. The Apache BasicDataSource, an open-source implementation, is commonly used for simplicity. This DataSource is then passed to JdbcTemplate, a class from the Spring framework, which streamlines SQL database interactions by managing low-level details like connection handling. In the context of a one-to-many relationship between two tables (authors and books), exemplified by the JdbcAuthorDao and JdbcBookDao classes, running SQL queries is facilitated by JdbcTemplate''s methods. The queryForRowSet() method, for instance, takes a SQL query as a parameter. However, dealing with null values in database columns requires caution. For instance, attempting to convert a database NULL for a value type may yield default values (0 for integers, false for booleans), while for reference types, like Date or BigDecimal, a null value can lead to NullPointerExceptions when calling methods or attributes. To mitigate this, it''s crucial to check for null before invoking any methods on potentially null values.',
 
-'JDBC | connection string | dataSource | JdbcTemplate | Spring framework | database connection | one-to-many | jdbcAuthorDao | sql queries'
+'JDBC | connection string | dataSource | JdbcTemplate | Spring framework | database connection | one-to-many | jdbcAuthorDao | sql queries',
 
-'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/01_Data_Access_Part_1/01-introduction.md |
-https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html |
-https://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html | https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html | 
-https://spring.io/'
+'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/01_Data_Access_Part_1/01-introduction.md'
 ),
 (
-'Data Access (Part 2)'
+'Data Access (Part 2)',
 
-'SELECT queries, these statements are dynamic and employ SQL arguments. Exception handling is crucial to gracefully manage errors, whether related to SQL statements or server/database connectivity. DAO methods follow a consistent naming convention—create, update, and delete, followed by the object name. Exceptionally, delete methods include the property in the WHERE clause. Parameters and return types adhere to object instances for create and update methods, while delete methods utilize property values and return the affected row count. Associative table methods, like link and unlink, facilitate INSERT and DELETE operations with void return types. Error handling is imperative in DAO methods, and common exceptions like CannotGetJdbcConnectionException (for connection issues) and DataIntegrityViolationException (for duplicate or non-existing key issues) may occur. To maintain loose coupling in the DAO pattern, a custom DAO exception is recommended. This ensures that calling code remains independent of specific DAO implementations. The custom exception class implements the parent exception''s constructors. When dealing with INSERT statements, the process mirrors SELECT queries—construct the SQL string, bind SQL arguments, and invoke a JdbcTemplate method. The choice between methods depends on whether you expect a return value, such as when using a RETURNING clause to retrieve the primary key of the newly inserted row.'
+'SELECT queries, these statements are dynamic and employ SQL arguments. Exception handling is crucial to gracefully manage errors, whether related to SQL statements or server/database connectivity. DAO methods follow a consistent naming convention—create, update, and delete, followed by the object name. Exceptionally, delete methods include the property in the WHERE clause. Parameters and return types adhere to object instances for create and update methods, while delete methods utilize property values and return the affected row count. Associative table methods, like link and unlink, facilitate INSERT and DELETE operations with void return types. Error handling is imperative in DAO methods, and common exceptions like CannotGetJdbcConnectionException (for connection issues) and DataIntegrityViolationException (for duplicate or non-existing key issues) may occur. To maintain loose coupling in the DAO pattern, a custom DAO exception is recommended. This ensures that calling code remains independent of specific DAO implementations. The custom exception class implements the parent exception''s constructors. When dealing with INSERT statements, the process mirrors SELECT queries—construct the SQL string, bind SQL arguments, and invoke a JdbcTemplate method. The choice between methods depends on whether you expect a return value, such as when using a RETURNING clause to retrieve the primary key of the newly inserted row.',
 
-'DAO methods | insert | update | delete | JDBCTemplate | exception handling | exception | SQL queries | error handling'
+'DAO methods | insert | update | delete | JDBCTemplate | exception handling | exception | SQL queries | error handling',
 
 'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/02_Data_Access_Part_2/01-introduction.md'
 ),
 (
-'DAO Testing'
+'DAO Testing',
 
-'Integration testing is essential for validating the collaboration of code units and their interactions with external dependencies, such as databases. These tests, akin to unit tests, prioritize reliability, independence, and clarity, following the Arrange-Act-Assert pattern to set up conditions, execute actions, and validate outcomes. JUnit remains the go-to framework for integration testing. However, integration tests distinguish themselves by potentially slower speeds due to external resource access and increased setup complexity. This complexity is particularly pronounced in DAO testing, where methods modify databases. DAO testing faces challenges in handling data retrieval or modification within databases, demanding awareness of the database state for accurate expectations. To overcome this, integration tests leverage mock data, eliminating ambiguity and providing precise data definitions for DAO interactions. Mock data, often defined in SQL files within the src/test/resources folder, offers flexibility for testing. For instance, a JdbcAuthorDao test might utilize SQL to establish a testing database with specific author data. It''s crucial to note that this testing database is temporary, existing solely during test execution. Any modifications to mock data should be made in the corresponding SQL file.'
+'Integration testing is essential for validating the collaboration of code units and their interactions with external dependencies, such as databases. These tests, akin to unit tests, prioritize reliability, independence, and clarity, following the Arrange-Act-Assert pattern to set up conditions, execute actions, and validate outcomes. JUnit remains the go-to framework for integration testing. However, integration tests distinguish themselves by potentially slower speeds due to external resource access and increased setup complexity. This complexity is particularly pronounced in DAO testing, where methods modify databases. DAO testing faces challenges in handling data retrieval or modification within databases, demanding awareness of the database state for accurate expectations. To overcome this, integration tests leverage mock data, eliminating ambiguity and providing precise data definitions for DAO interactions. Mock data, often defined in SQL files within the src/test/resources folder, offers flexibility for testing. For instance, a JdbcAuthorDao test might utilize SQL to establish a testing database with specific author data. It''s crucial to note that this testing database is temporary, existing solely during test execution. Any modifications to mock data should be made in the corresponding SQL file.',
 
-'DAO | testing | integration testing | unit tests | junit | mock data | sql file'
+'DAO | testing | integration testing | unit tests | junit | mock data | sql file',
 
 'https://lms.techelevator.com/cohorts/535/blocks/14/content_files/03_DAO_Testing/01-introduction.md'
 ),
 (
-'Data Security'
+'Data Security',
 
-'Data security is paramount due to common data breaches, prevalent even in sectors like banking and social media. SQL Injection Attacks pose a significant threat, exploiting unguarded user inputs to execute unauthorized database actions. The solution lies in prepared statements, demonstrated by Java''s JdbcTemplate class, which uses placeholders to delegate value insertion to the SQL database, thwarting manipulation attempts. Beyond external threats, the chapter explores data protection post-breach, introducing hashing as a method to irreversibly obscure original data. Cryptographic Hash Functions, applicable to file integrity verification, find utility in password hashing for web applications. Storing hashed passwords, rather than plaintext ones, adds a layer of security, thwarting unauthorized access attempts. Vulnerabilities arise from weak hashing algorithms or predictable passwords, underscoring the need for robust practices. Password hashing introduces salting, where a random value is added before hashing to individualize each hash, rendering precomputed attacks practically infeasible. Adaptive hashing functions like Argon2, PBKDF2, scrypt, and bcrypt offer dynamic password security, adjusting computational effort to withstand evolving computing capabilities.'
+'Data security is paramount due to common data breaches, prevalent even in sectors like banking and social media. SQL Injection Attacks pose a significant threat, exploiting unguarded user inputs to execute unauthorized database actions. The solution lies in prepared statements, demonstrated by Java''s JdbcTemplate class, which uses placeholders to delegate value insertion to the SQL database, thwarting manipulation attempts. Beyond external threats, the chapter explores data protection post-breach, introducing hashing as a method to irreversibly obscure original data. Cryptographic Hash Functions, applicable to file integrity verification, find utility in password hashing for web applications. Storing hashed passwords, rather than plaintext ones, adds a layer of security, thwarting unauthorized access attempts. Vulnerabilities arise from weak hashing algorithms or predictable passwords, underscoring the need for robust practices. Password hashing introduces salting, where a random value is added before hashing to individualize each hash, rendering precomputed attacks practically infeasible. Adaptive hashing functions like Argon2, PBKDF2, scrypt, and bcrypt offer dynamic password security, adjusting computational effort to withstand evolving computing capabilities.',
 
-'data security | data breaches | SQL injection | hashing | prevention | security | password'
+'data security | data breaches | SQL injection | hashing | prevention | security | password',
 
-'https://lms.techelevator.com/cohorts/535/blocks/18/content_files/01_Data_Security/01-introduction.md |
-https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/ |
-https://en.wikipedia.org/wiki/Cryptographic_hash_function |
-https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/'
+'https://lms.techelevator.com/cohorts/535/blocks/18/content_files/01_Data_Security/01-introduction.md'
 ),
 (
-'Networking and HTTP'
+'Networking and HTTP',
 
-'Understanding the basics of how the internet functions is crucial for software developers. Key concepts include the roles of clients and servers, communication protocols (HTTP and HTTPS), and URL components (protocol, subdomain, domain, top-level domain, port, and path). The Domain Name System (DNS) translates domain names into IP addresses. HTTP communication involves requests and responses, each having a head and an optional body. The stateless nature of HTTP means each request is independent. Developer tools, like Chrome''s Network tab, allow insight into HTTP requests and responses, aiding troubleshooting and optimization. Follow-up requests for resources, such as images and scripts, contribute to rendering a complete web page. The lesson encourages using browser developer tools to gain practical insights into internet communication.'
+'Understanding the basics of how the internet functions is crucial for software developers. Key concepts include the roles of clients and servers, communication protocols (HTTP and HTTPS), and URL components (protocol, subdomain, domain, top-level domain, port, and path). The Domain Name System (DNS) translates domain names into IP addresses. HTTP communication involves requests and responses, each having a head and an optional body. The stateless nature of HTTP means each request is independent. Developer tools, like Chrome''s Network tab, allow insight into HTTP requests and responses, aiding troubleshooting and optimization. Follow-up requests for resources, such as images and scripts, contribute to rendering a complete web page. The lesson encourages using browser developer tools to gain practical insights into internet communication.',
 
-'networking | http | https | URL | DNS | IP address | http request | http response | stateless | troubleshooting | web page rendering'
+'networking | http | https | URL | DNS | IP address | http request | http response | stateless | troubleshooting | web page rendering',
 
 'https://lms.techelevator.com/cohorts/535/blocks/28/content_files/01_Networking_and_HTTP/01-introduction.md'
 ),
 (
-'Consuming RESTful APIs (Part 1)'
+'Consuming RESTful APIs (Part 1)',
 
-'In this unit, you''ll delve into using the HTTP protocol for Web APIs and explore the REST principles. An API (application programming interface) facilitates data transfer between computer programs, and a Web API extends this functionality over the internet. REST, short for "Representational State Transfer," outlines principles for designing Web APIs. To interact with Web APIs, you employ HTTP requests and handle responses through code, often using a client class like Spring RestTemplate. Notably, some APIs are public, accessible to all developers, while others are private and restricted. Examples like Amazon and ExchangeRate-API illustrate the diverse applications of Web APIs. The ExchangeRate-API, a public API, offers currency exchange rates through a URL endpoint. JSON (JavaScript Object Notation) emerges as a prevalent format for Web API response data due to its language independence and human readability. RestTemplate, a client in the Spring framework, executes HTTP methods, such as GET, to interact with Web APIs. It parses the response and throws exceptions for unsuccessful requests, emphasizing the importance of handling errors. Successful GET requests typically return a status code of 200. Lastly, you explore parsing JSON responses with RestTemplate, converting the data into Java objects based on predefined classes.'
+'In this unit, you''ll delve into using the HTTP protocol for Web APIs and explore the REST principles. An API (application programming interface) facilitates data transfer between computer programs, and a Web API extends this functionality over the internet. REST, short for "Representational State Transfer," outlines principles for designing Web APIs. To interact with Web APIs, you employ HTTP requests and handle responses through code, often using a client class like Spring RestTemplate. Notably, some APIs are public, accessible to all developers, while others are private and restricted. Examples like Amazon and ExchangeRate-API illustrate the diverse applications of Web APIs. The ExchangeRate-API, a public API, offers currency exchange rates through a URL endpoint. JSON (JavaScript Object Notation) emerges as a prevalent format for Web API response data due to its language independence and human readability. RestTemplate, a client in the Spring framework, executes HTTP methods, such as GET, to interact with Web APIs. It parses the response and throws exceptions for unsuccessful requests, emphasizing the importance of handling errors. Successful GET requests typically return a status code of 200. Lastly, you explore parsing JSON responses with RestTemplate, converting the data into Java objects based on predefined classes.',
 
-'HTTP | web API | API | REST | Representational state transfer | public API | parsing JSON | status code | error handling | deserialization | Spring restTemplate | application programming interface | restTemplate'
+'HTTP | web API | API | REST | Representational state transfer | public API | parsing JSON | status code | error handling | deserialization | Spring restTemplate | application programming interface | restTemplate',
 
-'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/02_Consuming_RESTful_APIs_Part_1/01-introduction.md |
-https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#rest-resttemplate |
-https://www.exchangerate-api.com/ |
-https://www.postman.com/'
+'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/02_Consuming_RESTful_APIs_Part_1/01-introduction.md'
 ),
 (
-'Consuming RESTful APIs (Part 2)'
+'Consuming RESTful APIs (Part 2)',
 
-'In this unit, you''ll delve into more advanced interactions with web APIs, focusing on sending data, handling errors, and utilizing HTTP methods like POST, PUT, and DELETE. These methods are crucial for creating, updating, and deleting data through API interactions. REST principles, denoted by Representational State Transfer, play a key role, emphasizing standard HTTP methods for seamless interactions. This unit delves into advanced aspects of web API interactions, focusing on sending data and error handling. Key HTTP methods—POST, PUT, and DELETE—are explored for creating, updating, and deleting data. The RestTemplate tool facilitates these operations, handling serialization and deserialization seamlessly. Adherence to RESTful principles, aligning with standard HTTP methods, is emphasized for consistent and compatible API interactions. Understanding HTTP status codes is crucial for effective error handling, with client (4xx) and server (5xx) codes indicating issues. Best practices involve associating data-changing methods with the appropriate HTTP methods, avoiding caching pitfalls associated with GET requests for data modification. Postman, introduced as a testing tool, offers flexibility in selecting request methods and customizing data formats like JSON. The unit clarifies "REST" and "RESTful" as an architectural style leveraging HTTP standards, defining GET, POST, PUT, and DELETE methods. The ResourceAccessException in RestTemplate signals network issues, prompting robust error-handling strategies within try/catch blocks. This comprehensive unit equips learners with nuanced API interaction skills, ensuring effective data exchange and adherence to RESTful principles, ultimately fostering robust, error-resilient applications.'
+'In this unit, you''ll delve into more advanced interactions with web APIs, focusing on sending data, handling errors, and utilizing HTTP methods like POST, PUT, and DELETE. These methods are crucial for creating, updating, and deleting data through API interactions. REST principles, denoted by Representational State Transfer, play a key role, emphasizing standard HTTP methods for seamless interactions. This unit delves into advanced aspects of web API interactions, focusing on sending data and error handling. Key HTTP methods—POST, PUT, and DELETE—are explored for creating, updating, and deleting data. The RestTemplate tool facilitates these operations, handling serialization and deserialization seamlessly. Adherence to RESTful principles, aligning with standard HTTP methods, is emphasized for consistent and compatible API interactions. Understanding HTTP status codes is crucial for effective error handling, with client (4xx) and server (5xx) codes indicating issues. Best practices involve associating data-changing methods with the appropriate HTTP methods, avoiding caching pitfalls associated with GET requests for data modification. Postman, introduced as a testing tool, offers flexibility in selecting request methods and customizing data formats like JSON. The unit clarifies "REST" and "RESTful" as an architectural style leveraging HTTP standards, defining GET, POST, PUT, and DELETE methods. The ResourceAccessException in RestTemplate signals network issues, prompting robust error-handling strategies within try/catch blocks. This comprehensive unit equips learners with nuanced API interaction skills, ensuring effective data exchange and adherence to RESTful principles, ultimately fostering robust, error-resilient applications.',
 
-'put | get | post| delete | serialization | deserialization | http status code | caching | Postman | REST | API | HTTP methods | API endpoint | JSON format | web API | URL'
+'put | get | post| delete | serialization | deserialization | http status code | caching | Postman | REST | API | HTTP methods | API endpoint | JSON format | web API | URL',
 
-'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/03_Consuming_RESTful_APIs_Part_2/01-introduction.md |
-https://httpwg.org/specs/rfc7231.html#method.definitions'
+'https://lms.techelevator.com/cohorts/535/blocks/19/content_files/03_Consuming_RESTful_APIs_Part_2/01-introduction.md'
 ),
 (
-'Server-side APIs (Part 1)'
+'Server-side APIs (Part 1)',
 
-'This unit delves into the concept of API development, emphasizing the importance of design patterns and frameworks. It uses a hypothetical startup scenario to illustrate challenges in managing multiple applications and introduces the Model-View-Controller (MVC) pattern for enhanced code organization. MVC separates an application into Model, View, and Controller components, promoting clean code and maintainability. Spring MVC, a Java framework, is introduced, with Spring Boot simplifying its usage for building robust applications. The request and response lifecycle in a Spring MVC application is explained, emphasizing the role of controllers and models. Conventions for organizing controllers and naming are discussed, with @RestController as a crucial annotation for handling web requests. Handler methods in controllers, annotated with @RequestMapping, are explored, showcasing examples for retrieving, getting, and adding. Annotations like @RequestBody and @PathVariable are introduced for handling request body and path variables. The unit concludes by laying the foundation for API development, covering MVC principles, Spring MVC framework, and key annotations.'
+'This unit delves into the concept of API development, emphasizing the importance of design patterns and frameworks. It uses a hypothetical startup scenario to illustrate challenges in managing multiple applications and introduces the Model-View-Controller (MVC) pattern for enhanced code organization. MVC separates an application into Model, View, and Controller components, promoting clean code and maintainability. Spring MVC, a Java framework, is introduced, with Spring Boot simplifying its usage for building robust applications. The request and response lifecycle in a Spring MVC application is explained, emphasizing the role of controllers and models. Conventions for organizing controllers and naming are discussed, with @RestController as a crucial annotation for handling web requests. Handler methods in controllers, annotated with @RequestMapping, are explored, showcasing examples for retrieving, getting, and adding. Annotations like @RequestBody and @PathVariable are introduced for handling request body and path variables. The unit concludes by laying the foundation for API development, covering MVC principles, Spring MVC framework, and key annotations.',
 
-'API | Design patterns | MVC | Model | view | controller | Spring boot | restController | handler methods | RequestMapping | RequestBody | pathVariable | JSON | content negotiation'
+'API | Design patterns | MVC | Model | view | controller | Spring boot | restController | handler methods | RequestMapping | RequestBody | pathVariable | JSON | content negotiation',
 
-'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/01_Server_Side_APIs_Part_1/01-introduction-to-mvc.md |
-https://spring.io/projects/spring-framework'
+'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/01_Server_Side_APIs_Part_1/01-introduction-to-mvc.md'
 ),
 (
-'Server-side APIs (Part 2)'
+'Server-side APIs (Part 2)',
 
-'This unit delves into the realm of API development, focusing on Web Service APIs and their adherence to the REST (Representational State Transfer) convention. REST, relying on standard web technologies like HTTP, URLs, and JSON, provides a flexible and widely adoptable approach for exposing code and business logic to diverse applications. It revolves around the concept of "resources," such as objects in an application, with URLs and HTTP methods addressing these resources. Resources, ranging from "days" in a calendar app to "products" in an e-commerce site, form the foundational elements of applications. The CRUD (Create, Retrieve, Update, Delete) operations are employed to manipulate these resources, utilizing HTTP methods like POST, GET, PUT, and DELETE. The question of whether to use POST or PUT is clarified by the idempotent nature of operations. PUT, being idempotent, updates resources consistently, while POST creates new ones. The unit emphasizes the significance of HTTP status codes in API responses, elucidating common codes like 200 (OK), 201 (Created), 204 (No Content), 304 (Not Modified), and error codes like 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), and 500 (Internal Server Error). The @ResponseStatus annotation is introduced to control the status code of API responses, allowing customization based on different scenarios. The ResponseStatusException class enables tailored status codes and error messages in exceptional situations.'
+'This unit delves into the realm of API development, focusing on Web Service APIs and their adherence to the REST (Representational State Transfer) convention. REST, relying on standard web technologies like HTTP, URLs, and JSON, provides a flexible and widely adoptable approach for exposing code and business logic to diverse applications. It revolves around the concept of "resources," such as objects in an application, with URLs and HTTP methods addressing these resources. Resources, ranging from "days" in a calendar app to "products" in an e-commerce site, form the foundational elements of applications. The CRUD (Create, Retrieve, Update, Delete) operations are employed to manipulate these resources, utilizing HTTP methods like POST, GET, PUT, and DELETE. The question of whether to use POST or PUT is clarified by the idempotent nature of operations. PUT, being idempotent, updates resources consistently, while POST creates new ones. The unit emphasizes the significance of HTTP status codes in API responses, elucidating common codes like 200 (OK), 201 (Created), 204 (No Content), 304 (Not Modified), and error codes like 400 (Bad Request), 401 (Unauthorized), 404 (Not Found), and 500 (Internal Server Error). The @ResponseStatus annotation is introduced to control the status code of API responses, allowing customization based on different scenarios. The ResponseStatusException class enables tailored status codes and error messages in exceptional situations.',
 
-'API | REST | http methods | post | get | put | delete | Data Validation | Bean validation | responseStatus | Crud | dependency injection | '
+'API | REST | http methods | post | get | put | delete | Data Validation | Bean validation | responseStatus | Crud | dependency injection | ',
 
 'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/02_Server_Side_APIs_Part_2/01-what-is-rest.md'
 ),
 (
-'Securing APIs'
+'Securing APIs',
 
-'This unit explores the crucial aspects of securing API methods in server applications and ensuring secure access from client applications. The focus lies on authentication and authorization, distinct but interconnected components of the security framework. Authentication is the process of validating a user''s identity, often accomplished through knowledge factors (e.g., passwords), ownership factors (e.g., USB keys), or inherence factors (e.g., fingerprints). Multi-factor authentication (MFA) combines these factors, enhancing security. Authorization involves granting users specific permissions to access resources or perform functions. For instance, different users may have varying levels of access, like viewing versus updating sensitive information. The unit introduces JSON Web Token (JWT) as a compact and secure means of transmitting information between parties. JWT, a JSON object, facilitates authorization in APIs. Upon user authentication, the server creates a JWT, which the client includes in API requests using the Authorization HTTP header with the "Bearer" prefix. The server verifies the JWT accuracy to grant or deny access to the requested resource. JWTs consist of three parts: header, payload (data), and signature. Tools like JWT.io allow developers to decode JWTs, revealing these components. Claims, statements about an entity, form the payload. Standard claims include subject (user ID), name, and role. The inclusion of expiration time prevents token misuse.'
+'This unit explores the crucial aspects of securing API methods in server applications and ensuring secure access from client applications. The focus lies on authentication and authorization, distinct but interconnected components of the security framework. Authentication is the process of validating a user''s identity, often accomplished through knowledge factors (e.g., passwords), ownership factors (e.g., USB keys), or inherence factors (e.g., fingerprints). Multi-factor authentication (MFA) combines these factors, enhancing security. Authorization involves granting users specific permissions to access resources or perform functions. For instance, different users may have varying levels of access, like viewing versus updating sensitive information. The unit introduces JSON Web Token (JWT) as a compact and secure means of transmitting information between parties. JWT, a JSON object, facilitates authorization in APIs. Upon user authentication, the server creates a JWT, which the client includes in API requests using the Authorization HTTP header with the "Bearer" prefix. The server verifies the JWT accuracy to grant or deny access to the requested resource. JWTs consist of three parts: header, payload (data), and signature. Tools like JWT.io allow developers to decode JWTs, revealing these components. Claims, statements about an entity, form the payload. Standard claims include subject (user ID), name, and role. The inclusion of expiration time prevents token misuse.',
 
-'Authentication | Authorization | Knowledge factors | Ownership factors | Inherence factors | JSON Web Token | header | payload | signature | restTemplate | responseEntity| http response code | Unauthorized | forbidden'
+'Authentication | Authorization | Knowledge factors | Ownership factors | Inherence factors | JSON Web Token | header | payload | signature | restTemplate | responseEntity| http response code | Unauthorized | forbidden',
 
-'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/03_Securing_APIs/01-introduction.md |
-https://jwt.io/#debugger-io |
-https://en.wikipedia.org/wiki/JSON_Web_Token#Standard_fields |
-https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions |
-https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html'
+'https://lms.techelevator.com/cohorts/535/blocks/20/content_files/03_Securing_APIs/01-introduction.md'
 ),
 (
 'Intro to HTML',
@@ -435,8 +389,7 @@ https://docs.spring.io/spring-security/reference/servlet/authorization/expressio
 
 'http | tag | tags | hyper | text | markup | language | markup | header | web | visual studio code | visual',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/01-html-and-css.md | 
-https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/01-html-and-css.md'
 ),
 (
 'Intro to CSS',
@@ -454,8 +407,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'
 
 'css | box | model | box model | decorate | layout | web design | properties | selectors | elements | attributes | appearance',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/02_CSS_Selectors/07-cascading-and-specificity.md | 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/02_CSS_Selectors/07-cascading-and-specificity.md'
 ),
 (
 'CSS Grid',
@@ -464,9 +416,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'
 
 'grid | css | formatting | format | layout | appearance | appear | attributes | model | position | positioning | css grid | experience | organize | organization ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/03_CSS_Grid/01-layouts-in-css.md | 
-https://getbootstrap.com/ | 
-https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries'
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/03_CSS_Grid/01-layouts-in-css.md'
 ),
 (
 'CSS Flexbox',
@@ -484,14 +434,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queri
 
 'javascript | script | web design | web | functionality | dynamic | variable | loosely typed | programming | language | ecma script | ecma  ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/01_Intro_to_JavaScript/01-introduction.md | 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence | 
-https://en.wikipedia.org/wiki/NaN | 
-https://en.wikipedia.org/wiki/ECMAScript | 
-https://stackoverflow.com/questions/912479/what-is-the-difference-between-javascript-and-ecmascript/913064 | 
-https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839 | 
-https://medium.freecodecamp.org/google-publishes-a-javascript-style-guide-here-are-some-key-lessons-1810b8ad050b | 
-https://softwareengineering.stackexchange.com/questions/134118/why-are-shortcuts-like-x-y-considered-good-practice'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/01_Intro_to_JavaScript/01-introduction.md'
 ),
 (
 'JavaScript Functions',
@@ -500,9 +443,7 @@ https://softwareengineering.stackexchange.com/questions/134118/why-are-shortcuts
 
 'javascript | script | web design | web | function | functions | anonymous function | anonymous | jsdoc | parameters | parameter | rest parameter',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/02_JavaScript_Functions/01-javascript-functions.md | 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters | 
-https://www.youtube.com/embed/_sifYGxcSA8'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/02_JavaScript_Functions/01-javascript-functions.md'
 ),
 (
 'Document Object Model',
@@ -511,8 +452,7 @@ https://www.youtube.com/embed/_sifYGxcSA8'
 
 'document object model | document | object | model | structure | dom | manipulate | manipulation | manipulating elements | append ',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/03_DOM/01-introduction.md | 
-https://www.youtube.com/embed/r0IIW4-11T4'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/03_DOM/01-introduction.md'
 ),
 (
 'Event Handling',
@@ -521,9 +461,7 @@ https://www.youtube.com/embed/r0IIW4-11T4'
 
 'event | event handling | listener | javascript',
 
-'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/04_Event_Handling/01-event-driven-programming.md | 
-https://developer.mozilla.org/en-US/docs/Web/API/Event | 
-https://www.sitepoint.com/event-bubbling-javascript/'
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/04_Event_Handling/01-event-driven-programming.md'
 ),
 (
 'Intro to Vue.JS',
@@ -532,9 +470,7 @@ https://www.sitepoint.com/event-bubbling-javascript/'
 
 'vue | component | modular | web design | web application | web | reusability | reusable',
 
-'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/01_Intro_to_Vue_JS/01-introduction.md | 
-https://vuejs.org/guide/introduction.html | 
-https://te-video.netlify.app/vue-devtools/vue-devtools_player'
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/01_Intro_to_Vue_JS/01-introduction.md'
 ),
 (
 'Vue Event Handling',
