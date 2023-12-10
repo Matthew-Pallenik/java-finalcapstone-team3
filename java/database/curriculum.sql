@@ -67,7 +67,6 @@ There are many options available for storing data. Some reasons a developer migh
 
 'https://lms.techelevator.com/cohorts/535/blocks/5/content_files/postman/01-whats-postman.md'
 ),
-
 (
 'NPM',
 
@@ -239,11 +238,7 @@ https://blog.codinghorror.com/code-smells/'
 
 'abstract | final | protected | access | concrete | polymorphism',
 
-'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_Inheritance/01-introduction.md'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1f20e022c5daa0f3e9dee9669a24bb08624a6018
+x'https://lms.techelevator.com/cohorts/535/blocks/9/content_files/04_Managing_Inheritance/01-introduction.md'
 ),
 (
 'Unit Testing'
@@ -432,6 +427,121 @@ https://jwt.io/#debugger-io |
 https://en.wikipedia.org/wiki/JSON_Web_Token#Standard_fields |
 https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions |
 https://docs.spring.io/spring-security/reference/servlet/authorization/expression-based.html'
-<<<<<<< HEAD
 ),
+(
+'Intro to HTML',
 
+'HTML, or Hyper Text Markup Language, is a markup language used to structure and display content on the web. It employs tags to define the structure of text. For instance, <h1> tags indicate a heading, while <p> tags represent paragraphs. Unlike plain text, HTML informs web browsers on how to present content. To begin working with HTML and CSS, which styles HTML elements, you only need a web browser and a text editor, such as Visual Studio Code. HTML documents start with the common structure of <!DOCTYPE html> and the <html> root tag. The <head> contains metadata, and the <body> holds content. You can generate this structure using tools like Emmet in Visual Studio Code. The page title is set with the <title> tag in the <head>. Opening the web page is simple, either by double-clicking the file or using Visual Studio Code Live Server extension. HTML tags come in pairs with opening and closing tags, or they can be self-closing like <br /> and <hr />. Tags may have attributes, like lang="en" in the <html> tag, influencing element behavior. For a detailed list of attributes, refer to the MDN documentation on HTML attributes. While it would be difficult to list all of the tags, here are some common ones: Heading tags such as <h1>, the paragraph tag <p>, the emphasis tag <em>, the strong tag <strong>, the blockquote tab <blockquote>, the anchor tag <a>, the image tag <img>, list tags <ul> <ol> <li>, and table tags <table> <tr> <td> <th>',
+
+'http | tag | tags | hyper | text | markup | language | markup | header | web | visual studio code | visual',
+
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/01-html-and-css.md | 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes'
+),
+(
+'Intro to CSS',
+
+'HTML structures web content, while Cascading Style Sheets (CSS) adds aesthetic appeal and layout. Browsers apply default styles, noticeable in headings, paragraphs, lists, and links. CSS empowers customization, stored in a "css" directory and linked to HTML using <link>. Syntax involves selectors, declarations, properties, and values. Fonts, vital for design, can be set using the body selector, featuring web-safe or Google Fonts. Font properties include size, weight, style, line height, and alignment. Colors, specified by keywords or hex codes, impact background and text for readability. Key CSS properties encompass font, text, and color adjustments. Web-safe and web fonts provide design flexibility, and tools like Visual Studio Code simplify color selection. CSS enhances the visual appeal, ensuring a harmonious and readable web design.',
+
+'http | css | style | styling | styles | decoration | decorate | font | visual studio code | visual | web design | web | font | color | selector | properties',
+
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/01_Intro_HTML_CSS/07-intro-to-css.md'
+),
+(
+'CSS Selectors and Box Model',
+
+'CSS layout involves treating HTML elements as rectangles with attributes like height, width, margin, padding, and border. The box model, comprising these properties, provides control over an elements appearance. Understanding the flow of elements on a webpage is crucial, including display types like block, inline, and inline-block. CSS selectors, both basic and advanced, play a pivotal role in styling by selecting specific elements. Additionally, element positioning, unit measurements, and the principles of cascading and specificity are fundamental aspects of effective web design.',
+
+'css | box | model | box model | decorate | layout | web design | properties | selectors | elements | attributes | appearance',
+
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/02_CSS_Selectors/07-cascading-and-specificity.md | 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'
+),
+(
+'CSS Grid',
+
+'HTML page layouts have evolved from table-based structures to the use of <div>s and float-based positioning, with CSS frameworks like Bootstrap addressing layout challenges. Modern CSS introduces powerful tools like Flexbox and Grid, catering to diverse interface needs. Flexbox excels in organizing similar objects, making it ideal for interfaces such as Twitter feeds or product lists. CSS Grid, on the other hand, facilitates the division of pages into rows and columns, eliminating the complexities of float-based layouts. Combining Flexbox and Grid empowers designers to create intricate and stable layouts swiftly. Responsive web design, crucial for diverse screen sizes, involves flexible grid layouts, resizable images, and CSS media queries, ensuring a seamless user experience. Embracing a mobile-first approach has become imperative, starting with small screens and gradually introducing breakpoints for larger screens, ensuring optimal user interaction across devices.',
+
+'grid | css | formatting | format | layout | appearance | appear | attributes | model | position | positioning | css grid | experience | organize | organization ',
+
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/03_CSS_Grid/01-layouts-in-css.md | 
+https://getbootstrap.com/ | 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries'
+),
+(
+'CSS Flexbox',
+
+'Flexbox is short for Flexible Box Module. It is a relatively new layout tool in CSS that provides a flexible way to arrange items on a page. Since its introduction several years ago, it has been steadily working its way into common usage in web development and is supported by nearly 98% of the available browsers. Flexbox dynamically handles alignment and the space between page items, which helps to save time. It consists of a flex container that contains one or more flex items which are constrained in their layout within the container using various flexbox properties specified by the developer.',
+
+'css | formatting | format | layout | appearance | appear | attributes | model | position | positioning | css flexbox | experience | organize | organization | flexbox',
+
+'https://lms.techelevator.com/cohorts/535/blocks/6/content_files/04_CSS_Flexbox/01-flexbox.md'
+),
+(
+'Intro to JavaScript',
+
+'JavaScript, originally designed for dynamic HTML content, has evolved into a versatile language with unique features. Variable names in JavaScript adhere to specific rules, allowing letters, digits, and $. Best practices include camelCase for variables and uppercase with underscores for constants. JavaScript offers let and const for variable declaration, with const indicating immutability. Data types like Number, String, Boolean, Object, null, and undefined exist, and JavaScript is loosely typed, allowing variables to hold any type. Key numeric operations, string manipulations, and logical branching mirror conventions in Java and C#. JavaScript introduces for, for...of, while, and do...while loops, similar to counterparts in Java and C#. Arrays in JavaScript support dynamic sizing, and various array functions, such as push(), pop(), and join(), enhance functionality. Finally, JavaScript runs primarily in web browsers, using the <script> element to embed or link scripts for execution. Understanding these fundamentals empowers developers to create robust web applications.',
+
+'javascript | script | web design | web | functionality | dynamic | variable | loosely typed | programming | language | ecma script | ecma  ',
+
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/01_Intro_to_JavaScript/01-introduction.md | 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence | 
+https://en.wikipedia.org/wiki/NaN | 
+https://en.wikipedia.org/wiki/ECMAScript | 
+https://stackoverflow.com/questions/912479/what-is-the-difference-between-javascript-and-ecmascript/913064 | 
+https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839 | 
+https://medium.freecodecamp.org/google-publishes-a-javascript-style-guide-here-are-some-key-lessons-1810b8ad050b | 
+https://softwareengineering.stackexchange.com/questions/134118/why-are-shortcuts-like-x-y-considered-good-practice'
+),
+(
+'JavaScript Functions',
+
+'JavaScript functions, akin to methods in Java or C#, are versatile blocks of code callable from anywhere, not confined to classes. Named functions comprise a signature with names, parameters, and optional or default values. Parameters are optional, allowing undefined values, and default values can be set, enhancing function flexibility. Rest parameters handle variable arguments. Anonymous functions, created with arrow syntax, lack names but offer versatility in assignment or direct use as function parameters. Array functions like forEach, map, filter, and reduce provide powerful tools for array manipulation. Documentation, facilitated by JSDoc comments, is crucial for code clarity, offering insights into function purpose, parameters, return values, and optional data types. JSDoc contributes to code readability and aids in development by providing context and guidance for programmers.',
+
+'javascript | script | web design | web | function | functions | anonymous function | anonymous | jsdoc | parameters | parameter | rest parameter',
+
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/02_JavaScript_Functions/01-javascript-functions.md | 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters | 
+https://www.youtube.com/embed/_sifYGxcSA8'
+),
+(
+'Document Object Model',
+
+'The Document Object Model (DOM) is the internal representation of a web page structure in a browser, crucial for dynamic and interactive web development. Upon loading an HTML document, browsers convert it into a tree-like structure, reflecting parent-child relationships of elements. This hierarchy, resembling HTML tags, is fundamental for JavaScript, as it operates on the DOM rather than static HTML. Notably, the DOM may differ from the HTML source, impacting CSS application. Understanding this is exemplified when creating tables, revealing added elements like tbody for representation. Developers employ JavaScript functions, including getElementById() and querySelector(), for DOM interaction. Mastery of DOM traversal is pivotal for dynamically modifying web pages. Techniques like appendChild() and insertAdjacentElement() enable the addition of new elements with precise placement. Manipulating elements involves accessing properties like innerText and innerHTML, with caution to prevent security vulnerabilities such as Cross-Site Scripting (XSS). The DOM facilitates navigation between elements with methods like parentNode and nextElementSibling. For removal, removeChild() is employed, removing elements by calling it from the parent. This comprehensive overview underscores the DOM centrality in web development, emphasizing its dynamic nature through JavaScript interactions and its impact on the interactive and responsive nature of modern web pages.',
+
+'document object model | document | object | model | structure | dom | manipulate | manipulation | manipulating elements | append ',
+
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/03_DOM/01-introduction.md | 
+https://www.youtube.com/embed/r0IIW4-11T4'
+),
+(
+'Event Handling',
+
+'Event-driven programming transforms traditional console-based logic, adapting to the dynamic flow of graphical user interface (GUI) applications. Unlike console programs, GUIs empower users with broad control, seen in web-based actions like clicks, selections, and resizing. This paradigm, crucial for flexibility, responds to diverse events asynchronously. JavaScripts addEventListener supports event subscription, specifying target, type, and function. The accompanying Event Object holds vital details. Event propagation traverses the DOM hierarchy, allowing multiple listeners. stopPropagation() halts upward traversal. In summary, this model empowers responsive web apps, embracing user events and a versatile pub-sub model for interactive digital landscapes.',
+
+'event | event handling | listener | javascript',
+
+'https://lms.techelevator.com/cohorts/535/blocks/11/content_files/04_Event_Handling/01-event-driven-programming.md | 
+https://developer.mozilla.org/en-US/docs/Web/API/Event | 
+https://www.sitepoint.com/event-bubbling-javascript/'
+),
+(
+'Intro to Vue.JS',
+
+'Vue.js is an open-source JavaScript framework renowned for its user-friendly approach to building interactive web applications, particularly single-page applications (SPAs). Vue embraces a component-based architecture, encapsulating UI elements into reusable, self-contained components. This frameworks advantages lie in modularity, reusability, and its data-centric design, featuring robust data-binding capabilities. Vue Single File Components (SFCs) consolidate HTML, CSS, and JavaScript into a single .vue file. Components, like StudentInfo.vue, exhibit this structure, including template, script, and style blocks. State, crucial for components, is defined through a data function, enabling Vue to monitor and automatically update the UI as data changes. Mustache tags facilitate data display, while v-bind, v-model, and v-for directives enhance data binding and iteration. Computed properties derive values dynamically, and v-model facilitates two-way data binding for user interaction. Vue.js strikes a balance between simplicity and power, making it a compelling choice for modern web application development.',
+
+'vue | component | modular | web design | web application | web | reusability | reusable',
+
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/01_Intro_to_Vue_JS/01-introduction.md | 
+https://vuejs.org/guide/introduction.html | 
+https://te-video.netlify.app/vue-devtools/vue-devtools_player'
+),
+(
+'Vue Event Handling',
+
+'Vue simplifies event handling in applications, connecting DOM element events like clicks to corresponding code through event binding. Methods, essential JavaScript functions in components, are introduced for behavior definition. The distinction between methods and computed properties is explained. Event listeners, using the v-on directive, respond to events like clicks or changes in a textbox. Specifics of keyboard and mouse events, including key modifiers for targeted responses, are covered. Shorthand notations, like @ for v-on, are mentioned. Event handlers, the code executed on events, can be inline or method-based. Handling event arguments, with access to the original DOM event, is emphasized. Using v-on:submit for form submissions is discussed, with solutions to prevent unwanted browser refresh. Conditional display, essential for dynamic UIs, is explained using v-if for element removal and v-show for toggling CSS display. Considerations for choosing between v-if and v-show, emphasizing CPU efficiency, are highlighted. The content provides a comprehensive understanding of Vue event handling and related concepts.',
+
+'event | event handling | event | click | v-if | v-show | dom manipulation | dynamic | web design | interactivity | user interface | ui | usability | use | usable | interactive | clickable',
+
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/02_Vue_Event_Handling/01-introduction.md'
+);
