@@ -34,11 +34,12 @@
 
       <ul>
         <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
-        <li><router-link v-bind:to="{name: 'Pathway'}" class="nav-link">Pathway</router-link></li>
-        <li><router-link v-bind:to="{name: 'Curriculum'}" class="nav-link">Curriculum</router-link></li>
-        <li><router-link v-bind:to="{name: 'Jobs'}" class="nav-link">Jobs</router-link></li>
-        <li><router-link v-bind:to="{name: 'AskForHelp'}" class="nav-link">Ask For Help</router-link></li>
-        <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" class="nav-link">Logout</router-link></li>
+        <li><router-link v-bind:to="{ name: 'Pathway' }" class="nav-link">Pathway</router-link></li>
+        <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
+        <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
+        <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
+        <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
+            class="nav-link">Logout</router-link></li>
       </ul>
     </div>
 
@@ -72,12 +73,12 @@
       <div v-if="userName" class="input-box">
         <input type="text" v-model="userQuery" @keyup.enter="processQuery" placeholder="Ask me anything...">
       </div>
+
     </div>
 
     <!-- Placeholder for the motivational quote in the middle-right -->
     <div class="grid-item motivational-quote">
       <!-- Motivational quote can be dynamically inserted here -->
-      {{ this.quote }}
 
     </div>
 
@@ -88,21 +89,22 @@
     </div>
 
     <!-- Skyline image in the bottom-center -->
-    <div class="skyline">
+    <!-- <div class="grid-item skyline">
       <img src="img/Cleveland-90s.png" alt="City Skyline">
-    </div>
-
-    <div class="grid-item bottom-left-placeholder">
-
-    </div>
+    </div> -->
 
     <!-- Placeholder for the bottom-right content -->
-    
+    <div class="grid-item bottom-right-placeholder">
+      <!-- This can be left empty or used for future content -->
+    </div>
+  </div>
+
+  <div class="grid-item footer">
+
   </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
-import QuoteService from '../services/QuoteService';
 
 export default {
   mounted() {
@@ -117,7 +119,6 @@ export default {
     return {
       preferredName: '', // Store the user's preferred name
       userName: '',
-      quote:'',
       userQuery: '',
       qaHistory: [] // Array to hold the history of Q&A
     };
@@ -127,33 +128,18 @@ export default {
     this.checkRouteForSearchQuery();
 
     // Set the preferredName from the Vuex store if available
-    if(!this.userName){
+    if (!this.userName) {
       this.userName = this.$store.state.preferredName;
     }
-    
+
   },
 
   methods: {
     ...mapActions(['performSearch']), // Map the performSearch action from Vuex
 
     saveName() {
-      this.userName = this.preferredName.trim();   
-      this.$store.commit('SET_PREFERRED_NAME', this.userName); 
-      this.fetchRandomQuote();
-    },
-    fetchRandomQuote() {
-      QuoteService.getRandomQuote()
-        .then((response) => {
-          const quotesArray = response.data;
-          if (quotesArray && quotesArray.length > 0) {
-            this.quote = quotesArray[0].quote;
-          } else {
-            console.error('No quotes found in the response.');
-          }
-        })
-        .catch((error) => {
-          console.error('Error fetching quote:', error);
-        });
+      this.userName = this.preferredName.trim();
+      this.$store.commit('SET_PREFERRED_NAME', this.userName);
     },
     //this checks for a query form another view
     checkRouteForSearchQuery() {
@@ -235,9 +221,9 @@ export default {
       // Reset the user query input field to be ready for a new query.
       this.userQuery = '';
     }
-  }, 
+  },
 
-  watch: {    
+  watch: {
 
     // Watch for changes in the route, especially for the 'search' query parameter
     $route(to, from) {
@@ -256,46 +242,67 @@ export default {
 
 <!--added scoped here so this css doesn't affect other css views-->
 <style scoped>
-
-
-
 /* Layout for the entire grid */
-
-
-
-
- 
+/* .home.grid-container{
+  min-block-size: 100vb;
+  background-image: linear-gradient(
+    to right bottom, 
+  rgb(214, 135, 226), 
+  rgb(204, 120, 120), 
+  rgb(218, 137, 71));
+} */
 .grid-container {
   display: grid;
-  grid-template-columns: 275px 1fr 200px; /* Three unequal columns */
-  grid-template-rows: auto; /* Rows adjust to content height */
-  gap: 20px; /* Space between grid items */
-  align-items: start; /* Align items to the top of their cell */
-  grid-template-areas: 
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  align-items: start;
+  grid-template-areas:
     "logo welcome right-top-placeholder"
     "nav qa-section motivational-quote"
-    "bottom-left-placeholder skyline bottom-right-placeholder";
-    min-height: 100vh;
-    /* background-image: linear-gradient(
-    to bottom, 
-  white 0%, white 80%,
-  rgb(19,28,90) 80%, rgb(19,28,90) 100%)
-} */
+    "footer footer footer";
+  background-image: url('img/Cleveland-90s.png');
+  /* Set the skyline image as the background */
+  background-size: 145%;
+  /* Cover the entire container with the background image */
+  background-position: center calc(100% + 550px);
+  /* Center the background image and position it below the bottom of the grid */
+  background-repeat: no-repeat;
+  /* Do not repeat the background image */
 }
-
 
 /* Assign grid area names to the children */
-.logo { grid-area: logo; }
-.welcome { grid-area: welcome; }
-.right-top-placeholder { grid-area: right-top-placeholder; }
-.home-nav { 
-  grid-area: nav; 
+.logo {
+  grid-area: logo;
 }
-.qa-section { grid-area: qa-section; }
-.motivational-quote { grid-area: motivational-quote; }
-.bottom-left-placeholder { grid-area: bottom-left-placeholder;}
-.skyline { grid-area: skyline;}
-.bottom-right-placeholder { grid-area: bottom-right-placeholder; }
+
+.welcome {
+  grid-area: welcome;
+}
+
+.right-top-placeholder {
+  grid-area: right-top-placeholder;
+}
+
+.home-nav {
+  grid-area: nav;
+}
+
+.qa-section {
+  grid-area: qa-section;
+}
+
+.motivational-quote {
+  grid-area: motivational-quote;
+}
+
+.bottom-left-placeholder {
+  grid-area: bottom-left-placeholder;
+}
+
+.bottom-right-placeholder {
+  grid-area: bottom-right-placeholder;
+}
 
 /* Styling for the logo to make it smaller and align properly */
 /* Styling for the logo container */
@@ -303,17 +310,20 @@ export default {
 .grid-item.logo {
   /* Center the logo within its grid cell */
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   margin-top: 0px;
-  filter: drop-shadow(-1px -1px 1px #b5b6b8); /* Shadow effect for depth */  
-  
+  filter: drop-shadow(-1px -1px 1px #b5b6b8);
+  /* Shadow effect for depth */
+
 }
 
 /* Styling for the logo image */
 .grid-item.logo img {
-  width: 250px; /* You may set a max-width instead if the image is too large */
-  height: auto; /* Maintain aspect ratio */
+  width: 250px;
+  /* You may set a max-width instead if the image is too large */
+  height: auto;
+  /* Maintain aspect ratio */
   margin-left: 75px;
   /* Remove max-height if it's not needed or adjust accordingly */
 }
@@ -323,57 +333,73 @@ export default {
 /* Styling for the welcome message container */
 /* Styling for the welcome container */
 .welcome {
-  display: flex; /* Use Flexbox for alignment */
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: flex-start; /* content vertically */
-  align-items: center; /* Center content horizontally */
-  text-align: center; /* Ensure text is centered */
-  grid-column: 1 / -1; /* Span across all columns */
-  margin-top: 0; /* Remove top margin to bring closer to the top */
-  padding-top: 1em; /* Add padding to space it from the top edge */
+  display: flex;
+  /* Use Flexbox for alignment */
+  flex-direction: column;
+  /* Stack elements vertically */
+  justify-content: flex-start;
+  /* content vertically */
+  align-items: center;
+  /* Center content horizontally */
+  text-align: center;
+  /* Ensure text is centered */
+  grid-column: 1 / -1;
+  /* Span across all columns */
+  margin-top: 0;
+  /* Remove top margin to bring closer to the top */
+  padding-top: 1em;
+  /* Add padding to space it from the top edge */
   color: var(--color-pink);
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
+
 /* Styling for h1 inside the welcome container */
 /* Styling for h1 inside the welcome container */
 /* Styling for h1 inside the welcome container */
 .welcome h1 {
-  font-size: 45px; /* Size relative to the viewport width */
-  margin-top: 0; /* Remove top margin to bring closer to the top */
-  margin-bottom: 0; /* Spacing between h1 and h2 */
+  font-size: 45px;
+  /* Size relative to the viewport width */
+  margin-top: 0;
+  /* Remove top margin to bring closer to the top */
+  margin-bottom: 0;
+  /* Spacing between h1 and h2 */
   font-family: prompt;
 }
 
 /* Styling for the prompt beneath the welcome message */
 .welcome h2 {
-  font-size: 45px; /* Slightly smaller than the h1 */
-  margin-top: 0; /* Remove top margin to reduce space */
-  margin-bottom: 0.5em; /* Consistent spacing */
+  font-size: 45px;
+  /* Slightly smaller than the h1 */
+  margin-top: 0;
+  /* Remove top margin to reduce space */
+  margin-bottom: 0.5em;
+  /* Consistent spacing */
   font-family: prompt;
 }
 
 /* Align navigation links to the left */
 .home-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px;
   margin-top: 20px;
   margin-left: 20px;
-  text-align: center;
+  margin-right: 20px;
   font-size: 25px;
   background-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 0.5rem;
 }
 
-.home-nav a{
+.home-nav a {
   color: #ffffff;
   text-decoration: none;
   font-family: prompt;
   transition: color 0.2s ease-in-out;
 }
-.home-nav a:hover{
+
+.home-nav a:hover {
   color: #1dd3da;
-  
+
 }
 
 li {
@@ -382,31 +408,40 @@ li {
   padding: 10px;
 }
 
-ul{
+ul {
   white-space: nowrap;
 }
 
 
 /* Styling for the initial input box */
 .initial-input {
-  width: 800px; /* Adjust width considering the padding */
-  height: 50px; /* Standard input height */
-  padding: 0 15px; /* Padding inside the input */
-  font-size: 1rem; /* Standard font size */  
+  width: 800px;
+  /* Adjust width considering the padding */
+  height: 50px;
+  /* Standard input height */
+  padding: 0 15px;
+  /* Padding inside the input */
+  font-size: 1rem;
+  /* Standard font size */
   font-family: prompt;
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 8px;
+  /* Rounded corners */
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  margin-top: 10px; /* Space above the input box */
-  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
+  margin-top: 10px;
+  /* Space above the input box */
+
 }
 
 /* Styling for the placeholder text in input */
 .input-box input[type="text"]::placeholder,
 .initial-input::placeholder {
-  color: #999; /* Change the color to a desired color */
+  color: #999;
+  /* Change the color to a desired color */
   font-family: prompt;
-  font-style: italic; /* Apply italic font style */
+  font-style: italic;
+  /* Apply italic font style */
   /* You can also adjust other properties like font-size, font-weight, etc. */
 }
 
@@ -414,29 +449,42 @@ ul{
 .qa-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the children horizontally */
-  width: 80%; /* Set a max width for the Q&A section */
-  max-width: 100%; /* Ensure this does not exceed the viewport width */
-  margin: auto; /* Center the section in the grid area */
+  align-items: center;
+  /* Center the children horizontally */
+  width: 80%;
+  /* Set a max width for the Q&A section */
+  max-width: 100%;
+  /* Ensure this does not exceed the viewport width */
+  margin: auto;
+  /* Center the section in the grid area */
   margin-bottom: 0px;
 }
 
 /* QA Container specific styles */
 .qa-container {
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */  
-  border-radius: 15px; /* Rounded corners */
-  padding: 20px; /* Padding inside the container */
-  margin-bottom: 10px; /* Space between the QA container and the input box */
-  width: 800px; /* Full width of the qa-section */
-  height: 450px; /* Fixed height with scrolling */
-  overflow-y: auto; /* Scrollbar for overflow content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Semi-transparent white */
+  border-radius: 15px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Padding inside the container */
+  /* margin-bottom: 10px; Space between the QA container and the input box */
+  width: 800px;
+  /* Full width of the qa-section */
+  height: 450px;
+  /* Fixed height with scrolling */
+  overflow-y: auto;
+  /* Scrollbar for overflow content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
 }
-.question{
+
+.question {
   font-family: prompt;
   font-size: 20px;
   color: var(--color-light-purple);
 }
+
 .label {
   font-family: prompt;
   font-size: 20px;
@@ -448,27 +496,39 @@ span {
   font-size: 20px;
   color: var(--color-light-blue);
 }
+
 /* Input box styling */
 .input-box input[type="text"] {
-  width: 800px; /* Adjust width considering the padding */
-  height: 50px; /* Standard input height */
-  padding: 0 15px; /* Padding inside the input */
-  font-size: 1rem; /* Standard font size */  
-  border-radius: 8px; /* Rounded corners */
+  width: 800px;
+  /* Adjust width considering the padding */
+  height: 50px;
+  /* Standard input height */
+  padding: 0 15px;
+  /* Padding inside the input */
+  font-size: 1rem;
+  /* Standard font size */
+  border-radius: 8px;
+  /* Rounded corners */
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  margin-top: 10px; /* Space above the input box */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
+  margin-top: 10px;
+  /* Space above the input box */
   margin-bottom: 0px;
 }
 
-/* Styling for the skyline image, serving as the footer visually */
-.skyline img {
-  min-width: 150%; /* Full width of the grid area */
-  position:fixed;
-  height: auto; /* Height to maintain aspect ratio */
-  bottom: 0;
-  transform: translate(-650px, 240px);
-
+.footer {
+  grid-area: footer;
+  background-color: #131c5a;
+  /* Blue color for the footer */
+  height: 200px;
+  /* Set the desired height for the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* Text color for the footer content */
+  font-family: prompt;
 }
 
-</style>
+/* Styling for the skyline image, serving as the footer visually */</style>

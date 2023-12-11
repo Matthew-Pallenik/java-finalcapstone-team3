@@ -47,13 +47,20 @@
         <div class="grid-item bottom-left">
             <!-- This cell is intentionally left empty -->
         </div>
-        <div class="grid-item bottom-center skyline">
+        <!-- <div class="grid-item bottom-center skyline">
             <img src="img/Columbus-90s.png" alt="City Skyline">
-        </div>
+        </div> -->
         <div class="grid-item bottom-right">
             <!-- this is intentionally right empty-->
         </div>
+
     </div>
+    
+  <div class="grid-item footer">
+
+</div>
+    
+
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
@@ -82,9 +89,9 @@ export default {
 <style scoped>
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr, 3fr, 1fr;
     /* Three columns of equal size */
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto 1frSSS;
     /* Three rows, size determined by content */
     gap: 10px;
     /* Space between grid items */
@@ -92,6 +99,11 @@ export default {
     /* Center items horizontally */
     align-items: center;
     /* Center items vertically */
+
+    background-image: url('img/Columbus-90s.png'); /* Set the skyline image as the background */
+  background-size: 145%; /* Cover the entire container with the background image */
+  background-position: center calc(100% + 550px ); /* Center the background image and position it below the bottom of the grid */
+  background-repeat: no-repeat; /* Do not repeat the background image */
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -99,7 +111,7 @@ export default {
     grid-template-areas:
         "logo welcome empty1"
         "nav curriculum-content motivational-quotes"
-        "empty2 skyline empty3";
+        "footer footer footer";
 }
 
 /* Place each grid-item in the correct grid area */
@@ -133,16 +145,25 @@ export default {
 /* empty1 does not need a style since it is intentionally left empty */
 
 .nav {
-    grid-area: nav;
     display: flex;
-    justify-content: flex-start;
-    /* Aligns content to the left */
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
-    font-family: prompt;
-    text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 25px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 0.5rem;
+}
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: prompt;
+  transition: color 0.2s ease-in-out;
+}
+nav a:hover {
+  color: #1dd3da;
+
 }
 
 li {
@@ -229,9 +250,20 @@ li {
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
-.skyline {
-    grid-area: skyline;
-    filter: drop-shadow(-10px -10px 10px #b5b6b8);
-    /* Shadow effect for depth */
-}</style>
+body{
+    overflow: hidden;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #131c5a; /* Blue color for the footer */
+  height: 300px; /* Set the desired height for the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color for the footer content */
+  font-family: prompt;
+}
+
+</style>
 

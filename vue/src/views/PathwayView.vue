@@ -17,7 +17,6 @@
             <!-- Navigation content goes here -->
             <ul>
                 <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
-                <li><router-link v-bind:to="{ name: 'Pathway' }" class="nav-link">Pathway</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
                 <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
@@ -48,13 +47,14 @@
         <div class="grid-item bottom-left">
             <!-- This cell is intentionally left empty -->
         </div>
-        <div class="grid-item bottom-center skyline">
+        <!-- <div class="grid-item bottom-center skyline">
             <img src="img/Pittsburgh-90s.png" alt="City Skyline">
-        </div>
+        </div> -->
         <div class="grid-item bottom-right">
             <!-- this is intentionally right empty-->
         </div>
     </div>
+    <div class="grid-item footer"></div>
 </template>
 
 <script>
@@ -85,18 +85,15 @@ export default {
 <style scoped>
 .grid-container {
     display: grid;    
-    grid-template-columns: repeat(3, 1fr);/* Three columns of equal size */    
-    grid-template-rows: auto auto auto;/* Three rows, size determined by content */    
-    gap: 10px;/* Space between grid items */    
-    justify-items: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Three columns of equal size */
+    grid-template-columns: 1fr 3fr 1fr; /* Three columns: left, middle, right */
     grid-template-rows: auto auto auto;
-    /* Three rows, size determined by content */
     gap: 10px;
-    /* Space between grid items */
+    justify-items: center;
+    align-items: center;
+    background-image: url('img/Pittsburgh-90s.png');
+    background-size: 150%;
+    background-position: center calc(100% + 600px) ;
+    background-repeat: no-repeat;
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -104,7 +101,8 @@ export default {
     grid-template-areas:
         "logo welcome empty1"
         "nav pathway-content motivational-quotes"
-        "empty2 skyline empty3";
+        "footer footer footer";
+
 }
 
 /* Place each grid-item in the correct grid area */
@@ -149,17 +147,25 @@ export default {
 /* empty1 does not need a style since it is intentionally left empty */
 
 .nav {
-    grid-area: nav;
     display: flex;
-    justify-content: flex-start;/* Aligns content to the left */    
-    justify-content: flex-start;
-    /* Aligns content to the left */
-    padding: 10px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
-    font-family: prompt;
-    text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 25px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 0.5rem;
+}
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: prompt;
+  transition: color 0.2s ease-in-out;
+}
+nav a:hover {
+  color: #1dd3da;
+
 }
 
 li {
@@ -169,110 +175,71 @@ li {
 }
 
 .pathways-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);/* Create three columns */    
-    grid-gap: 20px;/* Adjust to your preference for space between grid items */    
-    padding: 20px;/* Padding around the entire grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 .pathway-cell {
-    background-color: #fff;/* White background for the cell */    
-    border-radius: 10px;/* Rounded corners for the cells */    
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);/* Shadow for depth */    
-    padding: 20px;/* Padding inside each cell */    
-    display: flex;
-    justify-content: center;/* Center the content horizontally */    
-    align-items: center;/* Center the content vertically */    
-    cursor: pointer;/* Change cursor to indicate the cell is clickable */    
-    transition: transform 0.3s ease, box-shadow 0.3s ease;/* Smooth transition for hover effects */
-}
-    
-
-.pathway-cell:hover {
-    transform: translateY(-5px);/* Slightly raise the cell on hover */    
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow for lifted effect */
-}
-
-.pathway-title {
-    margin: 0;/* Remove default margin from paragraph tags */    
-    font-size: 20px;/* Adjust font size as needed */    
-    font-family: prompt;
-    color: var(--color-light-blue);
-    text-align: center;/* Center text */
-    grid-template-columns: repeat(3, 1fr);
-    /* Create three columns */
-    grid-gap: 20px;
-    /* Adjust to your preference for space between grid items */
-    padding: 20px;
-    /* Padding around the entire grid */
-}
-
-.pathway-cell {
-    background-color: #fff;
-    /* White background for the cell */
-    border-radius: 10px;
-    /* Rounded corners for the cells */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
-    padding: 20px;
-    /* Padding inside each cell */
-    display: flex;
-    justify-content: center;
-    /* Center the content horizontally */
-    align-items: center;
-    /* Center the content vertically */
-    cursor: pointer;
-    /* Change cursor to indicate the cell is clickable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition for hover effects */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .pathway-cell:hover {
-    transform: translateY(-5px);
-    /* Slightly raise the cell on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Larger shadow for lifted effect */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .pathway-title {
-    margin: 0;
-    /* Remove default margin from paragraph tags */
-    font-size: 20px;
-    /* Adjust font size as needed */
-    font-family: prompt;
-    color: var(--color-light-blue);
-    text-align: center;
-    /* Center text */
+  margin: 0;
+  font-size: 20px;
+  font-family: prompt;
+  color: var(--color-light-blue);
+  text-align: center;
 }
 
-/* Style for the input container */
 .input-container {
-    display: flex;
-    justify-content: center;/* Center the input horizontally */        
-    /* Center the input horizontally */
-    height: 50px;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 20px;
 }
 
-/* Style for the input box */
 .pathway-input {
-    width: 100%;    
-    max-width: calc(100% - 40px);    
-    margin: 0 auto;   
-    padding: 10px 15px;    
-    border-radius: 10px;    
-    border: none;    
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);        
+  width: 100%;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: prompt;
+  font-size: 18px;
+  color: #5f5b5b;
 }
 
 .motivational-quotes {
     grid-area: motivational-quotes;
 }
+.footer {
+  grid-area: footer;
+  background-color: #131c5a; /* Blue color for the footer */
+  height: 30vh; /* Set the desired height for the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color for the footer content */
+  font-family: prompt;
+}
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
-.skyline {
-    grid-area: skyline;
-    filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */       
-}
 </style>

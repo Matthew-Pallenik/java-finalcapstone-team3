@@ -9,14 +9,14 @@
     --color-navy: rgb(19, 28, 90)
 }
 
-body {
-    background-image: linear-gradient(to bottom,
-            white 0%, white 80%,
-            rgb(19, 28, 90) 80%, rgb(19, 28, 90) 100%);
-}
+
 
 .header {
     background-color: var(--color-light);
+}
+.footer{
+    background-color: #131c5a;
+    grid-area: footer;
 }
 
 body,
@@ -27,3 +27,4 @@ html {
     font-family: Source 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: auto;
 }
+
