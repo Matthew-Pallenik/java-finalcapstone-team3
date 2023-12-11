@@ -79,6 +79,8 @@
     <!-- Placeholder for the motivational quote in the middle-right -->
     <div class="grid-item motivational-quote">
       <!-- Motivational quote can be dynamically inserted here -->
+      {{ this.quote }}
+      -{{ this.quoteAuthor }}
 
     </div>
 
@@ -105,10 +107,12 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
+import QuoteService from '../services/QuoteService';
 
 export default {
   mounted() {
     document.title = "Home";
+    this.fetchRandomQuote();
   },
 
   computed: {
@@ -119,6 +123,8 @@ export default {
     return {
       preferredName: '', // Store the user's preferred name
       userName: '',
+      quote:'',
+      quoteAuthor:'',
       userQuery: '',
       qaHistory: [] // Array to hold the history of Q&A
     };
@@ -140,6 +146,22 @@ export default {
     saveName() {
       this.userName = this.preferredName.trim();
       this.$store.commit('SET_PREFERRED_NAME', this.userName);
+    },
+    fetchRandomQuote() {
+      QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
     },
     //this checks for a query form another view
     checkRouteForSearchQuery() {
@@ -386,7 +408,7 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 25px;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
 }
 
