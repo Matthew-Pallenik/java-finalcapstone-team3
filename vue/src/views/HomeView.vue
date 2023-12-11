@@ -87,14 +87,16 @@
     </div>
 
     <!-- Skyline image in the bottom-center -->
-    <div class="grid-item skyline">
+    <div class="skyline">
       <img src="img/Cleveland-90s.png" alt="City Skyline">
     </div>
 
-    <!-- Placeholder for the bottom-right content -->
-    <div class="grid-item bottom-right-placeholder">
-      <!-- This can be left empty or used for future content -->
+    <div class="grid-item bottom-left-placeholder">
+
     </div>
+
+    <!-- Placeholder for the bottom-right content -->
+    
   </div>
 </template>
 <script>
@@ -195,15 +197,14 @@ export default {
 <!--added scoped here so this css doesn't affect other css views-->
 <style scoped>
 
+
+
 /* Layout for the entire grid */
-/* .home.grid-container{
-  min-block-size: 100vb;
-  background-image: linear-gradient(
-    to right bottom, 
-  rgb(214, 135, 226), 
-  rgb(204, 120, 120), 
-  rgb(218, 137, 71));
-} */
+
+
+
+
+ 
 .grid-container {
   display: grid;
   grid-template-columns: 275px 1fr 200px; /* Three unequal columns */
@@ -214,7 +215,14 @@ export default {
     "logo welcome right-top-placeholder"
     "nav qa-section motivational-quote"
     "bottom-left-placeholder skyline bottom-right-placeholder";
+    min-height: 100vh;
+    /* background-image: linear-gradient(
+    to bottom, 
+  white 0%, white 80%,
+  rgb(19,28,90) 80%, rgb(19,28,90) 100%)
+} */
 }
+
 
 /* Assign grid area names to the children */
 .logo { grid-area: logo; }
@@ -225,8 +233,8 @@ export default {
 }
 .qa-section { grid-area: qa-section; }
 .motivational-quote { grid-area: motivational-quote; }
-.bottom-left-placeholder { grid-area: bottom-left-placeholder; }
-.skyline { grid-area: skyline; }
+.bottom-left-placeholder { grid-area: bottom-left-placeholder;}
+.skyline { grid-area: skyline;}
 .bottom-right-placeholder { grid-area: bottom-right-placeholder; }
 
 /* Styling for the logo to make it smaller and align properly */
@@ -394,10 +402,12 @@ span {
 
 /* Styling for the skyline image, serving as the footer visually */
 .skyline img {
-  width: 100%; /* Full width of the grid area */
+  min-width: 150%; /* Full width of the grid area */
+  position:fixed;
   height: auto; /* Height to maintain aspect ratio */
-  object-fit: cover; /* Cover the grid area without stretching */
-  filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */  
+  bottom: 0;
+  transform: translate(-650px, 240px);
+
 }
 
 </style>
