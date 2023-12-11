@@ -10,6 +10,7 @@ import PathwaysView from '../views/PathwayView.vue';
 import CurriculumView from '../views/CurriculumView.vue';
 import JobsView from '../views/JobsView.vue';
 import AskForHelpView from '../views/AskForHelpView.vue';
+import AboutView from '../views/AboutView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -83,7 +84,15 @@ const routes = [
     meta: {
       requiresAuth: false
     }
-  } 
+  },
+  {
+    path: "/about",
+    name: "AboutUs",
+    component: AboutView,
+    meta: {
+      requiresAuth: false
+    }
+  }
 
 ];
 
