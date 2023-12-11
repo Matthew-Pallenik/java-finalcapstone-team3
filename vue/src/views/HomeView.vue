@@ -77,6 +77,7 @@
     <!-- Placeholder for the motivational quote in the middle-right -->
     <div class="grid-item motivational-quote">
       <!-- Motivational quote can be dynamically inserted here -->
+      {{ this.quote }}
 
     </div>
 
@@ -99,6 +100,7 @@
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
+import QuoteService from '../services/QuoteService';
 
 export default {
   mounted() {
@@ -113,6 +115,7 @@ export default {
     return {
       preferredName: '', // Store the user's preferred name
       userName: '',
+      quote:'',
       userQuery: '',
       qaHistory: [] // Array to hold the history of Q&A
     };
@@ -134,6 +137,21 @@ export default {
     saveName() {
       this.userName = this.preferredName.trim();   
       this.$store.commit('SET_PREFERRED_NAME', this.userName); 
+      this.fetchRandomQuote();
+    },
+    fetchRandomQuote() {
+      QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
     },
     //this checks for a query form another view
     checkRouteForSearchQuery() {
