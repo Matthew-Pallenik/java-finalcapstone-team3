@@ -21,21 +21,54 @@
                 <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
                 <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
+                <li><router-link v-bind:to="{ name: 'AboutUs' }" class="nav-link">About Us</router-link></li>
                 <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''" class="nav-link">Logout</router-link></li>
             </ul>
         </div>
         <div class="grid-item middle-center aboutUs-content">
             <!-- Create a grid container for the About Us entries -->
-            <h3>This chatbot was brought to you by the following:</h3>
+            <h2>This chatbot was brought to you by the following:</h2>
             <p></p>
-            <ul>
-                <li>Jake Butler</li>
-                <li>Ahmed Elbagory</li>
-                <li>Matthew Pallenik</li>
-                <li>Bryson Poole</li>
-                <li>Roxana Valdina</li>
-                <li>And viewers like you! Thank you!</li>
-            </ul>
+            <section id="all-items">
+                <header></header>
+                <section>
+                    <article>
+                        <div><i class="fas fa-pizza-slice fa-7x"> </i></div>
+                        <div>
+                            <h3>Jake Butler</h3>
+                            <p>The Bad Boy of Coding</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div>
+                            <h3>Ahmed Elbagory</h3>
+                            <p>The Quiet Storm</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div>
+                            <h3>Matthew Pallenik</h3>
+                            <p>The Sicko Writing This</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div>
+                            <h3>Bryson Poole</h3>
+                            <p>The (Mostly) Ethical Hacker</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div>
+                            <h3>Roxana Valdina</h3>
+                            <p>The Champion of ChatGPT</p>
+                        </div>
+                    </article>
+                </section>
+            </section>
             
         </div>
         <div class="grid-item middle-right motivational-quotes">
@@ -47,7 +80,7 @@
             <!-- This cell is intentionally left empty -->
         </div>
         <div class="grid-item bottom-center skyline">
-            <img src="img/Pittsburgh-90s.png" alt="City Skyline">
+            <img src="img/Cleveland-90s.png" alt="City Skyline">
         </div>
         <div class="grid-item bottom-right">
             <!-- this is intentionally right empty-->
@@ -56,34 +89,13 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-import router from '@/router';
 
-export default {
-    mounted() {
-    document.title = "Pathway";
-    this.fetchRandomPathways();
-  },  
-  computed: {
-    ...mapState(['pathways']),
-  },
-  methods: {
-    ...mapActions(['fetchRandomPathways']),
-    goToLink(url) {
-      window.open(url, '_blank');
-    },
-    handleInputEnter(query) {
-      // Redirect to the home route with the query
-      this.$router.push({ name: 'home', query: { search: query } });
-    },
-  },
-}
 </script>
 
 <style scoped>
 .grid-container {
     display: grid;    
-    grid-template-columns: repeat(3, 1fr);/* Three columns of equal size */    
+    grid-template-columns: 1fr 6fr 1fr;/* Three columns of equal size */    
     grid-template-rows: auto auto auto;/* Three rows, size determined by content */    
     gap: 10px;/* Space between grid items */    
     justify-items: center; /* Center items horizontally */
@@ -150,9 +162,8 @@ export default {
     grid-area: nav;
     display: flex;
     justify-content: flex-start;/* Aligns content to the left */    
-    justify-content: flex-start;
-    /* Aligns content to the left */
-    padding: 10px;
+    align-items: flex-start;
+    margin-right: 20px;
     margin-top: 20px;
     text-align: center;
     font-size: 25px;
@@ -166,7 +177,24 @@ li {
     padding: 5px;
 }
 
+.aboutUs-content {
+    grid-area: aboutUs-content;
+    font-family: prompt;
+}
 
+#all-items section { 
+    display: flex; 
+    flex-direction: column;
+}
+
+ #all-items section article { 
+    display: flex; 
+    align-items: center;
+}
+
+#all-items section article div header {
+    font-weight: bold;
+}
 
 .motivational-quotes {
     grid-area: motivational-quotes;
