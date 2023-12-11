@@ -152,7 +152,7 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 25px;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
 }
 .nav a {
@@ -161,7 +161,7 @@ export default {
   font-family: prompt;
   transition: color 0.2s ease-in-out;
 }
-nav a:hover {
+.nav a:hover {
   color: #1dd3da;
 
 }
