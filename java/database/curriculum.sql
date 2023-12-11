@@ -480,4 +480,56 @@ The Elements view includes an interactive tree view of the DOM (Document Object 
 'event | event handling | event | click | v-if | v-show | dom manipulation | dynamic | web design | interactivity | user interface | ui | usability | use | usable | interactive | clickable',
 
 'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/02_Vue_Event_Handling/01-introduction.md'
+),
+(
+'Vue Component Communication',
+
+'Vue promotes streamlined event handling by binding DOM element events, like clicks, to corresponding code. Methods, fundamental JavaScript functions in components, define behavior, distinguishing them from computed properties. Event listeners, facilitated by the v-on directive, respond to events such as clicks or textbox changes. Keyboard and mouse events, including key modifiers for precision, are covered, with shorthand notations like @ for v-on mentioned. Event handlers, executed inline or as methods, handle code execution. Emphasis is placed on handling event arguments, offering access to the original DOM event. Form submissions using v-on:submit are discussed, with solutions to prevent unwanted browser refresh. Conditional display, vital for dynamic UIs, employs v-if for element removal and v-show for CSS display toggling. Considerations for v-if vs. v-show, focusing on CPU efficiency, are highlighted. The content provides a thorough grasp of Vue event handling and related concepts.',
+
+'component | vue | communication | event| conditional display | javascript',
+
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/03_Vue_Component_Communication/01-introduction.md'
+),
+(
+'Vue Router',
+
+'Vue Router facilitates the management of multi-page Vue applications, addressing the challenge of handling distinct views within a Single Page Application (SPA). The text guides through the setup of Vue Router in the /src/main.js file, creating the router and incorporating it into the Vue app.View components play a crucial role in Vue Router, with each route having a corresponding view component responsible for assembling other components and providing necessary data through props. The RouterView component dictates where to display views, and the route configuration is detailed in the routes array, typically found in src/router/index.js. Navigation is achieved using RouterLink components, allowing the creation of links to different views. The text delves into styling active navigation links, providing caution regarding route paths / and router-link-active. Programmatic navigation using the $router instance and methods like push is explained, along with incorporating route parameters for dynamic data in views. Special route scenarios, such as redirects and handling 404 errors for nonexistent routes, are discussed, offering a comprehensive overview of Vue Router for managing multi-page applications in Vue.js.',
+
+'router | vue | paths | views | apis | route | url | routerlink | props | prop',
+
+'https://lms.techelevator.com/cohorts/535/blocks/15/content_files/04_Vue_Router/01-introduction.md'
+),
+(
+'Web Services (GET)',
+
+'HTTP requests are integral to full-stack development, bridging the gap between frontend and backend. This unit delves into asynchronous programming, distinguishing it from synchronous methods with an analogy of restaurant service. Asynchronous programming proves crucial in web service requests, preventing UI sluggishness. Axios, a JavaScript library facilitating HTTP interactions, is introduced. Its asynchronous nature is highlighted, returning Promise objects for effective handling. Promises, featuring states like Pending, Fulfilled, and Rejected, become essential for managing asynchronous code.Service Objects take the spotlight, encapsulating web API logic for organization, testability, and reusability. The creation of an Axios-based Service Object is showcased, emphasizing the export of functions for widespread application use. Vue.js integration with Service Objects is explored. Leveraging the created() Lifecycle Hook for data loading during component creation, Vue directives like v-for aid in displaying fetched data. This approach ensures a responsive user interface, aligning with Vue.js principles of simplicity and power in modern web development.',
+
+'web service | web services | web | apis | http | axios | javascript | asynchronous | promise | pending | fulfilled | rejected | get | http request | request | promise object | service | service object',
+
+'https://lms.techelevator.com/cohorts/535/blocks/17/content_files/01_Web_Services_GET/01-introduction.md'
+),
+(
+'Web Services (POST)',
+
+'Axios is a versatile JavaScript library for making HTTP requests, widely used in web applications. With its promise-based structure, Axios simplifies asynchronous requests, supporting HTTP methods like GET, POST, PUT, and DELETE. For complex interactions, Axios seamlessly handles POST and PUT requests, crucial for creating, updating, or deleting data on servers. Its clean syntax and error-handling mechanisms, like .catch(), make it efficient for managing successful responses and errors. Error handling is a core feature; Axios differentiates between network failures, incorrect URLs, and server-side errors. This ensures meaningful user feedback, vital for a smooth user experience. Axios also addresses Cross-Origin Resource Sharing (CORS) challenges, supporting secure communication between web applications and diverse resources. Its widespread adoption stems from a balance of simplicity, power, and efficient asynchronous operations. In summary, Axios is an intuitive and powerful choice for handling HTTP requests in JavaScript, providing developers with essential features for modern, interactive web applications.',
+
+'axios | javascript | post | put | delete | catch | web services | web',
+
+'https://lms.techelevator.com/cohorts/535/blocks/17/content_files/02_Web_Services_POST/01-introduction.md'
 );
+
+GRANT ALL
+ON ALL TABLES IN SCHEMA public
+TO final_capstone_owner;
+
+GRANT ALL
+ON ALL SEQUENCES IN SCHEMA public
+TO final_capstone_owner;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON ALL TABLES IN SCHEMA public
+TO final_capstone_appuser;
+
+GRANT USAGE, SELECT
+ON ALL SEQUENCES IN SCHEMA public
+TO final_capstone_appuser;
