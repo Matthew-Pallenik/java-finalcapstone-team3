@@ -144,6 +144,44 @@ export default {
         this.processQuery();
       }
     },
+    scoreAndSort() {
+      console.log("Scoring and Sorting Action Called");
+
+      let scoredResults = [...this.$store.state.searchResults];
+
+      for (let result of scoredResults) {
+        let score = 0;
+
+        // Split the title into words for individual comparison
+        const titleWords = result.title ? result.title.toLowerCase().split(/\s+/) : [];
+
+        for (let keyword of this.$store.state.queryKeywords) {
+          // Check each word in the title
+          if (titleWords.includes(keyword.toLowerCase())) {
+            score += 10;
+          }
+
+          // Check in keywords (splitting by '|')
+          if (result.key) {
+            let resultKeywords = result.key.split('|').map(kw => kw.trim().toLowerCase());
+            if (resultKeywords.includes(keyword.toLowerCase())) {
+              score += 5;
+            }
+          }
+        }
+
+        // Update the result's score
+        result.score = score;
+      }
+
+      // Sort the results by score in descending order
+      scoredResults.sort((a, b) => b.score - a.score);
+
+      console.log("Scored and Sorted Results:", scoredResults);
+
+      // Commit the sorted results to the store
+      this.$store.commit('SET_SEARCH_RESULTS', scoredResults);
+    },
 
     async processQuery() {
       // Check if the userQuery is empty. If it is, exit the function early.
@@ -158,6 +196,7 @@ export default {
 
       // Perform the search using the stored keywords
       await this.$store.dispatch('performSearch');
+      this.scoreAndSort();
 
       // Check if there are search results and format them accordingly.
       // If there are search results, store only the first result as an object.
@@ -176,24 +215,9 @@ export default {
       // Reset the user query input field to be ready for a new query.
       this.userQuery = '';
     }
-  },
-  scoreAndSort(){
-    //grab the current keyword array
-    //loop through the result's titles and keywords checking if they contain the keywords in the array
-    //make sure to account for case
-    //assign a score to the results 10 points for each keyword in the title
-    //5 points for each key word in the result's key words
-    //update each results score in the store (each object already has a score set to zero)
-    // compare results scores and and reorder the results array from highest score to lowest score
-    //make sure the new array is sorted properly and displaying properly( this part may affect or be called in the process query)    
-  },
+  }, 
 
-  watch: {
-    // Watch for changes in the Vuex state's searchResults
-    searchResults(newResults) {
-      // Assuming filterResults method is implemented to process the results
-      this.filterResults(newResults);
-    },
+  watch: {    
 
     // Watch for changes in the route, especially for the 'search' query parameter
     $route(to, from) {
