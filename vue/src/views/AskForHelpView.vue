@@ -58,7 +58,7 @@ export default {
     data() {
         return {
             questions: [
-               "What is Cliffton Strengths?",
+                "What is polymorphism?",
                 "What is Git?",
                 "What are some front end job positions?",
                 "What should I wear to a interview?",
@@ -142,7 +142,7 @@ export default {
     align-items: center;
     font-family: prompt;
     font-size: 35px;
-    color: var(--color-pink);
+    color: white;
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
 .nav {
