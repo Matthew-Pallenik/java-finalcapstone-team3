@@ -295,6 +295,10 @@ export default {
 }
 .motivational-quote {
 text-align: left;
+margin-left: 5px;
+}
+h2 {
+  text-align: center;
 }
 
 /* Assign grid area names to the children */
