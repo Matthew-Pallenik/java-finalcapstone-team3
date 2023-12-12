@@ -86,15 +86,16 @@
             
         </div>
         <div class="grid-item middle-right motivational-quotes">
-            <!-- Motivational quotes content goes here -->
         </div>
 
         <!-- Bottom Row -->
         <div class="grid-item bottom-left">
             <!-- This cell is intentionally left empty -->
         </div>
-        <div class="grid-item bottom-center skyline">
-            <img src="img/Cleveland-90s.png" alt="City Skyline">
+        <div class="grid-item bottom-center footer">
+            <!-- Motivational quotes content goes here -->
+            <h2 class="need-motivation?">Need Motivation?</h2>
+            <h3 class="motivational-quote">{{ this.quote }}</h3>
         </div>
         <div class="grid-item bottom-right">
             <!-- this is intentionally right empty-->
@@ -103,6 +104,45 @@
 </template>
 
 <script>
+import QuoteService from '../services/QuoteService';
+
+export default {
+    mounted() {
+        document.title = "About Us";
+        this.fetchRandomQuote();
+    },
+    data(){
+    return {
+        quote:'',
+        quoteAuthor:''
+    }
+    },
+    methods: {
+        goToLink(url) {
+            window.open(url, '_blank');
+        },
+        handleInputEnter(query) {
+            // Redirect to the home route with the query
+            this.$router.push({ name: 'home', query: { search: query } });
+        },
+        fetchRandomQuote() {
+            QuoteService.getRandomQuote()
+            .then((response) => {
+                const quotesArray = response.data;
+                if (quotesArray && quotesArray.length > 0) {
+                this.quote = quotesArray[0].quote;
+                this.quoteAuthor = quotesArray[0].author;
+
+                } else {
+                console.error('No quotes found in the response.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error fetching quote:', error);
+            });
+        },
+    },
+}
 
 </script>
 
@@ -114,13 +154,10 @@
     gap: 10px;/* Space between grid items */    
     justify-items: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Three columns of equal size */
-    grid-template-rows: auto auto auto;
-    /* Three rows, size determined by content */
-    gap: 10px;
-    /* Space between grid items */
+    background-image: url('img/Cleveland-90s.png');
+    background-size: 145%;
+    background-position: center calc(100% + 350px);
+    background-repeat: no-repeat;
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -128,7 +165,7 @@
     grid-template-areas:
         "logo welcome empty1"
         "nav aboutUs-content motivational-quotes"
-        "empty2 skyline empty3";
+        "footer footer footer";
 }
 
 /* Place each grid-item in the correct grid area */
@@ -231,8 +268,19 @@ ul {
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
-.skyline {
-    grid-area: skyline;
-    filter: drop-shadow(-10px -10px 10px #b5b6b8); /* Shadow effect for depth */       
+.footer {
+  grid-area: footer;
+  background-color: #131c5a;
+  /* Blue color for the footer */
+  height: 200px;
+  /* Set the desired height for the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* Text color for the footer content */
+  font-family: prompt;
 }
+
+/* Styling for the skyline image, serving as the footer visually */
 </style>
