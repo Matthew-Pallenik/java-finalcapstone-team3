@@ -2,6 +2,7 @@ import { createStore as _createStore } from 'vuex';
 import axios from 'axios';
 import PathwayService from '../services/PathwayService';
 import CurriculumService from '../services/CurriculumService';
+import JobsService from '../services/JobsService';
 
 export function createStore(currentToken, currentUser) {
   let store = _createStore({
@@ -11,6 +12,7 @@ export function createStore(currentToken, currentUser) {
       pathways: [],      
       preferredName: '', // Store the user's preferred name
       curriculums: [],
+      jobs:[],
       queryKeywords: [] //this is the user query broken into a array to be used in other methods like the perform search and filterResults.
     },
     mutations: {
@@ -49,6 +51,14 @@ export function createStore(currentToken, currentUser) {
           score: 0 // Initializing score
         }));
       },
+      SET_JOB(state,jobs){
+        state.jobs = jobs.map(job => ({
+          ...job,
+          originalId: job.id,
+          id: `j${job.id}`,
+          score: 0
+        }));
+      },
       SET_PREFERRED_NAME(state, name) {
         state.preferredName = name;
       },
@@ -74,6 +84,7 @@ export function createStore(currentToken, currentUser) {
         try {
           let pathway = [];
           let curriculum = [];
+          let job = [];
 
           for (const key of state.queryKeywords) {
             const pathwayResponse = await PathwayService.addUserInput(key);
@@ -83,10 +94,14 @@ export function createStore(currentToken, currentUser) {
             const curriculumResponse = await CurriculumService.addUserInput(key);
             curriculum.push(...curriculumResponse.data);
             commit('SET_CURRICULUM', curriculum);
+
+            const jobsResponse = await JobsService.addUserInput(key);
+            job.push(...jobsResponse.data);
+            commit('SET_JOB', job)
           }
 
           // Use the getter to get the combined results
-          let allResults = [...state.pathways, ...state.curriculums];
+          let allResults = [...state.pathways, ...state.curriculums, ...state.jobs];
 
           // Commit the combined results
           commit('SET_SEARCH_RESULTS', allResults);
@@ -143,6 +158,32 @@ export function createStore(currentToken, currentUser) {
           console.error('Error fetching random curriculum:', error);
         }
       },
+      async fetchRandomJobs({ commit }) {
+        try {
+          const totalItems = 14; // Total number of items available(this may change when curriculum table is fully populated)
+          const numberOfItemsToFetch = 14; // Number of items to display
+          let selectedIds = new Set();
+      
+          // Randomly pick unique IDs
+          while (selectedIds.size < numberOfItemsToFetch) {
+            const randomId = Math.floor(Math.random() * totalItems) + 1;
+            selectedIds.add(randomId);
+          }
+      
+          let jobs = [];
+          for (let id of selectedIds) {
+            const response = await JobsService.getResultById(id);
+            jobs.push(response.data);
+            console.log(jobs);
+            
+          }
+      
+          // Assuming each response.data is an individual pathway item
+          commit('SET_JOB', jobs);
+        } catch (error) {
+          console.error('Error fetching random jobs:', error);
+        }
+      }
     }
   });
   return store;

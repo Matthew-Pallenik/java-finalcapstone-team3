@@ -39,8 +39,10 @@
                     @keyup.enter="handleInputEnter($event.target.value)">
             </div>
         </div>
-        <div class="grid-item middle-right motivational-quotes">
+        <div class="grid-item motivational-quotes">
             <!-- Motivational quotes content goes here -->
+            {{ this.quote }}
+            -{{ quoteAuthor }}
         </div>
 
         <!-- Bottom Row -->
@@ -60,14 +62,22 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import router from '@/router';
+import QuoteService from '../services/QuoteService';
 
 export default {
     mounted() {
     document.title = "Pathway";
     this.fetchRandomPathways();
+    this.fetchRandomQuote();
   },  
   computed: {
     ...mapState(['pathways']),
+  },
+  data(){
+    return {
+      quote:'',
+      quoteAuthor:''
+    }
   },
   methods: {
     ...mapActions(['fetchRandomPathways']),
@@ -77,6 +87,22 @@ export default {
     handleInputEnter(query) {
       // Redirect to the home route with the query
       this.$router.push({ name: 'home', query: { search: query } });
+    },
+    fetchRandomQuote() {
+      QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
     },
   },
 }
@@ -125,14 +151,6 @@ export default {
 
 }
 
-#TE Logo {
-    width: 250px;
-    /* You may set a max-width instead if the image is too large */
-    height: auto;
-    /* Maintain aspect ratio */
-
-}
-
 .welcome {
     grid-area: welcome;
     display: flex;
@@ -154,8 +172,8 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 25px;
-  background-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 0.5rem;
+  background-color: hsla(0, 2%, 46%, 0.5);
+border-radius: 0.5rem;
 }
 .nav a {
   color: #ffffff;
@@ -163,7 +181,7 @@ export default {
   font-family: prompt;
   transition: color 0.2s ease-in-out;
 }
-nav a:hover {
+.nav a:hover {
   color: #1dd3da;
 
 }
@@ -228,6 +246,20 @@ li {
 
 .motivational-quotes {
     grid-area: motivational-quotes;
+}
+.motivational-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 2%, 46%, 0.5);
+  border-radius: 0.5rem;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+  font-family: prompt;
 }
 .footer {
   grid-area: footer;

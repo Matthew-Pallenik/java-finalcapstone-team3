@@ -10,6 +10,6 @@ const http = axios.create({
 });
 export default{
     getRandomQuote(){
-        return http.get('/quotes?category=failure')
+        return http.get('/quotes?category=computers')
     }
 }

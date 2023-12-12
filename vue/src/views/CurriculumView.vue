@@ -41,6 +41,7 @@
         </div>
         <div class="grid-item middle-right motivational-quotes">
             <!-- Motivational quotes content goes here -->
+            {{ this.quote }} - {{ this.quoteAuthor }}
         </div>
 
         <!-- Bottom Row -->
@@ -65,11 +66,19 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import router from '@/router';
+import QuoteService from '../services/QuoteService';
 
 export default {
     mounted() {
         document.title = "Curriculum";
         this.fetchRandomCurriculum();
+        this.fetchRandomQuote();
+    },
+    data(){
+        return{
+            quote:'',
+            quoteAuthor:''
+        }
     },
     computed: {
         ...mapState(['curriculums']),
@@ -83,35 +92,46 @@ export default {
             // Redirect to the home route with the query
             this.$router.push({ name: 'home', query: { search: query } });
         },
+        fetchRandomQuote() {
+        QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
+    }
     },
 }
 </script>
 <style scoped>
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr, 3fr, 1fr;
-    /* Three columns of equal size */
-    grid-template-rows: auto auto 1frSSS;
-    /* Three rows, size determined by content */
+    display: grid;    
+    grid-template-columns: 1fr 3fr 1fr; /* Three columns: left, middle, right */
+    grid-template-rows: auto auto auto;
     gap: 10px;
-    /* Space between grid items */
     justify-items: center;
-    /* Center items horizontally */
     align-items: center;
-    /* Center items vertically */
-
-    background-image: url('img/Columbus-90s.png'); /* Set the skyline image as the background */
-  background-size: 145%; /* Cover the entire container with the background image */
-  background-position: center calc(100% + 550px ); /* Center the background image and position it below the bottom of the grid */
-  background-repeat: no-repeat; /* Do not repeat the background image */
+    background-image: url('img/Pittsburgh-90s.png');
+    background-size: 150%;
+    background-position: center calc(100% + 600px) ;
+    background-repeat: no-repeat;
 }
 
 /* Assign the grid-template-areas to match the layout */
 .grid-container {
     grid-template-areas:
         "logo welcome empty1"
-        "nav curriculum-content motivational-quotes"
+        "nav pathway-content motivational-quotes"
         "footer footer footer";
+
 }
 
 /* Place each grid-item in the correct grid area */
@@ -120,15 +140,32 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
-    filter: drop-shadow(-1px -1px 1px #b5b6b8);
-    /* Shadow effect for depth */
+    margin-top: 0px;    
+    filter: drop-shadow(-1px -1px 1px #b5b6b8);/* Shadow effect for depth */ 
 }
 
 #TE Logo {
-    width: 250px;
-    height: auto;
-    /* Maintain aspect ratio */
+    width: 250px;    
+    height: auto;/* Maintain aspect ratio */ 
+    margin-top: 0px;
+    margin-left: 100px;
+    filter: drop-shadow(-1px -1px 1px #b5b6b8);
+    /* Shadow effect for depth */
+
+}
+.motivational-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 2%, 46%, 0.5);
+  border-radius: 0.5rem;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+  font-family: prompt;
 }
 
 .welcome {
@@ -152,8 +189,8 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 25px;
-  background-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 0.5rem;
+  background-color: hsla(0, 2%, 46%, 0.5);
+border-radius: 0.5rem;
 }
 .nav a {
   color: #ffffff;
@@ -161,7 +198,7 @@ export default {
   font-family: prompt;
   transition: color 0.2s ease-in-out;
 }
-nav a:hover {
+.nav a:hover {
   color: #1dd3da;
 
 }
@@ -173,91 +210,64 @@ li {
 }
 
 .curriculum-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Create three columns */
-    grid-gap: 20px;
-    /* Adjust to your preference for space between grid items */
-    padding: 20px;
-    /* Padding around the entire grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 .curriculum-cell {
-    background-color: #fff;
-    /* White background for the cell */
-    border-radius: 10px;
-    /* Rounded corners for the cells */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
-    padding: 20px;
-    /* Padding inside each cell */
-    display: flex;
-    justify-content: center;
-    /* Center the content horizontally */
-    align-items: center;
-    /* Center the content vertically */
-    cursor: pointer;
-    /* Change cursor to indicate the cell is clickable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition for hover effects */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .curriculum-cell:hover {
-    transform: translateY(-5px);
-    /* Slightly raise the cell on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Larger shadow for lifted effect */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .curriculum-title {
-    margin: 0;
-    /* Remove default margin from paragraph tags */
-    font-size: 20px;
-    /* Adjust font size as needed */
-    font-family: prompt;
-    color: var(--color-light-blue);
-    text-align: center;
-    /* Center text */
+  margin: 0;
+  font-size: 20px;
+  font-family: prompt;
+  color: var(--color-light-blue);
+  text-align: center;
 }
 
-/* Style for the input container */
 .input-container {
-    display: flex;
-    justify-content: center;
-    /* Center the input horizontally */
-    height: 50px;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  padding: 20px;
 }
 
-/* Style for the input box */
 .curriculum-input {
-    width: 100%;
-    max-width: calc(100% - 40px);
-    margin: 0 auto;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    font-family: prompt;
-    font-size: 18px;
-    color: #5f5b5b;
+  width: 100%;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: prompt;
+  font-size: 18px;
+  color: #5f5b5b;
 }
 
 .motivational-quotes {
     grid-area: motivational-quotes;
 }
-
-/* empty2 and empty3 do not need styles since they are intentionally left empty */
-
-body{
-    overflow: hidden;
-}
-
 .footer {
   grid-area: footer;
   background-color: #131c5a; /* Blue color for the footer */
-  height: 300px; /* Set the desired height for the footer */
+  height: 30vh; /* Set the desired height for the footer */
   display: flex;
   justify-content: center;
   align-items: center;
