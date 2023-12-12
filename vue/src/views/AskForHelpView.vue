@@ -58,10 +58,13 @@
 
 <script>
 import router from '@/router';
+import QuoteService from '../services/QuoteService';
 
 export default {
     data() {
         return {
+            quote:'',
+      quoteAuthor:'',
             questions: [
                 "What is polymorphism?",
                 "What is Git?",
@@ -80,6 +83,7 @@ export default {
     },
     mounted() {
         document.title = "Ask For Help!";
+        this.fetchRandomQuote();
     },
     methods: {
         handleInputEnter(query) {
@@ -89,6 +93,22 @@ export default {
         setQueryAndNavigate(question) {
             this.$router.push({ name: 'home', query: { search: question } });
         },
+        fetchRandomQuote() {
+      QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
+     },
     },
 }
 </script>
