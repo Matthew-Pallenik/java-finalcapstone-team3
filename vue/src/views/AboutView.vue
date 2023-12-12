@@ -33,38 +33,53 @@
                 <header></header>
                 <section>
                     <article>
-                        <div><i class="fas fa-pizza-slice fa-7x"> </i></div>
+                        <div></div>
                         <div>
                             <h3>Jake Butler</h3>
-                            <p>The Bad Boy of Coding</p>
+                            <p>I'm Jake. I am a music lover, amateur athlete, and self-proclaimed comedian. 
+                                I'm a career changer, pivoting from covering news to developing views. 
+                                One thing that hasn't changed is my love for people and collaboration. 
+                                While moving from journalism to development may seem like an odd shift, teamwork in both roles is vital, both for the team and my own personal human interaction quotas. 
+                                My goal is to, yes, build a sustainable career in tech where I can contribute to amazing projects, but also to build genuine connections with colleagues and keep team morale at peak levels. 
+                                This may be a good time to mention my bartending experience too.</p>
                         </div>
                     </article>
                     <article>
-                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div></div>
                         <div>
                             <h3>Ahmed Elbagory</h3>
-                            <p>The Quiet Storm</p>
+                            <p>I am a computer technician who developed a passion for electronics at a young age, progressing from disassembling old devices to repairing them. 
+                                As my expertise expanded, I transitioned from hardware troubleshooting to software exploration, seeking a holistic understanding of technology's problem-solving potential. 
+                                Motivated by challenges, I aim to apply my unique blend of technical and creative skills in a junior software development role to contribute to business success and continue my personal growth.</p>
                         </div>
                     </article>
                     <article>
-                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div></div>
                         <div>
                             <h3>Matthew Pallenik</h3>
-                            <p>The Sicko Writing This</p>
+                            <p>I am a software developer with a background in shipping and logistics. 
+                                I first got into computing because I was miffed that Madden and NCAA Football had declined for years, but got derailed from that after college.
+                                But even though I was good enough to be an All-Star at my job, I still felt my skills weren't being put to the best use, so I decided to switch careers. 
+                                That's when I remembered that my favorite parts of the job came when dealing with computers and programs. 
+                                So to understand the other side of what happens with those programs, I am pursuing a career in coding.</p>
                         </div>
                     </article>
                     <article>
-                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div></div>
                         <div>
                             <h3>Bryson Poole</h3>
-                            <p>The (Mostly) Ethical Hacker</p>
+                            <p>I am a (mostly) ethical hacker and near unanimous winner of the "Grossest Website" award thanks to my skills in making seizure-inducing flashing backgrounds.</p>
                         </div>
                     </article>
                     <article>
-                        <div><i class="fas fa-ice-cream fa-7x"> </i></div>
+                        <div></div>
                         <div>
                             <h3>Roxana Valdina</h3>
-                            <p>The Champion of ChatGPT</p>
+                            <p>I am a passionate lifelong learner, dedicated to growth and the deep exploration of challenges that push me beyond my comfort zone. 
+                                My journey toward becoming a software engineer began with an interest in video game design and blossomed into a profound love for artificial intelligence and the endless opportunities to learn new technologies. 
+                                There's always something to satiate my hunger for knowledge and fuel my curiosity. 
+                                For me, building a career in technology isn't just a professional choice; it's about crafting a life dedicated to creating innovative solutions that genuinely impact people's lives. 
+                                This path in software engineering is more than a career trajectory I've chosen; it's a testament to my belief that with passion and perseverance, anything is possible.</p>
                         </div>
                     </article>
                 </section>
@@ -95,7 +110,7 @@
 <style scoped>
 .grid-container {
     display: grid;    
-    grid-template-columns: 1fr 6fr 1fr;/* Three columns of equal size */    
+    grid-template-columns: 1fr 3fr 1fr;/* Three columns of equal size */    
     grid-template-rows: auto auto auto;/* Three rows, size determined by content */    
     gap: 10px;/* Space between grid items */    
     justify-items: center; /* Center items horizontally */
@@ -159,22 +174,37 @@
 /* empty1 does not need a style since it is intentionally left empty */
 
 .nav {
-    grid-area: nav;
-    display: flex;
-    justify-content: flex-start;/* Aligns content to the left */    
-    align-items: flex-start;
-    margin-right: 20px;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
-    font-family: prompt;
-    text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.2);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 25px;
+  background-color: hsla(0, 2%, 46%, 0.5);
+  border-radius: 0.5rem;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: prompt;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav a:hover {
+  color: #1dd3da;
+
 }
 
 li {
     display: list-item;
     list-style-type: none;
     padding: 5px;
+}
+
+ul {
+    white-space: nowrap;
 }
 
 .aboutUs-content {
