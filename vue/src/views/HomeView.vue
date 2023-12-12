@@ -289,6 +289,20 @@ export default {
   background-repeat: no-repeat;
   /* Do not repeat the background image */
 }
+.motivational-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 2%, 46%, 0.5);
+  border-radius: 0.5rem;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+  font-family: prompt;
+}
 
 /* Assign grid area names to the children */
 .logo {

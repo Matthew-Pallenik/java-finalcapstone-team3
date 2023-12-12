@@ -41,6 +41,7 @@
         </div>
         <div class="grid-item middle-right motivational-quotes">
             <!-- Motivational quotes content goes here -->
+            {{ this.quote }} - {{ this.quoteAuthor }}
         </div>
 
         <!-- Bottom Row -->
@@ -65,11 +66,19 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import router from '@/router';
+import QuoteService from '../services/QuoteService';
 
 export default {
     mounted() {
         document.title = "Curriculum";
         this.fetchRandomCurriculum();
+        this.fetchRandomQuote();
+    },
+    data(){
+        return{
+            quote:'',
+            quoteAuthor:''
+        }
     },
     computed: {
         ...mapState(['curriculums']),
@@ -83,6 +92,22 @@ export default {
             // Redirect to the home route with the query
             this.$router.push({ name: 'home', query: { search: query } });
         },
+        fetchRandomQuote() {
+        QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
+    }
     },
 }
 </script>
@@ -127,6 +152,20 @@ export default {
     filter: drop-shadow(-1px -1px 1px #b5b6b8);
     /* Shadow effect for depth */
 
+}
+.motivational-quotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 2%, 46%, 0.5);
+  border-radius: 0.5rem;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+  font-family: prompt;
 }
 
 .welcome {

@@ -35,7 +35,7 @@
         <input type="text" placeholder="Ask me anything..." class="jobs-input" @keyup.enter="handleInputEnter($event.target.value)">
       </div>
     </div>
-    <div class="grid-item middle-right motivational-quotes">
+    <div class="grid-item motivational-quotes">
       <!-- Motivational quotes content goes here -->
     </div>
 
@@ -119,6 +119,7 @@ export default {
     /* Shadow effect for depth */
 
 }
+
 
 .welcome {
     grid-area: welcome;
