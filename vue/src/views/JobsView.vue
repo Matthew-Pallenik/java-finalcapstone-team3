@@ -26,10 +26,10 @@
     </div>
     <div class="grid-item middle-center jobs-content">
       <div class="jobs-grid">
-        <div v-for="job in jobs.slice(0, 2)" :key="job.id" class="jobs-cell" @click="toggleExpansion(job)">
-          <div :class="{ 'expanded': job.expanded }" class="job-info">
-            <p class="jobs-title">{{ job.title }}</p>
-            <p class="jobs-description">{{ job.description }}</p>
+        <div v-if="currentJob" class="jobs-cell" @click="toggleExpansion">
+          <div :class="{ 'expanded': currentJob.expanded }" class="job-info">
+            <p class="jobs-title">{{ currentJob.title }}</p>
+            <p class="jobs-description">{{ currentJob.description }}</p>
           </div>
         </div>
       </div>
@@ -57,12 +57,20 @@ import { mapState, mapActions } from 'vuex';
 import router from '@/router';
 
 export default {
+  data() {
+    return {
+      currentJobIndex: 0,
+    };
+  },
   mounted() {
     document.title = "Job";
     this.fetchRandomJobs();
-  },  
+  },
   computed: {
     ...mapState(['jobs']),
+    currentJob() {
+      return this.jobs[this.currentJobIndex];
+    },
   },
   methods: {
     ...mapActions(['fetchRandomJobs']),
@@ -72,11 +80,12 @@ export default {
     handleInputEnter(query) {
       this.$router.push({ name: 'home', query: { search: query } });
     },
-    toggleExpansion(job) {
-      job.expanded = !job.expanded;
+    toggleExpansion() {
+      // Increment the currentJobIndex and wrap around to the first job if needed
+      this.currentJobIndex = (this.currentJobIndex + 1) % this.jobs.length;
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -193,7 +202,7 @@ li {
 
 .jobs-title {
     margin: 0;
-    font-size: 40px;
+    font-size: larger;
     font-family: prompt;
     color: var(--color-light-blue);
     margin-bottom: 5px; /* Add margin bottom for spacing between title and description */
@@ -204,6 +213,7 @@ li {
     font-size: 10px;
     font-family: prompt;
     color: #5f5b5b;
+    font-size: large;
 }
 
 .jobs-title {
