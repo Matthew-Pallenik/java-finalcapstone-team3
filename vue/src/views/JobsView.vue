@@ -37,8 +37,8 @@
         <input type="text" placeholder="Ask me anything..." class="jobs-input" @keyup.enter="handleInputEnter($event.target.value)">
       </div>
     </div>
-    <div class="grid-item motivational-quotes">
-      <!-- Motivational quotes content goes here -->
+    <div class="grid-item middle right">
+      
     </div>
 
     <!-- Bottom Row -->
@@ -49,7 +49,12 @@
       <!-- this is intentionally right empty-->
     </div>
   </div>
-  <div class="grid-item footer"></div>
+  <div class="grid-item footer">
+    <!-- Motivational quotes content goes here -->
+    <h2 class="need-motivation?">Need Motivation?</h2>
+    <h3 class="motivational-quote">{{ this.quote }}</h3>
+    <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
+  </div>
 </template>
 
 <script>

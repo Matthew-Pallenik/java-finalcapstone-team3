@@ -41,8 +41,7 @@
             </div>
         </div>
         <div class="grid-item middle-right">
-            <!-- Motivational quotes content goes here -->
-            
+           
         </div>
 
         <!-- Bottom Row -->
@@ -57,9 +56,11 @@
         </div>
     </div>
     <div class="grid-item footer">
+       <!-- Motivational quotes content goes here -->
+            
       <h2 class="need-motivation?">Need Motivation?</h2>
     <h3 class="motivational-quote">{{ this.quote }}</h3>
-    <h3 class="quote-author">-{{ quoteAuthor }}</h3>
+    <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
 
     </div>
 </template>
