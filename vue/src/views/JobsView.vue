@@ -60,16 +60,20 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import router from '@/router';
+import QuoteService from '../services/QuoteService';
 
 export default {
   data() {
     return {
       currentJobIndex: 0,
+      quote:'',
+      quoteAuthor:''
     };
   },
   mounted() {
     document.title = "Job";
     this.fetchRandomJobs();
+    this.fetchRandomQuote();
   },
   computed: {
     ...mapState(['jobs']),
@@ -88,6 +92,22 @@ export default {
     toggleExpansion() {
       // Increment the currentJobIndex and wrap around to the first job if needed
       this.currentJobIndex = (this.currentJobIndex + 1) % this.jobs.length;
+    },
+    fetchRandomQuote() {
+      QuoteService.getRandomQuote()
+        .then((response) => {
+          const quotesArray = response.data;
+          if (quotesArray && quotesArray.length > 0) {
+            this.quote = quotesArray[0].quote;
+            this.quoteAuthor = quotesArray[0].author;
+
+          } else {
+            console.error('No quotes found in the response.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching quote:', error);
+        });
     },
   },
 };
