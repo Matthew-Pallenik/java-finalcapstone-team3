@@ -78,7 +78,7 @@
     </div>
 
     <!-- Placeholder for the motivational quote in the middle-right -->
-    <div class="grid-item motivational-quote">
+    <div class="grid-item middle right">
       <!-- Motivational quote can be dynamically inserted here -->
 
 
