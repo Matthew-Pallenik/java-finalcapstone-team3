@@ -16,7 +16,8 @@
                 <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
-                <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
+                <li><router-link v-bind:to="{ name: 'Pathway' }" class="nav-link">Pathway</router-link></li>
+                <li><router-link v-bind:to="{ name: 'AboutUs' }" class="nav-link">About Us</router-link></li>
                 <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
                         class="nav-link">Logout</router-link></li>
             </ul>
@@ -57,7 +58,7 @@ export default {
     data() {
         return {
             questions: [
-               "What is Clifton Strengths?",
+                "What is polymorphism?",
                 "What is Git?",
                 "What are some front end job positions?",
                 "What should I wear to a interview?",
@@ -141,7 +142,7 @@ export default {
     align-items: center;
     font-family: prompt;
     font-size: 35px;
-    color: var(--color-pink);
+    color: white;
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
 .nav {
