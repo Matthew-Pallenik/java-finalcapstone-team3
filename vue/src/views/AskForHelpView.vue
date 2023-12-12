@@ -16,7 +16,8 @@
                 <li><router-link v-bind:to="{ name: 'home' }" class="nav-link">Home</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Curriculum' }" class="nav-link">Curriculum</router-link></li>
                 <li><router-link v-bind:to="{ name: 'Jobs' }" class="nav-link">Jobs</router-link></li>
-                <li><router-link v-bind:to="{ name: 'AskForHelp' }" class="nav-link">Ask For Help</router-link></li>
+                <li><router-link v-bind:to="{ name: 'Pathway' }" class="nav-link">Pathway</router-link></li>
+                <li><router-link v-bind:to="{ name: 'AboutUs' }" class="nav-link">About Us</router-link></li>
                 <li><router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"
                         class="nav-link">Logout</router-link></li>
             </ul>
