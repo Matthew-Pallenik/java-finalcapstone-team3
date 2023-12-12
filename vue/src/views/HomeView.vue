@@ -91,9 +91,6 @@
     </div>
 
     <!-- Skyline image in the bottom-center -->
-    <!-- <div class="grid-item skyline">
-      <img src="img/Cleveland-90s.png" alt="City Skyline">
-    </div> -->
 
     <!-- Placeholder for the bottom-right content -->
     <div class="grid-item bottom-right-placeholder">

@@ -125,14 +125,6 @@ export default {
 
 }
 
-#TE Logo {
-    width: 250px;
-    /* You may set a max-width instead if the image is too large */
-    height: auto;
-    /* Maintain aspect ratio */
-
-}
-
 .welcome {
     grid-area: welcome;
     display: flex;
