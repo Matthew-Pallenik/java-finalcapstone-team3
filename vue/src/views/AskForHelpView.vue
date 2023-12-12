@@ -24,19 +24,9 @@
         <div class="grid-item middle-center askForHelp-content">
             <!-- Create a grid container for the ask for help here -->
             <div class="askForHelp-grid">
-                <p>What is Cliffton Strengths?</p>
-                <p>What is Git?</p>
-                <p>What are some front end job positions?</p>
-                <p>What should I wear to a interview?</p>
-                <p>What is a variable?</p>
-                <p>What are some back end positions</p>
-                <p>What is CRUD?</p>
-                <p>I need help with my Resume.</p>
-                <p>What is Database Design?</p>
-                <p>What is Object Oriented Programming?</p>
-                <p>What do I do after interviews?</p>
-                <p>Job Positions?</p>
-            </div>        
+                <p v-for="(question, index) in questions" :key="index" @click="setQueryAndNavigate(question)">
+                    {{ question }}</p>
+            </div>
             <!-- Input Container -->
             <div class="input-container">
                 <input type="text" placeholder="Ask me anything..." class="askForHelp-input"
@@ -64,6 +54,24 @@
 import router from '@/router';
 
 export default {
+    data() {
+        return {
+            questions: [
+               "What is Cliffton Strengths?",
+                "What is Git?",
+                "What are some front end job positions?",
+                "What should I wear to a interview?",
+                "What is a variable?",
+                "What are some back end positions",
+                "What is CRUD?",
+                "I need help with my Resume.",
+                "What is Database Design?",
+                "What is Object Oriented Programming?",
+                "What do I do after interviews?",
+                "Job Positions?"
+            ]
+        };
+    },
     mounted() {
         document.title = "Ask For Help!";
     },
@@ -71,6 +79,9 @@ export default {
         handleInputEnter(query) {
             // Redirect to the home route with the query
             this.$router.push({ name: 'home', query: { search: query } });
+        },
+        setQueryAndNavigate(question) {
+            this.$router.push({ name: 'home', query: { search: question } });
         },
     },
 }
@@ -129,7 +140,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-family: prompt;
-    font-size: 45px;
+    font-size: 35px;
     color: var(--color-pink);
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
@@ -177,6 +188,13 @@ p {
   align-items: center;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: prompt;
+  font-size: 18px;
+  color: var(--color-light-purple);
+}
+p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 
