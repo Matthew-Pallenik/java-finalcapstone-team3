@@ -11,11 +11,7 @@
 
 
 
-.header {
-    background-color: var(--color-light);
-}
 .footer{
-    background-color: #131c5a;
     grid-area: footer;
 }
 
@@ -26,5 +22,17 @@ html {
     height: 100%;
     font-family: Source 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: auto;
+    background: radial-gradient(at right top, rgb(139, 92, 246), rgb(253, 186, 116))
+
+
+
+
+
+
+
+
+
+
+
 }
 

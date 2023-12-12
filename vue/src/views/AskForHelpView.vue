@@ -57,7 +57,7 @@ export default {
     data() {
         return {
             questions: [
-               "What is Cliffton Strengths?",
+               "What is Clifton Strengths?",
                 "What is Git?",
                 "What are some front end job positions?",
                 "What should I wear to a interview?",

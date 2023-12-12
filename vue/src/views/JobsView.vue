@@ -26,7 +26,7 @@
     </div>
     <div class="grid-item middle-center jobs-content">
       <div class="jobs-grid">
-        <div v-for="job in jobs.slice(0, 14)" :key="job.id" class="jobs-cell" @click="toggleExpansion(job)">
+        <div v-for="job in jobs.slice(0, 2)" :key="job.id" class="jobs-cell" @click="toggleExpansion(job)">
           <div :class="{ 'expanded': job.expanded }" class="job-info">
             <p class="jobs-title">{{ job.title }}</p>
             <p class="jobs-description">{{ job.description }}</p>
@@ -130,7 +130,7 @@ export default {
     align-items: center;
     font-family: prompt;
     font-size: 45px;
-    color: var(--color-pink);
+    color: whitesmoke;
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
 
@@ -166,7 +166,7 @@ li {
 
 .jobs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 20px;
   padding: 20px;
 }
@@ -193,7 +193,7 @@ li {
 
 .jobs-title {
     margin: 0;
-    font-size: 20px;
+    font-size: 40px;
     font-family: prompt;
     color: var(--color-light-blue);
     margin-bottom: 5px; /* Add margin bottom for spacing between title and description */

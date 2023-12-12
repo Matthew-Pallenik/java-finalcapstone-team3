@@ -80,8 +80,7 @@
     <!-- Placeholder for the motivational quote in the middle-right -->
     <div class="grid-item motivational-quote">
       <!-- Motivational quote can be dynamically inserted here -->
-      {{ this.quote }}
-      -{{ this.quoteAuthor }}
+
 
     </div>
 
@@ -100,6 +99,9 @@
   </div>
 
   <div class="grid-item footer">
+    <h2 class="need-motivation?">Need Motivation?</h2>
+    <h3 class="motivational-quote">{{ this.quote }}</h3>
+
 
   </div>
 </template>
@@ -289,20 +291,10 @@ export default {
   /* Center the background image and position it below the bottom of the grid */
   background-repeat: no-repeat;
   /* Do not repeat the background image */
+
 }
 .motivational-quote {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: hsla(0, 2%, 46%, 0.5);
-  border-radius: 0.5rem;
-  padding: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
-  font-family: prompt;
+text-align: left;
 }
 
 /* Assign grid area names to the children */
@@ -383,7 +375,7 @@ export default {
   /* Remove top margin to bring closer to the top */
   padding-top: 1em;
   /* Add padding to space it from the top edge */
-  color: var(--color-pink);
+  color: whitesmoke;
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
 
@@ -496,7 +488,7 @@ ul {
 
 /* QA Container specific styles */
 .qa-container {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, .95);
   /* Semi-transparent white */
   border-radius: 15px;
   /* Rounded corners */
