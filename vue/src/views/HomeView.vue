@@ -340,23 +340,20 @@ h2 {
 .grid-item.logo {
   /* Center the logo within its grid cell */
   display: flex;
-  justify-content:start;
+  justify-content: center;
   align-items: center;
   margin-top: 0px;  
   filter: drop-shadow(-1px -1px 1px #b5b6b8);
   /* Shadow effect for depth */
-
+  max-width: 100%; /* Add this line to restrict the width of the container */
 }
 
 /* Styling for the logo image */
 .grid-item.logo img {
-  transform: scale(5);
-  width: 250px;
   /* You may set a max-width instead if the image is too large */
-  height: auto;
   /* Maintain aspect ratio */
-  margin-left: 75px;
   /* Remove max-height if it's not needed or adjust accordingly */
+  max-width: 100%; /* Add this line to restrict the width of the image */
 }
 
 

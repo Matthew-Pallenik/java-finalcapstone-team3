@@ -1,7 +1,7 @@
 <template>
   <div class="jobs grid-container">
     <!-- Top Row -->
-    <div class="grid-item top-left logo">
+    <div class="grid-item logo">
       <img src="img/Gary-LOGO.png" alt="TE Logo">
     </div>
     <div class="grid-item top-center welcome">
@@ -137,28 +137,6 @@ export default {
 }
 
 /* Place each grid-item in the correct grid area */
-
-.grid-item.logo {
-  /* Center the logo within its grid cell */
-  display: flex;
-  justify-content:start;
-  align-items: center;
-  margin-top: 0px;  
-  filter: drop-shadow(-1px -1px 1px #b5b6b8);
-  /* Shadow effect for depth */
-
-}
-
-/* Styling for the logo image */
-.grid-item.logo img {
-  transform: scale(5);
-  width: 250px;
-  /* You may set a max-width instead if the image is too large */
-  height: auto;
-  /* Maintain aspect ratio */
-  margin-left: 75px;
-  /* Remove max-height if it's not needed or adjust accordingly */
-}
 
 
 

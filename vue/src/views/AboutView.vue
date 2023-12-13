@@ -188,15 +188,6 @@ export default {
 
 }
 
-.grid-item.logo img {
-  transform: scale(5);
-  width: 250px;
-  /* You may set a max-width instead if the image is too large */
-  height: auto;
-  /* Maintain aspect ratio */
-  margin-left: 75px;
-  /* Remove max-height if it's not needed or adjust accordingly */
-}
 
 
 .welcome {
