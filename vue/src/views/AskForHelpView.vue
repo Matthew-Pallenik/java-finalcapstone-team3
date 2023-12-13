@@ -50,7 +50,7 @@
     </div>
     <div class="grid-item footer">
          <!-- Motivational quotes content goes here -->
-    <h2 class="need-motivation?">Need Motivation?</h2>
+    <h2 class="need-motivation">Need Motivation?</h2>
     <h3 class="motivational-quote">{{ this.quote }}</h3>
     <h3 class="quote-author">-{{ quoteAuthor }}</h3>
     </div>
@@ -237,11 +237,32 @@ p:hover {
   grid-area: footer;
   background-color: #131c5a; /* Blue color for the footer */
   height: 30vh; /* Set the desired height for the footer */
-  display: flex;
+  display: grid;
+  text-align: center;
   justify-content: center;
   align-items: center;
   color: white; /* Text color for the footer content */
   font-family: prompt;
+}
+.need-motivation{
+  gap: 0;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+h3.motivational-quote{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 0px;
+}
+h3.quote-author{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  padding: 0px;
 }
 
 </style>

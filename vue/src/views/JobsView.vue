@@ -6,6 +6,8 @@
     </div>
     <div class="grid-item top-center welcome">
       <h2>Jobs</h2>
+      <h3 class="clickPrompt">...click to see next role...</h3>
+
       <!-- Welcome content goes here -->
     </div>
     <div class="grid-item top-right">
@@ -51,7 +53,7 @@
   </div>
   <div class="grid-item footer">
     <!-- Motivational quotes content goes here -->
-    <h2 class="need-motivation?">Need Motivation?</h2>
+    <h2 class="need-motivation">Need Motivation?</h2>
     <h3 class="motivational-quote">{{ this.quote }}</h3>
     <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
   </div>
@@ -135,7 +137,15 @@ export default {
         "footer footer footer";
 
 }
+h2{
+  margin-bottom: 0px;
+}
 
+.clickPrompt{
+  text-align: center;
+  margin: 0px;
+  font-size: 24px;
+}
 /* Place each grid-item in the correct grid area */
 
 
@@ -143,6 +153,7 @@ export default {
 .welcome {
     grid-area: welcome;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: prompt;
@@ -257,15 +268,35 @@ li {
 }
 .footer {
   grid-area: footer;
+  display: grid;
+  text-align: center;
   background-color: #131c5a; /* Blue color for the footer */
   height: 30vh; /* Set the desired height for the footer */
-  display: flex;
   justify-content: center;
   align-items: center;
   color: white; /* Text color for the footer content */
   font-family: prompt;
 }
-
+.need-motivation{
+  gap: 0;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+h3.motivational-quote{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 0px;
+}
+h3.quote-author{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  padding: 0px;
+}
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
 </style>

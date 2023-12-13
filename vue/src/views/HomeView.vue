@@ -11,7 +11,7 @@
       <!-- If userName is not set, welcome the user and ask for the user's name -->
       <div v-if="!userName">
         <h1>Welcome to Ask Gary</h1>
-        <h2>What would you like me to call you?</h2>
+        <h2 class="naming">What would you like me to call you?</h2>
         <input type="text" v-model="preferredName" @keyup.enter="saveName" class="initial-input"
           placeholder="Enter your name here">
       </div>
@@ -99,8 +99,9 @@
   </div>
 
   <div class="grid-item footer">
-    <h2 class="need-motivation?">Need Motivation?</h2>
+    <h2 class="need-motivation">Need Motivation?</h2>
     <h3 class="motivational-quote">{{ this.quote }}</h3>
+    <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
 
 
   </div>
@@ -281,7 +282,7 @@ export default {
   align-items: start;
   grid-template-areas:
     "logo welcome right-top-placeholder"
-    "nav qa-section motivational-quote"
+    "nav qa-section motivational-quotes"
     "footer footer footer";
   background-image: url('img/Cleveland-90s.png');
   /* Set the skyline image as the background */
@@ -293,11 +294,8 @@ export default {
   /* Do not repeat the background image */
 
 }
-.motivational-quote {
-text-align: left;
-margin-left: 5px;
-}
-h2 {
+
+.naming {
   text-align: center;
 }
 
@@ -322,17 +320,8 @@ h2 {
   grid-area: qa-section;
 }
 
-.motivational-quote {
-  grid-area: motivational-quote;
-}
 
-.bottom-left-placeholder {
-  grid-area: bottom-left-placeholder;
-}
 
-.bottom-right-placeholder {
-  grid-area: bottom-right-placeholder;
-}
 
 /* Styling for the logo to make it smaller and align properly */
 /* Styling for the logo container */
@@ -549,14 +538,40 @@ span {
   grid-area: footer;
   background-color: #131c5a;
   /* Blue color for the footer */
-  height: 200px;
+  height: 30vh;
   /* Set the desired height for the footer */
-  display: flex;
+  display: grid;
+  text-align: center;
   justify-content: center;
   align-items: center;
   color: white;
   /* Text color for the footer content */
   font-family: prompt;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+   "need-motivation"
+   "motivation-quote"
+   "quote-author";
+}
+.need-motivation{
+  gap: 0;
+  margin-top: 35px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+h3.motivational-quote{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 0px;
+}
+h3.quote-author{
+  gap: 0;
+  margin-top: 0px;
+  margin-bottom: 70px;
+  padding: 0px;
 }
 
 /* Styling for the skyline image, serving as the footer visually */</style>
