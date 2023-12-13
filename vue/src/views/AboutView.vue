@@ -92,13 +92,13 @@
         <div class="grid-item bottom-left">
             <!-- This cell is intentionally left empty -->
         </div>
-        <div class="grid-item bottom-center footer">
-            <!-- Motivational quotes content goes here -->
-            <h2 class="need-motivation?">Need Motivation?</h2>
-            <h3 class="motivational-quote">{{ this.quote }}</h3>
-        </div>
+        
         <div class="grid-item bottom-right">
             <!-- this is intentionally right empty-->
+        </div>
+        <div class="grid-item footer">
+            <!-- Motivational quotes content goes here -->
+            
         </div>
     </div>
 </template>
