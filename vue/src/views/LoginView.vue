@@ -26,9 +26,12 @@
           </p>
         </form>
       </div>
-      <div class="grid-item skyline-section">
-      <img src="img/Chicago-90s.png" alt="City Skyline">
-    </div>
+      <div class="grid-item footer">
+
+
+
+</div>
+
   </div>
     <!--add footer for the chicago skyline-->
 
@@ -85,10 +88,14 @@ export default {
   grid-template-areas:
     "welcome-section"
     "form-section"
-    "skyline-section";
+    "footer";
   height: 100vh; /* Full height of the viewport */
+  background-size: 145%;
+  background-image: url('img/Chicago-90s.png');
   justify-content: center; /* Center grid items horizontally */
   align-items: center; /* Center grid items vertically */
+  background-position: center calc(100% + 250px);
+
 }
 #login .welcome-section {
   grid-area: welcome-section;
@@ -125,7 +132,7 @@ h1.welcome-section {
 #login .welcome-section {
   grid-area: welcome-section;
   text-align: center; /* Center text */
-  color: var(--color-pink);
+  color: whitesmoke;
   text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
 }
 
@@ -223,5 +230,18 @@ h1.welcome-section {
   max-height: 100%; /* Keep image within the section */
   object-fit: contain; /* Ensures the entire image is visible */
   filter: drop-shadow(-10px -10px 10px #b5b6b8);
+}
+.footer {
+  grid-area: footer;
+  background-color: #131c5a;
+  /* Blue color for the footer */
+  height: 30vh;
+  /* Set the desired height for the footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* Text color for the footer content */
+  font-family: prompt;
 }
 </style>
