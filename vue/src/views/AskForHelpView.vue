@@ -1,7 +1,7 @@
 <template>
     <div class="askForHelp grid-container">
-        <div class="grid-itme top-left logo">
-            <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
+        <div class="grid-item top-left logo">
+            <img src="img/Gary-LOGO.png" alt="TE Logo">
         </div>
         <div class="grid-item top-center welcome">
             <h1>Ask For Help!</h1>
@@ -134,24 +134,29 @@ export default {
         "footer footer footer";
 
 }
-.logo {
-    grid-area: logo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;    
-    filter: drop-shadow(-1px -1px 1px #b5b6b8);/* Shadow effect for depth */ 
-}
+/* Place each grid-item in the correct grid area */
 
-#TE Logo {
-    width: 250px;    
-    height: auto;/* Maintain aspect ratio */ 
-    margin-top: 0px;
-    margin-left: 100px;
-    filter: drop-shadow(-1px -1px 1px #b5b6b8);
-    /* Shadow effect for depth */
+.grid-item.logo {
+  /* Center the logo within its grid cell */
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  margin-top: 0px;  
+  filter: drop-shadow(-1px -1px 1px #b5b6b8);
+  /* Shadow effect for depth */
 
 }
+/* Styling for the logo image */
+.grid-item.logo img {
+  transform: scale(5);
+  width: 250px;
+  /* You may set a max-width instead if the image is too large */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-left: 75px;
+  /* Remove max-height if it's not needed or adjust accordingly */
+}
+
 
 #TE Logo {
     width: 250px;
@@ -178,7 +183,7 @@ export default {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 25px;
-  background-color: hsla(0, 0%, 0%, 0.5);
+  background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
 }
 .nav a {

@@ -2,7 +2,7 @@
     <div class="aboutUs grid-container">
         <!-- Top Row -->
         <div class="grid-item top-left logo">
-            <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
+            <img src="img/Gary-LOGO.png" alt="TE Logo">
         </div>
         <div class="grid-item top-center welcome">
             <h2>About Us</h2>
@@ -157,7 +157,7 @@ export default {
     background-image: url('img/Cleveland-90s.png');
     background-size: 145%;
     background-position: center calc(100% + 350px);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -172,7 +172,7 @@ export default {
 .logo {
     grid-area: logo;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin-top: 0px;    
     filter: drop-shadow(-1px -1px 1px #b5b6b8);/* Shadow effect for depth */ 
@@ -188,13 +188,16 @@ export default {
 
 }
 
-#TE Logo {
-    width: 250px;
-    /* You may set a max-width instead if the image is too large */
-    height: auto;
-    /* Maintain aspect ratio */
-
+.grid-item.logo img {
+  transform: scale(5);
+  width: 250px;
+  /* You may set a max-width instead if the image is too large */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-left: 75px;
+  /* Remove max-height if it's not needed or adjust accordingly */
 }
+
 
 .welcome {
     grid-area: welcome;
@@ -246,8 +249,16 @@ ul {
 .aboutUs-content {
     grid-area: aboutUs-content;
     font-family: prompt;
+    color: White;
 }
 
+.aboutUs-content h3 {
+    font-size: 25px;
+}
+
+p{
+    font-size: 18px;
+}
 #all-items section { 
     display: flex; 
     flex-direction: column;
