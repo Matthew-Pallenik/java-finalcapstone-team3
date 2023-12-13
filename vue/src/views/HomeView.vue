@@ -3,14 +3,14 @@
     <!-- Top Row -->
     <!-- TE Logo on the top-left -->
     <div class="grid-item logo">
-      <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
+      <img src="img/Gary-LOGO.png" alt="TE Logo">
     </div>
 
     <!-- Welcome Message in the top-center -->
     <div class="grid-item welcome">
       <!-- If userName is not set, welcome the user and ask for the user's name -->
       <div v-if="!userName">
-        <h1>Welcome to Chatbot</h1>
+        <h1>Welcome to Ask Gary</h1>
         <h2>What would you like me to call you?</h2>
         <input type="text" v-model="preferredName" @keyup.enter="saveName" class="initial-input"
           placeholder="Enter your name here">
@@ -18,7 +18,7 @@
 
       <!-- If userName is set, display a personalized welcome message and ask what the user needs help with -->
       <div v-else>
-        <h1>Welcome to Chatbot, {{ userName }}</h1>
+        <h1>Welcome to Ask Gary, {{ userName }}</h1>
         <h2>What would you like help with?</h2>
       </div>
     </div>
@@ -340,9 +340,9 @@ h2 {
 .grid-item.logo {
   /* Center the logo within its grid cell */
   display: flex;
-  justify-content: center;
+  justify-content:start;
   align-items: center;
-  margin-top: 0px;
+  margin-top: 0px;  
   filter: drop-shadow(-1px -1px 1px #b5b6b8);
   /* Shadow effect for depth */
 
@@ -350,6 +350,7 @@ h2 {
 
 /* Styling for the logo image */
 .grid-item.logo img {
+  transform: scale(5);
   width: 250px;
   /* You may set a max-width instead if the image is too large */
   height: auto;

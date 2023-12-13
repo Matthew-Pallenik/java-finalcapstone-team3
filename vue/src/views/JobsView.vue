@@ -2,7 +2,7 @@
   <div class="jobs grid-container">
     <!-- Top Row -->
     <div class="grid-item top-left logo">
-      <img src="img/TE-LOGO-green-blue.png" alt="TE Logo">
+      <img src="img/Gary-LOGO.png" alt="TE Logo">
     </div>
     <div class="grid-item top-center welcome">
       <h2>Jobs</h2>
@@ -137,24 +137,29 @@ export default {
 }
 
 /* Place each grid-item in the correct grid area */
-.logo {
-    grid-area: logo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;    
-    filter: drop-shadow(-1px -1px 1px #b5b6b8);/* Shadow effect for depth */ 
-}
 
-#TE Logo {
-    width: 250px;    
-    height: auto;/* Maintain aspect ratio */ 
-    margin-top: 0px;
-    margin-left: 100px;
-    filter: drop-shadow(-1px -1px 1px #b5b6b8);
-    /* Shadow effect for depth */
+.grid-item.logo {
+  /* Center the logo within its grid cell */
+  display: flex;
+  justify-content:start;
+  align-items: center;
+  margin-top: 0px;  
+  filter: drop-shadow(-1px -1px 1px #b5b6b8);
+  /* Shadow effect for depth */
 
 }
+
+/* Styling for the logo image */
+.grid-item.logo img {
+  transform: scale(5);
+  width: 250px;
+  /* You may set a max-width instead if the image is too large */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-left: 75px;
+  /* Remove max-height if it's not needed or adjust accordingly */
+}
+
 
 
 .welcome {
