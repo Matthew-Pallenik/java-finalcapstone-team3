@@ -222,7 +222,8 @@ export default {
   font-size: 25px;
   background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
-  margin-bottom: 1200px
+  margin-bottom: 1200px;
+  text-align: left;
 }
 
 .nav a {
