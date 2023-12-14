@@ -5,6 +5,7 @@
         </div>
         <div class="grid-item top-center welcome">
             <h1>Ask For Help!</h1>
+            <h2>Here are some sample questions you can ask Gary. You can also click on these questions to search answers. For other question use Ask me anything!</h2>
         </div>
         <div class="grid-item top-right">
             <!-- This cell is intentionally left empty -->
@@ -68,16 +69,16 @@ export default {
             questions: [
                 "What is polymorphism?",
                 "What is Git?",
-                "What are some front end job positions?",
-                "What should I wear to a interview?",
+                "What is postman?",
+                "What is proper interview attire?",
                 "What is a variable?",
-                "What are some back end positions",
+                "What is a controller?",
                 "What is CRUD?",
                 "I need help with my Resume.",
                 "What is Database Design?",
                 "What is Object Oriented Programming?",
                 "What do I do after interviews?",
-                "Job Positions?"
+                "I need help with my elevator pitch?"
             ]
         };
     },
@@ -148,12 +149,21 @@ export default {
 .welcome {
     grid-area: welcome;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: prompt;
     font-size: 35px;
     color: white;
     text-shadow: 2px 2px 4px rgba(66, 65, 65, 0.4);
+}
+h2{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 0px;
+  padding: 0px;
+  margin-left: 35px;
+  margin-right: 20px;
 }
 .nav {
     display: flex;
