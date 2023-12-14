@@ -100,7 +100,7 @@
 
   <div class="grid-item footer">
     <h2 class="need-motivation">Need Motivation?</h2>
-    <h3 class="motivational-quote">{{ this.quote }}</h3>
+    <h2 class="motivational-quote">{{ this.quote }}</h2>
     <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
 
 
@@ -400,8 +400,8 @@ export default {
   justify-content: center;
   padding: 10px;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 65px;
+  margin-right: 50px;
   font-size: 25px;
   background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
