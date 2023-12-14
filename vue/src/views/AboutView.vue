@@ -32,7 +32,7 @@
                 <header></header>
                 <section>
                     <article>
-                        <div></div>
+                        <div><img src="img/jake.jpg"/></div>
                         <div>
                             <h3>Jake Butler</h3>
                             <p>I'm Jake. I am a music lover, amateur athlete, and self-proclaimed comedian. 
@@ -44,7 +44,7 @@
                         </div>
                     </article>
                     <article>
-                        <div></div>
+                        <div><img src="img/ahmed.jpg"/></div>
                         <div>
                             <h3>Ahmed Elbagory</h3>
                             <p>I am a computer technician who developed a passion for electronics at a young age, progressing from disassembling old devices to repairing them. 
@@ -53,7 +53,7 @@
                         </div>
                     </article>
                     <article>
-                        <div></div>
+                        <div><img src="img/Matthew.jpeg"/></div>
                         <div>
                             <h3>Matthew Pallenik</h3>
                             <p>I am a software developer with a background in shipping and logistics. 
@@ -64,14 +64,18 @@
                         </div>
                     </article>
                     <article>
-                        <div></div>
+                        <div><img src="img/bryson.jpg"/></div>
                         <div>
                             <h3>Bryson Poole</h3>
-                            <p>I am a (mostly) ethical hacker and near unanimous winner of the "Grossest Website" award thanks to my skills in making seizure-inducing flashing backgrounds.</p>
+                            <p>I am an aspiring software developer with a fervent interest in ethical hacking, driven by a passion for cybersecurity. 
+                                Despite facing setbacks, including a military injury during basic training, I've channeled resilience into mastering programming languages and software development. 
+                                My goal is to contribute meaningfully to the ever-evolving field of cybersecurity, recognizing its crucial role in today's digital landscape. 
+                                Beyond coding, I find enjoyment and inspiration in the strategic world of video games, fostering a creative mindset that enhances my problem-solving abilities in technology. 
+                                Committed to continuous learning, I am poised to make valuable contributions at the intersection of software development and ethical responsibility.</p>
                         </div>
                     </article>
                     <article>
-                        <div></div>
+                        <div><img src="img/rox.jpg"/></div>
                         <div>
                             <h3>Roxana Valdina</h3>
                             <p>I am a passionate lifelong learner, dedicated to growth and the deep exploration of challenges that push me beyond my comfort zone. 
@@ -255,13 +259,18 @@ p{
     flex-direction: column;
 }
 
- #all-items section article { 
+#all-items section article { 
     display: flex; 
     align-items: center;
 }
 
 #all-items section article div header {
     font-weight: bold;
+}
+
+#all-items section article img {
+    height: 150px;
+    margin-right: 20px;
 }
 
 .motivational-quotes {

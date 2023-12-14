@@ -7,5 +7,6 @@ createdb -U postgres $DATABASE &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/schema.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/pathway.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/curriculum.sql" &&
+psql -U postgres -d $DATABASE -f "$BASEDIR/roles.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/data.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/user.sql"
