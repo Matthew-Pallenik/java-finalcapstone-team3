@@ -30,7 +30,7 @@
             <p></p>
             <section id="all-items">
                 <header></header>
-                <section>
+                <section class="about-us">
                     <article>
                         <div><img src="img/jake.jpg"/></div>
                         <div>
@@ -158,10 +158,10 @@ export default {
     gap: 10px;/* Space between grid items */    
     justify-items: center; /* Center items horizontally */
     align-items: center; /* Center items vertically */
-    background-image: url('img/Cleveland-90s.png');
     background-size: 145%;
     background-position: center calc(100% + 350px);
     background-repeat: no-repeat;  
+    text-align: center;
 }
 
 /* Assign the grid-template-areas to match the layout */
@@ -191,6 +191,11 @@ export default {
     /* Shadow effect for depth */
 
 }
+#all-items section article img {
+    border-radius: 50%; /* Add this line to make the images circular */
+    
+}
+
 
 
 
@@ -217,6 +222,7 @@ export default {
   font-size: 25px;
   background-color: hsla(0, 2%, 46%, 0.5);
   border-radius: 0.5rem;
+  margin-bottom: 1200px
 }
 
 .nav a {
@@ -245,6 +251,7 @@ ul {
     grid-area: aboutUs-content;
     font-family: prompt;
     color: White;
+    
 }
 
 .aboutUs-content h2 {
@@ -266,6 +273,8 @@ p{
 #all-items section article { 
     display: flex; 
     align-items: center;
+    
+    
 }
 
 #all-items section article div header {
@@ -283,19 +292,17 @@ p{
 
 /* empty2 and empty3 do not need styles since they are intentionally left empty */
 
-.footer {
-  grid-area: footer;
-  background-color: #131c5a;
-  /* Blue color for the footer */
-  height: 200px;
-  /* Set the desired height for the footer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  /* Text color for the footer content */
-  font-family: prompt;
+
+.about-us article {
+    background-color: rgba(19, 28, 90, 0.5);    
+    border-radius: 10px; /* Optional: add rounded corners for a nicer look */
+    margin-bottom: 20px; /* Optional: add some spacing between articles */
+    padding: 20px; /* Optional: add padding inside the box */
 }
 
+.about-us h3,
+.about-us p {
+    color: white; /* Set the text color inside the blue box */
+}
 /* Styling for the skyline image, serving as the footer visually */
 </style>
