@@ -26,7 +26,7 @@
         </div>
         <div class="grid-item middle-center aboutUs-content">
             <!-- Create a grid container for the About Us entries -->
-            <h2>This chatbot was brought to you by the following:</h2>
+            <h2>This Ask Gary was brought to you by the following:</h2>
             <p></p>
             <section id="all-items">
                 <header></header>
@@ -53,7 +53,7 @@
                         </div>
                     </article>
                     <article>
-                        <div><img src="img/Matthew.jpeg"/></div>
+                        <div><img src="img/betterMattPic.jpg"/></div>
                         <div>
                             <h3>Matthew Pallenik</h3>
                             <p>I am a software developer with a background in shipping and logistics. 
@@ -245,6 +245,10 @@ ul {
     grid-area: aboutUs-content;
     font-family: prompt;
     color: White;
+}
+
+.aboutUs-content h2 {
+    text-align: center;
 }
 
 .aboutUs-content h3 {
