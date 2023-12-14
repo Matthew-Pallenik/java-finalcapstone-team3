@@ -61,7 +61,7 @@
   <div class="grid-item footer">
     <!-- Motivational quotes content goes here -->
     <h2 class="need-motivation">Need Motivation?</h2>
-    <h3 class="motivational-quote">{{ this.quote }}</h3>
+    <h2 class="motivational-quote">{{ this.quote }}</h2>
     <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
 </div>
     

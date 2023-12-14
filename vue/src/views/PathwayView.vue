@@ -59,7 +59,7 @@
        <!-- Motivational quotes content goes here -->
             
       <h2 class="need-motivation">Need Motivation?</h2>
-    <h3 class="motivational-quote">{{ this.quote }}</h3>
+    <h2 class="motivational-quote">{{ this.quote }}</h2>
     <h3 class="quote-author"> - {{ quoteAuthor }}</h3>
 
     </div>
@@ -270,7 +270,7 @@ li {
   margin-bottom: 0px;
   padding: 0px;
 }
-h3.motivational-quote{
+h2.motivational-quote{
   gap: 0;
   margin-top: 0px;
   margin-bottom: 0px;
