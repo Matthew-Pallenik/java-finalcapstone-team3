@@ -5,7 +5,7 @@ CREATE TABLE roles(
     role_id serial NOT NULL,
     title VARCHAR(200) NOT NULL,
     description VARCHAR(1500),
-    keywords VARCHAR(500),
+    keywords VARCHAR(500)
     
 );
 COMMIT;
